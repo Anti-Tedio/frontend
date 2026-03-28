@@ -39,7 +39,7 @@ const languages = [
 
 function changeLanguage(code: string) {
     localStorage.setItem('lang', code)
-    window.navigation.reload()
+    window.location.reload()
 }
 
 const S: Record<string, string> = {

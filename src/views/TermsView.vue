@@ -22,7 +22,7 @@ function toggle(index: number) {
 
 function changeLanguage(code: string) {
   localStorage.setItem('lang', code)
-  window.navigation.reload()
+  window.location.reload()
 }
 
 const sections = tm('terms.sections') as Array<{ title: string; content: string }>

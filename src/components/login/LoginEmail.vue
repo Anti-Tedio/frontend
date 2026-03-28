@@ -160,7 +160,7 @@ const toggleMode = () => {
               :placeholder="$t('auth.emailPlaceholder')"
               autocomplete="email"
               v-bind="componentField"
-              class="w-full focus-visible:border-primary focus-visible:ring-transparent h-10 p-3 rounded-xl border-2 border-gray-100 focus:border-primary outline-none transition-colors bg-transparent appearance-none"
+              class="w-full p-3 rounded-xl border-2 border-gray-100 focus-visible:border-primary focus-visible:ring-transparent h-10 outline-none transition-colors bg-transparent appearance-none"
             />
           </FormControl>
           <FormMessage class="text-xs font-medium text-rose-500 ml-1" role="alert" />

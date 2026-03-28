@@ -10,8 +10,8 @@ import { onMounted, ref, watch } from 'vue'
 const personsStore = usePersonsStore()
 const isReady = ref(false)
 
-const nextPage = async () => {
-  await personsStore.savePersons()
+const nextPage = () => {
+  personsStore.savePersons()
   router.push('/categorys')
 }
 

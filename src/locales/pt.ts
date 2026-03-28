@@ -1,5 +1,4 @@
 export default {
-  // ─── Navigation ───────────────────────────────────────────────
   nav: {
     home: 'Início',
     about: 'Sobre',
@@ -15,7 +14,6 @@ export default {
     language: 'idioma',
   },
 
-  // ─── Footer ───────────────────────────────────────────────────
   footer: {
     tagline: 'Transformamos momentos de ócio em experiências incríveis através de inteligência artificial e curadoria inteligente.',
     navigation: 'Navegação',
@@ -28,7 +26,6 @@ export default {
     copyright: '© {year} Anti Tédio. Todos os direitos reservados.',
   },
 
-  // ─── Auth / Login ─────────────────────────────────────────────
   auth: {
     welcomeBack: 'Bem-vindo de volta',
     createAccount: 'Bem-vindo ao Anti-Tédio',
@@ -65,7 +62,6 @@ export default {
     validationPasswordMin: 'A senha precisa ter pelo menos 8 caracteres',
   },
 
-  // ─── Forgot Password ──────────────────────────────────────────
   forgotPassword: {
     title: 'Recuperar Senha',
     subtitle: 'Insira seu e-mail abaixo. Enviaremos um link mágico para você redefinir sua senha.',
@@ -78,7 +74,6 @@ export default {
     understood: 'Entendi',
   },
 
-  // ─── Reset Password ───────────────────────────────────────────
   resetPassword: {
     title: 'Nova Senha',
     subtitle: 'Crie uma combinação forte para recuperar seu acesso ao {brand}.',
@@ -98,7 +93,6 @@ export default {
     validationMatch: 'As senhas não são iguais',
   },
 
-  // ─── Change Password ──────────────────────────────────────────
   changePassword: {
     title: 'Nova Senha',
     subtitle: 'Defina uma senha segura para sua conta no Anti-tédio.',
@@ -111,7 +105,6 @@ export default {
     validationMatch: 'As senhas não coincidem',
   },
 
-  // ─── Select Person ────────────────────────────────────────────
   selectPerson: {
     title: 'Como você se define?',
     subtitle: 'Escolha as características que mais combinam com você.',
@@ -124,7 +117,6 @@ export default {
     continueAriaLabel: 'Continuar para seleção de categoria',
   },
 
-  // ─── Select Category ──────────────────────────────────────────
   selectCategory: {
     back: 'VOLTAR',
     title: 'O que você quer fazer hoje?',
@@ -137,7 +129,6 @@ export default {
     resultAriaLabel: 'Ver minha recomendação',
   },
 
-  // ─── Edit Person ──────────────────────────────────────────────
   editPerson: {
     title: 'Selecione alguns dos traços abaixo',
     subtitle: 'Selecione no máximo 8 e no mínimo 3.',
@@ -147,20 +138,17 @@ export default {
     traitsLabel: 'Traços de personalidade',
   },
 
-  // ─── Info Person ──────────────────────────────────────────────
   infoPerson: {
     triggerLabel: 'Mais detalhes sobre este traço',
     dialogTitle: 'Sobre este traço',
     closeLabel: 'Fechar detalhes',
   },
 
-  // ─── Badge Person ─────────────────────────────────────────────
   badgePerson: {
     selected: '{trait} — selecionado, clique para desselecionar',
     unselected: '{trait} — clique para selecionar',
   },
 
-  // ─── Buy Credits ──────────────────────────────────────────────
   buyCredits: {
     triggerLabel: 'Comprar créditos — ver planos',
     dialogTitle: 'Turbine seu Anti-Tédio',
@@ -174,7 +162,6 @@ export default {
     plansLabel: 'Planos de créditos',
   },
 
-  // ─── Profile ──────────────────────────────────────────────────
   profile: {
     member: 'Usuário',
     myAccount: 'Minha conta',
@@ -201,7 +188,6 @@ export default {
     selectedTraitsLabel: 'Traços selecionados',
   },
 
-  // ─── Edit Avatar ──────────────────────────────────────────────
   editAvatar: {
     dialogTitle: 'Foto de perfil',
     previewLabel: 'Pré-visualização da foto de perfil',
@@ -222,7 +208,6 @@ export default {
     cancelLabel: 'Cancelar e fechar',
   },
 
-  // ─── History Card ─────────────────────────────────────────────
   historyCard: {
     uncategorized: 'Sem Categoria',
     by: 'Por {name}',
@@ -234,7 +219,6 @@ export default {
     rating: 'Avaliação: {score} estrelas',
   },
 
-  // ─── Result ───────────────────────────────────────────────────
   result: {
     articleLabel: 'Sua recomendação personalizada',
     tryDifferent: 'MUDAR DE ATIVIDADE',
@@ -244,7 +228,6 @@ export default {
     actionsLabel: 'Ações do resultado',
   },
 
-  // ─── Midia ────────────────────────────────────────────────────
   midia: {
     synopsis: 'Sinopse',
     availableOn: 'Disponível em:',
@@ -253,7 +236,6 @@ export default {
     loadingLabel: 'Carregando recomendação',
   },
 
-  // ─── Book ─────────────────────────────────────────────────────
   book: {
     by: 'por',
     publishedIn: 'Publicado em',
@@ -264,7 +246,6 @@ export default {
     readMore: 'Ler mais',
   },
 
-  // ─── Video Game ───────────────────────────────────────────────
   videoGame: {
     availableOn: 'Disponível na {store}',
     buyNow: 'Adquirir Agora',
@@ -273,7 +254,6 @@ export default {
     criticScore: 'Avaliação da crítica: {score}',
   },
 
-  // ─── Loading ──────────────────────────────────────────────────
   loading: {
     title: 'Sugestão sendo gerada',
     message1: 'Analisando suas informações…',
@@ -282,7 +262,6 @@ export default {
     progressLabel: 'Progresso do carregamento',
   },
 
-  // ─── Delete Account ───────────────────────────────────────────
   deleteAccount: {
     title: 'Excluir minha conta',
     subtitle: 'Sentimos muito em ver você partir. Antes de prosseguir, entenda o que acontecerá com seus dados.',
@@ -309,7 +288,6 @@ export default {
     inputHint: 'Digite a palavra DELETAR em letras maiúsculas para habilitar o botão de confirmação',
   },
 
-  // ─── Payment Pages ────────────────────────────────────────────
   paymentSuccess: {
     title: 'Pagamento Confirmado!',
     subtitle: 'Sua transação foi concluída com sucesso. Prepare-se, o tédio está com os dias contados!',
@@ -340,7 +318,6 @@ export default {
     backButton: 'Voltar para o início',
   },
 
-  // ─── Account Recovery ─────────────────────────────────────────
   accountRecovery: {
     recoveringTitle: 'Resgatando sua conta…',
     recoveringSubtitle: 'Estamos trazendo tudo de volta. O tédio não vai vencer hoje!',
@@ -354,7 +331,6 @@ export default {
     errorLabel: 'Falha na recuperação da conta',
   },
 
-  // ─── Extra Info (budget) ──────────────────────────────────────
   extraInfo: {
     title: 'Qual o seu orçamento?',
     subtitle: 'Informe o valor máximo que você deseja investir.',
@@ -365,7 +341,6 @@ export default {
     submitLabel: 'Confirmar orçamento e ver resultados',
   },
 
-  // ─── Email Verification ───────────────────────────────────────
   emailVerification: {
     title: 'Verifique seu e-mail: {email}',
     description: 'Digitando o código de 6 dígitos enviado para o seu e-mail, você libera o acesso total.',
@@ -377,7 +352,6 @@ export default {
     genericError: 'Código inválido ou expirado. Tente novamente.',
   },
 
-  // ─── Home ─────────────────────────────────────────────────────
   home: {
     badge: 'Descubra o que fazer com IA',
     title: 'O fim do seu {boredom} começa aqui.',
@@ -394,7 +368,6 @@ export default {
     feature3Desc: 'Suas recomendações ficam salvas para consulta.',
   },
 
-  // ─── Contact ──────────────────────────────────────────────────
   contact: {
     badge: 'Fale conosco',
     title: 'Entre em ',
@@ -427,7 +400,6 @@ export default {
     genericError: 'Falha ao enviar a mensagem.',
   },
 
-  // ─── Privacy Policy ───────────────────────────────────────────
   privacy: {
     pageTitle: 'Política de Privacidade',
     lastUpdated: 'Última atualização: março de 2026',
@@ -470,7 +442,6 @@ export default {
     ],
   },
 
-  // ─── Terms of Use ─────────────────────────────────────────────
   terms: {
     pageTitle: 'Termos de Uso',
     lastUpdated: 'Última atualização: março de 2026',
@@ -520,23 +491,84 @@ export default {
       },
     ],
   },
+  about: {
+    badge: 'Nossa história',
+    title: 'Criado para dar um fim no {boredom}.',
+    boredomWord: 'tédio',
+    subtitle: 'O Anti-Tédio surgiu de um incômodo real: perder mais tempo escolhendo o que fazer do que aproveitando o momento. Criamos a ferramenta que a gente sempre quis usar.',
+    ctaButton: 'Começar agora',
+    ctaLabel: 'Ir para o app e descobrir novas atividades',
 
-  // ─── Credits / Third-party ────────────────────────────────────
-  credits: {
-    pageTitle: 'Créditos & Tecnologias',
-    lastUpdated: 'Última atualização: março de 2026',
-    intro: 'O Anti-Tédio é construído com tecnologias de ponta e APIs externas de alta qualidade. Aqui reconhecemos todos os serviços e recursos de terceiros que tornam esta plataforma possível.',
-    backendTitle: 'Back-end & Infraestrutura',
-    frontendTitle: 'Front-end & Interface',
-    apisTitle: 'APIs & Serviços Externos',
-    assetsTitle: 'Recursos Visuais & Fontes',
-    teamTitle: 'Sobre o Criador',
-    teamIntro: 'O Anti-Tédio foi idealizado, desenhado e desenvolvido por uma única pessoa apaixonada por tecnologia e entretenimento.',
-    visitProfile: 'Ver perfil',
-    openSource: 'Código Aberto',
-    openSourceDesc: 'O back-end do Anti-Tédio é open source e está disponível no GitHub sob licença MIT.',
-    viewRepo: 'Ver repositório',
-    contactTitle: 'Fale com o criador',
-    contactDesc: 'Tem uma ideia, quer colaborar ou só dar um oi? Escolha o canal de preferência.',
+    projectTitle: 'O que é o Anti-Tédio?',
+    projectText1: 'O Anti-Tédio é uma solução inteligente para aquele clássico dilema do "o que eu faço agora?". Cruzamos inteligência artificial com diversas fontes de entretenimento para entregar sugestões certeiras de filmes, séries, livros, animes e jogos — tudo baseado no seu perfil, humor e bolso.',
+    projectText2: 'Nossa engine analisa seus gostos, vasculha APIs em tempo real e entrega recomendações que realmente fazem sentido para você. Tudo isso em uma interface moderna, rápida e totalmente pensada na sua experiência.',
+
+    howTitle: 'Três passos, zero tédio',
+    step1Title: 'Defina seu clima',
+    step1Desc: 'Escolha traços que combinam com seu momento — seja algo aventureiro, nostálgico ou criativo. A gente se adapta ao que você sente.',
+    step2Title: 'Escolha uma categoria',
+    step2Desc: 'Filmes, séries, livros, animes, desenhos ou jogos. Você decide que tipo de experiência quer ter hoje.',
+    step3Title: 'Receba sua indicação',
+    step3Desc: 'Nossa IA processa seu perfil e gera uma sugestão personalizada na hora. Chega de scroll infinito e fadiga de decisão.',
+
+    statsTitle: 'O Anti-Tédio em números',
+    stat1Value: '6',
+    stat1Label: 'Categorias de conteúdo',
+    stat2Value: '10+',
+    stat2Label: 'APIs integradas',
+    stat3Value: '2',
+    stat3Label: 'Idiomas suportados',
+    stat4Value: '∞',
+    stat4Label: 'Sugestões possíveis',
+
+    backendTitle: 'Stack de Backend',
+    frontendTitle: 'Stack de Frontend',
+    apisTitle: 'Integrações & APIs',
+    assetsTitle: 'Recursos & Créditos',
+
+    bunDesc: 'Runtime JavaScript ultra-rápido projetado para substituir o Node.js',
+    honoDesc: 'Framework web leve e de alta performance para edge computing',
+    prismaDesc: 'ORM moderno para TypeScript com suporte nativo ao PostgreSQL',
+    postgresDesc: 'Banco de dados relacional robusto para armazenamento seguro',
+    redisDesc: 'Armazenamento em memória para cache e gestão de sessões',
+    jwtDesc: 'Tokens de segurança para autenticação eficiente e sem estado',
+    vue3Desc: 'Framework progressivo para construção de interfaces reativas',
+    typescriptDesc: 'Superset do JavaScript que traz segurança e organização ao código',
+    viteDesc: 'Ferramenta de build de última geração com recarregamento instantâneo',
+    tailwindDesc: 'Framework CSS focado em utilitários para estilização rápida',
+    shadcnDesc: 'Componentes acessíveis e customizáveis baseados no Reka UI',
+    piniaDesc: 'Gerenciador de estado oficial do ecossistema Vue 3',
+    vueRouterDesc: 'Roteador oficial para aplicações Vue',
+    vueI18nDesc: 'Suporte completo a internacionalização (PT-BR e EN)',
+    veeValidateDesc: 'Validação de formulários tipada e declarativa',
+    lucideDesc: 'Biblioteca de ícones vetoriais consistentes e leves',
+    geminiDesc: 'Motor de IA que gera sugestões personalizadas de entretenimento',
+    omdbDesc: 'Metadados, capas e notas de filmes e séries',
+    googleBooksDesc: 'Informações detalhadas, sinopses e capas de livros',
+    istadDesc: 'Preços e promoções em tempo real de jogos digitais',
+    gcloudTranslateDesc: 'Tradução automática para o idioma de preferência do usuário',
+    googleOauthDesc: 'Autenticação segura através de contas Google',
+    facebookOauthDesc: 'Login social opcional via Facebook',
+    stripeDesc: 'Processamento global de pagamentos e assinaturas',
+    mercadoPagoDesc: 'Pagamentos locais no Brasil via Pix',
+    resendDesc: 'Entrega confiável de e-mails transacionais',
+    svgrepoDesc: 'Biblioteca com milhares de ícones SVG gratuitos',
+    lucideAssetsDesc: 'Conjunto coeso de ícones de interface open source',
+    googleFontsDesc: 'Fontes web de alta qualidade servidas via CDN',
+    materialSymbolsDesc: 'Sistema de ícones variáveis do Google',
+
+    repoFrontendTitle: 'Repositório Frontend',
+    repoFrontendDesc: 'Vue 3 · TypeScript · Vite · Tailwind CSS',
+    repoBackendTitle: 'Repositório Backend',
+    repoBackendDesc: 'Bun · Hono · Prisma · PostgreSQL · Redis',
+    viewSource: 'Ver código fonte',
+
+    creatorHeading: 'Criado por',
+    creatorBio: 'Sou um desenvolvedor focado em criar soluções que resolvem dores reais. O Anti-Tédio nasceu da vontade de aplicar IA de um jeito prático — ajudando as pessoas a descobrirem seu próximo conteúdo favorito sem estresse.',
+    creatorRole: 'Desenvolvedor Full-Stack & Fundador',
+
+    copyright: '© {year} Anti-Tédio. Distribuído sob a licença MIT.',
+    iconCredits: 'Ícones por {lucide} e {svgrepo}',
+    externalLinkLabel: 'Abrir site de {name} em nova aba',
   },
 }

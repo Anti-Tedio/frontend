@@ -1,5 +1,4 @@
 export default {
-  // ─── Navigation ───────────────────────────────────────────────
   nav: {
     home: 'Home',
     about: 'About',
@@ -15,7 +14,6 @@ export default {
     language: 'language',
   },
 
-  // ─── Footer ───────────────────────────────────────────────────
   footer: {
     tagline: 'We turn idle moments into amazing experiences through artificial intelligence and smart curation.',
     navigation: 'Navigation',
@@ -28,7 +26,6 @@ export default {
     copyright: '© {year} Anti Tédio. All rights reserved.',
   },
 
-  // ─── Auth / Login ─────────────────────────────────────────────
   auth: {
     welcomeBack: 'Welcome back',
     createAccount: 'Create your account',
@@ -65,7 +62,6 @@ export default {
     validationPasswordMin: 'Password must be at least 8 characters',
   },
 
-  // ─── Forgot Password ──────────────────────────────────────────
   forgotPassword: {
     title: 'Reset Password',
     subtitle: "Enter your email below and we'll send you a magic link to reset your password.",
@@ -78,7 +74,6 @@ export default {
     understood: 'Got it, back to sign in',
   },
 
-  // ─── Reset Password ───────────────────────────────────────────
   resetPassword: {
     title: 'New Password',
     subtitle: 'Create a strong password to recover your access to {brand}.',
@@ -98,7 +93,6 @@ export default {
     validationMatch: 'Passwords do not match',
   },
 
-  // ─── Change Password ──────────────────────────────────────────
   changePassword: {
     title: 'New Password',
     subtitle: 'Set a strong password for your Anti-Tédio account.',
@@ -111,7 +105,6 @@ export default {
     validationMatch: 'Passwords do not match',
   },
 
-  // ─── Select Person ────────────────────────────────────────────
   selectPerson: {
     title: 'How would you describe yourself?',
     subtitle: 'Pick the traits that best match your vibe right now.',
@@ -124,7 +117,6 @@ export default {
     continueAriaLabel: 'Continue to category selection',
   },
 
-  // ─── Select Category ──────────────────────────────────────────
   selectCategory: {
     back: 'BACK',
     title: 'What do you feel like doing?',
@@ -137,7 +129,6 @@ export default {
     resultAriaLabel: 'Get my recommendation',
   },
 
-  // ─── Edit Person ──────────────────────────────────────────────
   editPerson: {
     title: 'Select your personality traits',
     subtitle: 'Choose between 3 and 8 traits that describe you.',
@@ -147,20 +138,17 @@ export default {
     traitsLabel: 'Personality traits',
   },
 
-  // ─── Info Person ──────────────────────────────────────────────
   infoPerson: {
     triggerLabel: 'More details about this trait',
     dialogTitle: 'About this trait',
     closeLabel: 'Close details',
   },
 
-  // ─── Badge Person ─────────────────────────────────────────────
   badgePerson: {
     selected: '{trait} — selected, click to deselect',
     unselected: '{trait} — click to select',
   },
 
-  // ─── Buy Credits ──────────────────────────────────────────────
   buyCredits: {
     triggerLabel: 'Buy more credits — view credit plans',
     dialogTitle: 'Power Up Your Anti-Tédio',
@@ -174,7 +162,6 @@ export default {
     plansLabel: 'Credit plans',
   },
 
-  // ─── Profile ──────────────────────────────────────────────────
   profile: {
     member: 'Member',
     myAccount: 'My Account',
@@ -201,7 +188,6 @@ export default {
     selectedTraitsLabel: 'Selected traits',
   },
 
-  // ─── Edit Avatar ──────────────────────────────────────────────
   editAvatar: {
     dialogTitle: 'Profile Photo',
     previewLabel: 'Profile photo preview',
@@ -222,7 +208,6 @@ export default {
     cancelLabel: 'Cancel and close dialog',
   },
 
-  // ─── History Card ─────────────────────────────────────────────
   historyCard: {
     uncategorized: 'Uncategorized',
     by: 'By {name}',
@@ -234,7 +219,6 @@ export default {
     rating: 'Rating: {score} stars',
   },
 
-  // ─── Result ───────────────────────────────────────────────────
   result: {
     articleLabel: 'Your personalized recommendation',
     tryDifferent: 'TRY SOMETHING DIFFERENT',
@@ -244,7 +228,6 @@ export default {
     actionsLabel: 'Result actions',
   },
 
-  // ─── Midia ────────────────────────────────────────────────────
   midia: {
     synopsis: 'Synopsis',
     availableOn: 'Available on',
@@ -253,7 +236,6 @@ export default {
     loadingLabel: 'Loading recommendation',
   },
 
-  // ─── Book ─────────────────────────────────────────────────────
   book: {
     by: 'by',
     publishedIn: 'Published in',
@@ -264,7 +246,6 @@ export default {
     readMore: 'Read more',
   },
 
-  // ─── Video Game ───────────────────────────────────────────────
   videoGame: {
     availableOn: 'Available on {store}',
     buyNow: 'Buy Now',
@@ -273,7 +254,6 @@ export default {
     criticScore: 'Critic score: {score}',
   },
 
-  // ─── Loading ──────────────────────────────────────────────────
   loading: {
     title: 'Generating your recommendation',
     message1: 'Analyzing your preferences…',
@@ -282,7 +262,6 @@ export default {
     progressLabel: 'Loading progress',
   },
 
-  // ─── Delete Account ───────────────────────────────────────────
   deleteAccount: {
     title: 'Delete My Account',
     subtitle: "We're sorry to see you go. Before proceeding, please understand what will happen to your data.",
@@ -309,7 +288,6 @@ export default {
     inputHint: 'Type the word DELETE in capital letters to enable the confirm button',
   },
 
-  // ─── Payment Pages ────────────────────────────────────────────
   paymentSuccess: {
     title: 'Payment Confirmed!',
     subtitle: "Your transaction was completed successfully. Get ready — boredom's days are numbered!",
@@ -340,7 +318,6 @@ export default {
     backButton: 'Back to home',
   },
 
-  // ─── Account Recovery ─────────────────────────────────────────
   accountRecovery: {
     recoveringTitle: 'Recovering your account…',
     recoveringSubtitle: "We're bringing everything back. Boredom won't win today!",
@@ -354,7 +331,6 @@ export default {
     errorLabel: 'Account recovery failed',
   },
 
-  // ─── Extra Info (budget) ──────────────────────────────────────
   extraInfo: {
     title: "What's your budget?",
     subtitle: 'Enter the maximum amount you want to spend.',
@@ -365,7 +341,6 @@ export default {
     submitLabel: 'Confirm budget and see results',
   },
 
-  // ─── Email Verification ───────────────────────────────────────
   emailVerification: {
     title: 'Check your email: {email}',
     description: 'Enter the 6-digit code sent to your email to unlock full access.',
@@ -377,7 +352,6 @@ export default {
     genericError: 'Invalid or expired code. Please try again.',
   },
 
-  // ─── Home ─────────────────────────────────────────────────────
   home: {
     badge: 'AI-powered leisure discovery',
     title: 'Your {boredom} ends here.',
@@ -394,7 +368,6 @@ export default {
     feature3Desc: 'All your past recommendations are saved and easy to revisit anytime.',
   },
 
-  // ─── Contact ──────────────────────────────────────────────────
   contact: {
     badge: 'Contact us',
     title: 'Get in ',
@@ -427,7 +400,6 @@ export default {
     genericError: 'Failed to send the message.',
   },
 
-  // ─── Privacy Policy ───────────────────────────────────────────
   privacy: {
     pageTitle: 'Privacy Policy',
     lastUpdated: 'Last updated: March 2026',
@@ -470,7 +442,6 @@ export default {
     ],
   },
 
-  // ─── Terms of Use ─────────────────────────────────────────────
   terms: {
     pageTitle: 'Terms of Use',
     lastUpdated: 'Last updated: March 2026',
@@ -521,22 +492,84 @@ export default {
     ],
   },
 
-  // ─── Credits / Third-party ────────────────────────────────────
-  credits: {
-    pageTitle: 'Credits & Technologies',
-    lastUpdated: 'Last updated: March 2026',
-    intro: 'Anti-Tédio is built with cutting-edge technologies and high-quality external APIs. Here we acknowledge all the third-party services and resources that make this platform possible.',
-    backendTitle: 'Back-end & Infrastructure',
-    frontendTitle: 'Front-end & Interface',
-    apisTitle: 'APIs & External Services',
-    assetsTitle: 'Visual Assets & Fonts',
-    teamTitle: 'About the Creator',
-    teamIntro: 'Anti-Tédio was envisioned, designed and built by a single person passionate about technology and entertainment.',
-    visitProfile: 'View profile',
-    openSource: 'Open Source',
-    openSourceDesc: 'The Anti-Tédio back-end is open source and available on GitHub under the MIT license.',
-    viewRepo: 'View repository',
-    contactTitle: 'Get in touch with the creator',
-    contactDesc: 'Have an idea, want to collaborate, or just say hi? Pick your preferred channel.',
+  about: {
+    badge: 'Our story',
+    title: 'Built to kill {boredom}.',
+    boredomWord: 'boredom',
+    subtitle: 'Anti-Boredom started with a simple pet peeve: spending more time deciding what to do than actually doing it. We built the tool we always wished we had.',
+    ctaButton: 'Get started',
+    ctaLabel: 'Go to the app and start discovering activities',
+
+    projectTitle: 'What is Anti-Boredom?',
+    projectText1: 'Anti-Boredom is a smart discovery tool designed to end the "what now?" dilemma. By blending AI with a wide range of entertainment sources, we deliver tailored picks for movies, series, books, anime, cartoons, and games—always keeping your personality, mood, and budget in mind.',
+    projectText2: 'Our engine analyzes your traits, scans live content APIs, and suggests options you’ll actually enjoy. Everything is wrapped in a modern, responsive interface that’s fully localized and easy to use.',
+
+    howTitle: 'Three steps, zero boredom',
+    step1Title: 'Set the mood',
+    step1Desc: 'Pick personality traits that match your current vibe—whether you’re feeling adventurous, nostalgic, or creative. We adapt to your moment.',
+    step2Title: 'Pick a category',
+    step2Desc: 'Movies, series, books, anime, cartoons, or games. Choose the kind of experience you’re in the mood for today.',
+    step3Title: 'Get your pick',
+    step3Desc: 'Our AI processes your profile and generates a personalized suggestion in seconds. No endless scrolling, no decision fatigue.',
+
+    statsTitle: 'Anti-Boredom by the numbers',
+    stat1Value: '6',
+    stat1Label: 'Content categories',
+    stat2Value: '10+',
+    stat2Label: 'Integrated APIs',
+    stat3Value: '2',
+    stat3Label: 'Supported languages',
+    stat4Value: '∞',
+    stat4Label: 'Possible recommendations',
+
+    backendTitle: 'Backend Stack',
+    frontendTitle: 'Frontend Stack',
+    apisTitle: 'Integrations & APIs',
+    assetsTitle: 'Resources & Credits',
+
+    bunDesc: 'Ultra-fast JavaScript runtime designed as a Node.js successor',
+    honoDesc: 'Lightweight, high-performance web framework for edge computing',
+    prismaDesc: 'Modern TypeScript ORM with native PostgreSQL support',
+    postgresDesc: 'Reliable relational database for persistent storage',
+    redisDesc: 'In-memory data store for caching and session management',
+    jwtDesc: 'Secure access and refresh tokens for stateless authentication',
+    vue3Desc: 'Progressive framework for building reactive user interfaces',
+    typescriptDesc: 'Typed superset of JavaScript for safer, self-documenting code',
+    viteDesc: 'Next-generation build tool with instant hot-reload',
+    tailwindDesc: 'Utility-first CSS framework for rapid UI development',
+    shadcnDesc: 'Accessible, customizable components built on top of Reka UI',
+    piniaDesc: 'The official state management store for Vue 3',
+    vueRouterDesc: 'The official router for Vue applications',
+    vueI18nDesc: 'Internationalization support for PT-BR and EN',
+    veeValidateDesc: 'Typed, declarative form validation for Vue',
+    lucideDesc: 'Consistent and accessible vector icon library',
+    geminiDesc: 'AI engine powering personalized entertainment suggestions',
+    omdbDesc: 'Rich metadata, posters, and ratings for movies and series',
+    googleBooksDesc: 'Detailed info, synopses, and covers for millions of books',
+    istadDesc: 'Real-time pricing and deals for digital games',
+    gcloudTranslateDesc: 'Automatic translation to the user’s preferred language',
+    googleOauthDesc: 'Secure authentication via Google accounts',
+    facebookOauthDesc: 'Optional social login via Facebook',
+    stripeDesc: 'Global payment processing and subscriptions',
+    mercadoPagoDesc: 'Local payment processing in Brazil via Pix',
+    resendDesc: 'Reliable transactional email delivery',
+    svgrepoDesc: 'Library featuring thousands of free SVG icons',
+    lucideAssetsDesc: 'Cohesive set of open-source UI icons',
+    googleFontsDesc: 'High-quality web fonts served via CDN',
+    materialSymbolsDesc: 'Google’s variable icon font system',
+
+    repoFrontendTitle: 'Frontend Repository',
+    repoFrontendDesc: 'Vue 3 · TypeScript · Vite · Tailwind CSS',
+    repoBackendTitle: 'Backend Repository',
+    repoBackendDesc: 'Bun · Hono · Prisma · PostgreSQL · Redis',
+    viewSource: 'View source code',
+
+    creatorHeading: 'Built by',
+    creatorBio: 'I’m a developer who loves building digital experiences that solve real-world headaches. Anti-Boredom was born from a desire to use AI in a practical, creative way—helping people find their next favorite thing without the stress.',
+    creatorRole: 'Full-Stack Developer & Founder',
+
+    copyright: '© {year} Anti-Boredom. Distributed under the MIT License.',
+    iconCredits: 'Icons by {lucide} and {svgrepo}',
+    externalLinkLabel: 'Open {name} website in a new tab',
   },
 }

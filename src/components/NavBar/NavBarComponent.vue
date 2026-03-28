@@ -72,7 +72,6 @@ function handleLogout() {
           href="/about"
           role="menuitem"
           class="text-sm text-zinc-600 hover:text-primary transition-colors uppercase font-semibold no-underline"
-          @click.prevent="navigate('about')"
         >
           {{ $t('nav.about') }}
         </a>
@@ -119,7 +118,6 @@ function handleLogout() {
           href="/about"
           role="menuitem"
           class="text-sm text-zinc-600 hover:text-primary transition-colors no-underline"
-          @click.prevent="navigate('about')"
         >
           {{ $t('nav.about') }}
         </a>

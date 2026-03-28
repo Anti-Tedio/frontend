@@ -16,6 +16,11 @@ const router = createRouter({
       component: () => import('@/views/TermsView.vue')
     },
     {
+      path: '/about',
+      name: 'about',
+      component: () => import('@/views/AboutView.vue')
+    },
+    {
       path: '/',
       component: () => import('@/layouts/MainLayout.vue'),
       children: [
@@ -83,11 +88,6 @@ const router = createRouter({
           path: '/contact',
           name: 'contact',
           component: () => import('@/views/ContectView.vue')
-        },
-        {
-          path: '/about',
-          name: 'about',
-          component: () => import('@/views/AboutView.vue')
         },
       ]
     }

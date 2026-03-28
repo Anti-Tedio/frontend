@@ -25,7 +25,7 @@ export default {
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',
     contact: 'Contact Us',
-    copyright: '© {year} Anti-Tédio. All rights reserved.',
+    copyright: '© {year} Anti Tédio. All rights reserved.',
   },
 
   // ─── Auth / Login ─────────────────────────────────────────────

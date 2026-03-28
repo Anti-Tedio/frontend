@@ -23,7 +23,7 @@ export default {
     privacy: 'Privacidad',
     terms: 'Términos',
     contact: 'Contáctanos',
-    copyright: '© {year} Anti-Tédio. Todos los derechos reservados.',
+    copyright: '© {year} Anti Tédio. Todos los derechos reservados.',
   },
 
   auth: {

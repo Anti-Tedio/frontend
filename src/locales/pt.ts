@@ -25,7 +25,7 @@ export default {
     privacy: 'Privacidade',
     terms: 'Termos',
     contact: 'Fale Conosco',
-    copyright: '© {year} Anti-Tédio. Todos os direitos reservados.',
+    copyright: '© {year} Anti Tédio. Todos os direitos reservados.',
   },
 
   // ─── Auth / Login ─────────────────────────────────────────────

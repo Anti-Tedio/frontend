@@ -21,10 +21,10 @@ defineEmits(['email'])
         <googleIcon class="w-5" aria-hidden="true" />
         {{ $t('auth.continueGoogle') }}
       </button>
-      <button class="w-full h-15 border-2 border-gray-100 rounded-2xl font-medium flex justify-center items-center gap-4 hover:border-primary/30 hover:bg-primary/5 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none" @click="userStore.loginProvider('facebook')" :aria-label="$t('auth.continueMeta')">
+      <!-- <button class="w-full h-15 border-2 border-gray-100 rounded-2xl font-medium flex justify-center items-center gap-4 hover:border-primary/30 hover:bg-primary/5 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none" @click="userStore.loginProvider('facebook')" :aria-label="$t('auth.continueMeta')">
         <facebookIcon class="w-5" aria-hidden="true" />
         {{ $t('auth.continueMeta') }}
-      </button>
+      </button> -->
     </div>
     <div class="flex items-center gap-3 w-full" role="separator">
       <span class="flex-1 h-px bg-gray-100" aria-hidden="true"></span>

@@ -33,7 +33,7 @@ const languages = [
 
 function setLocale(code: string) {
   localStorage.setItem('lang', code)
-  window.navigation.reload()
+  window.location.reload()
 }
 
 function navigate(name: string) {

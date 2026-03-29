@@ -18,12 +18,16 @@ const categoryStore = useCategorysStore()
 const userStore = useUserStore()
 const route = useRoute();
 
-onMounted(async () => {
-  await usePersonsStore().getPersons()
-  await categoryStore.getCategory()
-  await useProductStore().getProduct()
+async function fetchStart(){
+  categoryStore.getCategory()
+  useProductStore().getProduct()
   await refreshToken()
   await userStore.getUser()
+  await usePersonsStore().getPersons()
+}
+
+onMounted(async () => {
+  fetchStart();
 })
 </script>
 

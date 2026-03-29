@@ -1,9 +1,10 @@
-import router from "@/router/routes"
 import useCategorysStore from "@/stores/categorys.store";
 import usePersonsStore from "@/stores/persons.store";
 import useUserStore from "@/stores/user.store";
 import { token } from "@/utils/refreshToken";
-export const auth = () => {
+import type { Router } from "vue-router";
+
+export const auth = (router: Router) => {
     router.beforeEach((to, from) => {
 
         const userStore = useUserStore()
@@ -25,12 +26,12 @@ export const auth = () => {
             if (!categoryStore.selected?.id) return { name: 'categorys' }
 
             if (token.value) return true;
-            else userStore.popUpLogin = true;
+            else { userStore.popUpLogin = true; return { name: 'persons' } };
         }
 
         if (to.name === 'profile') {
             if (token.value) return true;
-            else { userStore.popUpLogin = true; return { name:'home' } }
+            else { userStore.popUpLogin = true; return { name: 'home' } }
         }
 
         if (to.name === 'reset-password') {

@@ -19,7 +19,6 @@ const userStore = useUserStore()
 const route = useRoute();
 
 onMounted(async () => {
-  auth()
   await usePersonsStore().getPersons()
   await categoryStore.getCategory()
   await useProductStore().getProduct()

@@ -1,6 +1,7 @@
 import router from "@/router/routes";
 import { api } from "@/services/axios";
 import type { Login, Register, User } from "@/types";
+import { token } from "@/utils/refreshToken";
 import type { ContactForm } from "@/views/ContectView.vue";
 import { defineStore } from "pinia";
 
@@ -77,6 +78,7 @@ const useUserStore = defineStore('user', {
         await api.post('/auth/logout');
         this.$reset();
         localStorage.removeItem('token')
+        token.value=null
       } catch (error) {
         console.error('Error Register:', error);
         throw error

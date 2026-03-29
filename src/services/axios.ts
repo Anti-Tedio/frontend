@@ -1,4 +1,4 @@
-import { refreshToken } from '@/utils/refreshToken';
+import { refreshToken, token } from '@/utils/refreshToken';
 import axios, { type AxiosInstance } from 'axios';
 
 declare module 'vue' {
@@ -37,18 +37,21 @@ api.interceptors.response.use(response => response,
 
       originalRequest.headers['Authorization'] = `Bearer ${novoToken}`;
 
-      setTimeout(() => {
-        return axios(originalRequest);
-      }, 3000)
+      const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+      await delay(3000);
+      return api(originalRequest);
     } else if (error.response.status === 403) {
       localStorage.removeItem('token')
+      token.value=null
     }
 
     if (error.response.status === 500 && !originalRequest._retry) {
       originalRequest._retry = true
-      setTimeout(() => {
-        return axios(originalRequest);
-      }, 3000)
+      const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+      await delay(3000);
+      return api(originalRequest);
     }
 
     return Promise.reject(error);

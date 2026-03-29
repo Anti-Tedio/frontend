@@ -130,7 +130,7 @@ async function handleNext() {
         @click="handleNext"
       >
         {{
-          categoryStore.selected?.title['en'] === 'video-game'
+          categoryStore.selected?.title['en'] === 'video game'
             ? $t('selectCategory.continueButton')
             : $t('selectCategory.resultButton')
         }}

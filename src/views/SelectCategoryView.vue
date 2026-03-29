@@ -123,7 +123,7 @@ async function handleNext() {
         "
         :disabled="!categoryStore.selected"
         :aria-label="
-          categoryStore.selected?.title['en'] === 'video-game'
+          categoryStore.selected?.title['en'] === 'video game'
             ? $t('selectCategory.continueAriaLabel')
             : $t('selectCategory.resultAriaLabel')
         "

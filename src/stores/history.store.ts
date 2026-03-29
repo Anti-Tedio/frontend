@@ -1,7 +1,7 @@
+import i18n from "@/i18n";
 import { api } from "@/services/axios";
 import type { History } from "@/types";
 import { defineStore } from "pinia";
-import { useI18n } from "vue-i18n";
 
 interface StateHistory {
     historys: History[];
@@ -15,11 +15,11 @@ const useHistoryStore = defineStore('history', {
     }),
     actions: {
         async getHistory() {
-            const { locale } = useI18n();
+            const lang = i18n.global.locale.value
             try {
                 this.loading = true;
                 this.historys = [];
-                const { data } = await api.post<History[]>('/history', { lang: locale.value });
+                const { data } = await api.post<History[]>('/history', { lang });
                 this.historys = data;
 
             } catch (error) {

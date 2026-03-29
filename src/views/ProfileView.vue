@@ -34,11 +34,8 @@ const editPerson = ref<{ isOpen: boolean } | null>(null)
 const editAvatar = ref<{ isOpen: boolean } | null>(null)
 const changePassword = ref(false)
 
-// ── Filter ─────────────────────────────────────────────────────────────────
-// 'all' means no filter; otherwise it's a category id as string
 const selectedCategoryId = ref<string>('all')
 
-/** Categories that actually appear in the user's history */
 const availableCategories = computed(() => {
   const ids = new Set(historyStore.historys.map((h) => h.recommended.categoryId))
   return categoryStore.categorys.filter((c) => ids.has(c.id))
@@ -51,7 +48,6 @@ const filteredHistory = computed(() => {
   )
 })
 
-// ── Helpers ────────────────────────────────────────────────────────────────
 function activeEditPerson() {
   if (editPerson.value) editPerson.value.isOpen = true
 }
@@ -83,7 +79,6 @@ onMounted(async () => {
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-      <!-- ── Personality sidebar ──────────────────────────────────── -->
       <aside :aria-label="$t('profile.myPersonality')" class="space-y-6">
         <Skeleton
           v-if="personsStore.loading"
@@ -115,14 +110,12 @@ onMounted(async () => {
         <PubliGoogleAdSenseComponent :ad-slot="8154894288" />
       </aside>
 
-      <!-- ── History section ─────────────────────────────────────── -->
       <section class="lg:col-span-2 space-y-4" aria-labelledby="history-heading">
         <header class="flex flex-wrap items-center justify-between gap-3">
           <h2 id="history-heading" class="text-xl font-medium tracking-tight">
             {{ $t('profile.historyTitle') }}
           </h2>
 
-          <!-- Category filter — only shown when there is history -->
           <Select
             v-if="!historyStore.loading && historyStore.historys.length > 0"
             v-model="selectedCategoryId"
@@ -148,12 +141,10 @@ onMounted(async () => {
 
         <div class="grid gap-4" aria-live="polite" aria-atomic="false">
 
-          <!-- Loading skeletons -->
           <template v-if="historyStore.loading">
             <Skeleton v-for="n in 3" :key="n" class="shadow-md w-full h-150 sm:h-60 bg-gray-200" />
           </template>
 
-          <!-- History cards -->
           <template v-else-if="filteredHistory.length > 0">
             <HistoryCard
               v-for="history in filteredHistory"
@@ -162,7 +153,6 @@ onMounted(async () => {
             />
           </template>
 
-          <!-- No results after filtering -->
           <div
             v-else-if="historyStore.historys.length > 0 && filteredHistory.length === 0"
             class="flex flex-col items-center justify-center rounded-md border border-dashed p-8 text-center animate-in fade-in duration-500"
@@ -178,7 +168,6 @@ onMounted(async () => {
             </button>
           </div>
 
-          <!-- Completely empty history -->
           <div
             v-else
             class="flex md:min-h-[400px] flex-col items-center justify-center rounded-md border border-dashed p-8 text-center animate-in fade-in duration-500"
@@ -187,7 +176,7 @@ onMounted(async () => {
             <p class="mt-6 text-xl font-semibold tracking-tight">{{ $t('profile.noHistoryTitle') }}</p>
             <p class="text-sm text-muted-foreground mt-1">{{ $t('profile.noHistorySubtitle') }}</p>
             <a
-              href="/select-person"
+              href="/persons"
               class="gap-2 bg-primary text-white py-2 px-5 rounded-lg mt-sm hover:bg-primary/90 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none inline-block"
             >
               {{ $t('profile.exploreNow') }}

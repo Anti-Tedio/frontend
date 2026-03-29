@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://antitedio.com.br/</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://antitedio.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://antitedio.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://antitedio.com.br/"/>
+  </url>
+
+  <url>
+    <loc>https://antitedio.com.br/about</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://antitedio.com.br/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://antitedio.com.br/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://antitedio.com.br/about"/>
+  </url>
+
+  <url>
+    <loc>https://antitedio.com.br/contact</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://antitedio.com.br/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://antitedio.com.br/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://antitedio.com.br/contact"/>
+  </url>
+
+  <url>
+    <loc>https://antitedio.com.br/privacy</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://antitedio.com.br/terms</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

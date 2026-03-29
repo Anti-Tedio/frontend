@@ -1,0 +1,27 @@
+# robots.txt — antitedio.com.br
+
+User-agent: *
+
+# Páginas públicas indexáveis:
+# / (home), /about, /privacy, /terms, /contact
+
+# Bloqueia fluxo de uso (não agrega valor ao SEO)
+Disallow: /persons
+Disallow: /categorys
+Disallow: /extra-info
+Disallow: /result
+
+# Bloqueia páginas autenticadas
+Disallow: /profile
+Disallow: /delete-account
+
+# Bloqueia fluxo de pagamento
+Disallow: /success
+Disallow: /failure
+Disallow: /pending
+
+# Bloqueia fluxo de autenticação por link
+Disallow: /reset-password
+Disallow: /recovery-account
+
+Sitemap: https://antitedio.com.br/sitemap.xml

@@ -153,7 +153,7 @@ const useUserStore = defineStore('user', {
   },
   persist: {
     storage: localStorage,
-    pick: ['name', 'email', 'credits']
+    pick: ['name', 'email', 'credits', 'avatarUrl']
   }
 })
 

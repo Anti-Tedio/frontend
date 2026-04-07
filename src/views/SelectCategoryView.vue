@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import PubliGoogleAdSenseComponent from '@/components/PubliGoogleAdSenseComponent.vue'
 import router from '@/router/routes'
 import useCategorysStore from '@/stores/categorys.store'
 import usePersonsStore from '@/stores/persons.store'
@@ -111,8 +110,6 @@ async function handleNext() {
           </div>
         </li>
       </ul>
-
-      <PubliGoogleAdSenseComponent :ad-slot="8552098075" />
 
       <button
         class="text-white text-xl font-bold py-sm rounded-2xl flex items-center justify-center gap-3 max-w-100 w-full transition-all duration-200 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none"

@@ -1,8 +1,8 @@
 import router from "@/router/routes";
 import { api } from "@/services/axios";
 import type { Login, Register, User } from "@/types";
-import { token } from "@/utils/refreshToken";
-import type { ContactForm } from "@/views/ContectView.vue";
+import { token } from "@/lib/refreshToken";
+import type { ContactForm } from '@/types/contact';
 import { defineStore } from "pinia";
 
 interface UserLogin extends User {
@@ -80,7 +80,7 @@ const useUserStore = defineStore('user', {
         localStorage.removeItem('token')
         token.value=null
       } catch (error) {
-        console.error('Error Register:', error);
+        console.error('Error Logout:', error);
         throw error
       } finally {
         window.location.reload();
@@ -118,7 +118,7 @@ const useUserStore = defineStore('user', {
       try {
         await api.post('/auth/change-password', { newPassword: password })
       } catch (e) {
-        console.error('Error ao resetar senha')
+        console.error('Error ao alterar senha')
         throw e
       }
     },
@@ -126,7 +126,7 @@ const useUserStore = defineStore('user', {
       try {
         await api.post('/auth/verify', { code, email })
       } catch (e) {
-        console.error('Error Register:', e);
+        console.error('Error Verify Email:', e);
         throw e
       }
     },

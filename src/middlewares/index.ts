@@ -1,7 +1,7 @@
 import useCategorysStore from "@/stores/categorys.store";
 import usePersonsStore from "@/stores/persons.store";
 import useUserStore from "@/stores/user.store";
-import { token } from "@/utils/refreshToken";
+import { token } from "@/lib/refreshToken";
 import type { Router } from "vue-router";
 
 export const auth = (router: Router) => {

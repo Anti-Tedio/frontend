@@ -11,7 +11,7 @@ export default {
     welcomeSubtitle: "Faça login para começar",
     openMenu: "Abrir menu de navegação",
     accountMenu: "Menu da conta de {name}",
-    language: "idioma",
+    language: "Idioma",
   },
 
   footer: {
@@ -109,10 +109,10 @@ export default {
     title: "Como você se define?",
     subtitle: "Escolha as características que mais combinam com você.",
     loading: "Carregando opções de personalidade",
-    traitsLabel: "Traços de personalidade — selecione pelo menos 3",
+    traitsLabel: "Traços de personalidade (selecione pelo menos 3)",
     counterNone: "Selecione pelo menos 3 traços para continuar",
     counterSome: "Mais {count} para completar…",
-    counterReady: "✓ {count} selecionados — pronto para continuar!",
+    counterReady: "✓ {count} selecionados, pronto para continuar!",
     continueButton: "Continuar",
     continueAriaLabel: "Continuar para seleção de categoria",
   },
@@ -145,12 +145,12 @@ export default {
   },
 
   badgePerson: {
-    selected: "{trait} — selecionado, clique para desselecionar",
-    unselected: "{trait} — clique para selecionar",
+    selected: "{trait} (selecionado, clique para desselecionar)",
+    unselected: "{trait} (clique para selecionar)",
   },
 
   buyCredits: {
-    triggerLabel: "Comprar créditos — ver planos",
+    triggerLabel: "Comprar créditos (ver planos)",
     dialogTitle: "Turbine seu Anti-Tédio",
     dialogSubtitle: "Escolha um pacote e receba recomendações exclusivas para te tirar do tédio.",
     credits: "{count} créditos",
@@ -314,7 +314,7 @@ export default {
     pixCopyLabel: "Copiar código Pix",
     pixNote: "Após o pagamento, o acesso ao {brand} será liberado instantaneamente.",
     checkButton: "Já paguei, verificar agora",
-    checkButtonLabel: "Já paguei — verificar status do pagamento agora",
+    checkButtonLabel: "Já paguei, verificar status do pagamento agora",
     backButton: "Voltar para o início",
   },
 
@@ -344,7 +344,7 @@ export default {
   emailVerification: {
     title: "Verifique seu e-mail: {email}",
     description: "Digitando o código de 6 dígitos enviado para o seu e-mail, você libera o acesso total.",
-    otpLabel: "Código de verificação — 6 dígitos",
+    otpLabel: "Código de verificação: 6 dígitos",
     verifying: "Verificando…",
     confirmButton: "Confirmar",
     changeEmail: "Trocar email",
@@ -366,6 +366,43 @@ export default {
     feature2Desc: "A IA aprende o que você gosta para ser mais certeira.",
     feature3Title: "Histórico",
     feature3Desc: "Suas recomendações ficam salvas para consulta.",
+
+    catMovie: "Filmes",
+    catSeries: "Séries",
+    catAnime: "Anime",
+    catBook: "Livros",
+    catGame: "Jogos",
+    catCartoon: "Desenhos",
+
+    categoriesTitle: "Conteúdo para descobrir",
+    categoriesSubtitle: "De filmes e séries a livros e jogos, tudo personalizado para o seu perfil.",
+    categoriesAriaLabel: "Categorias de conteúdo disponíveis",
+
+    howTitle: "Como funciona",
+    howSubtitle: "Três passos simples para encontrar sua próxima experiência favorita.",
+    howAriaLabel: "Etapas para receber uma recomendação",
+    step1Title: "Escolha seus traços",
+    step1Desc: "Conte-nos um pouco sobre sua personalidade e humor.",
+    step2Title: "Escolha uma categoria",
+    step2Desc: "Selecione o tipo de experiência que te dá vontade hoje.",
+    step3Title: "Receba sua escolha",
+    step3Desc: "Nossa IA gera uma sugestão personalizada em segundos.",
+
+    advantagesTitle: "Por que escolher o Anti-Tédio?",
+    advantage1Title: "Super rápido",
+    advantage1Desc: "Sem rolagem infinita. Receba uma recomendação de qualidade na hora.",
+    advantage2Title: "Seus dados estão seguros",
+    advantage2Desc: "Usamos autenticação segura e nunca compartilhamos suas informações.",
+    advantage3Title: "Disponível a qualquer hora",
+    advantage3Desc: "Créditos diários gratuitos renovam automaticamente, sem assinatura.",
+
+    statsTitle: "O Anti-Tédio em números",
+    statCategories: "Categorias de conteúdo",
+    statAPIs: "APIs integradas",
+    statSuggestions: "Sugestões possíveis",
+
+    finalTitle: "Pronto para acabar com o tédio?",
+    finalSubtitle: "Leve apenas alguns segundos e encontraremos a experiência perfeita para você.",
   },
 
   contact: {
@@ -417,19 +454,19 @@ export default {
       },
       {
         title: "3. Compartilhamento de dados",
-        content: "O Anti-Tédio não vende seus dados. Compartilhamos informações somente com os parceiros essenciais para o funcionamento do serviço:\n\n• **Google (Gemini Pro, Books API, Cloud Translation, OAuth)** — para geração de sugestões, metadados de livros, tradução e autenticação.\n• **Stripe e Mercado Pago** — para processamento de pagamentos.\n• **OMDB API** — para metadados de filmes e séries.\n• **IsThereAnyDeal API** — para preços e promoções de jogos.\n• **Resend** — para envio de e-mails transacionais.\n• **Meta (Facebook OAuth)** — opcional, somente se você optar por entrar com o Facebook.",
+        content: "O Anti-Tédio não vende seus dados. Compartilhamos informações somente com os parceiros essenciais para o funcionamento do serviço:\n\n• **Google (Gemini Pro, Books API, Cloud Translation, OAuth)**: para geração de sugestões, metadados de livros, tradução e autenticação.\n• **Stripe e Mercado Pago**: para processamento de pagamentos.\n• **OMDB API**: para metadados de filmes e séries.\n• **IsThereAnyDeal API**: para preços e promoções de jogos.\n• **Resend**: para envio de e-mails transacionais.\n• **Meta (Facebook OAuth)**: opcional, somente se você optar por entrar com o Facebook.",
       },
       {
         title: "4. Armazenamento e segurança",
-        content: "• Dados persistentes são armazenados em banco de dados MySQL gerenciado com Prisma ORM.\n• Sessões e cache temporário utilizam Redis/Valkey com expiração automática.\n• Senhas são armazenadas exclusivamente como hash seguro — nunca em texto puro.\n• Tokens de acesso (JWT) têm vida útil curta e são renovados por tokens de refresh.\n• Toda comunicação entre cliente e servidor ocorre via HTTPS/TLS.",
+        content: "• Dados persistentes são armazenados em banco de dados MySQL gerenciado com Prisma ORM.\n• Sessões e cache temporário utilizam Redis/Valkey com expiração automática.\n• Senhas são armazenadas exclusivamente como hash seguro: nunca em texto puro.\n• Tokens de acesso (JWT) têm vida útil curta e são renovados por tokens de refresh.\n• Toda comunicação entre cliente e servidor ocorre via HTTPS/TLS.",
       },
       {
         title: "5. Seus direitos (LGPD / GDPR)",
-        content: "Você tem os seguintes direitos sobre seus dados pessoais:\n\n• **Acesso:** solicitar uma cópia dos dados que temos sobre você.\n• **Correção:** atualizar informações incorretas ou desatualizadas.\n• **Exclusão:** apagar sua conta e todos os dados associados — disponível diretamente nas configurações do perfil. Após a solicitação, os dados são removidos em até 30 dias.\n• **Portabilidade:** receber seus dados em formato estruturado.\n• **Revogação de consentimento:** retirar o consentimento para uso dos seus dados a qualquer momento.\n\nPara exercer qualquer um desses direitos, entre em contato: contato{'@'}mail.antitedio.com.br",
+        content: "Você tem os seguintes direitos sobre seus dados pessoais:\n\n• **Acesso:** solicitar uma cópia dos dados que temos sobre você.\n• **Correção:** atualizar informações incorretas ou desatualizadas.\n• **Exclusão:** apagar sua conta e todos os dados associados: disponível diretamente nas configurações do perfil. Após a solicitação, os dados são removidos em até 30 dias.\n• **Portabilidade:** receber seus dados em formato estruturado.\n• **Revogação de consentimento:** retirar o consentimento para uso dos seus dados a qualquer momento.\n\nPara exercer qualquer um desses direitos, entre em contato: contato{'@'}mail.antitedio.com.br",
       },
       {
-        title: "6. Cookies e rastreamento",
-        content: "Utilizamos cookies e tecnologias similares para:\n\n• Manter sua sessão autenticada.\n• Lembrar preferências de idioma e configurações.\n• Exibir anúncios relevantes por meio do Google AdSense (cookies de terceiros gerenciados pelo Google).\n\nVocê pode gerenciar ou desativar cookies nas configurações do seu navegador.",
+        title: "6. Cookies, rastreamento e publicidade",
+        content: "Utilizamos cookies e tecnologias similares para:\n\n• Manter sua sessão autenticada.\n• Lembrar preferências de idioma e configurações.\n• Melhorar a experiência do usuário por meio de análises.\n\nVocê pode gerenciar ou desativar cookies nas configurações do seu browser. A qualquer momento pode alterar suas preferências de consentimento por meio do banner de cookies na parte inferior da página.",
       },
       {
         title: "7. Menores de idade",
@@ -471,7 +508,7 @@ export default {
       },
       {
         title: "6. Propriedade intelectual",
-        content: "Todo o conteúdo original do Anti-Tédio — incluindo logotipo, design, textos, código-fonte e identidade visual — é protegido por direitos autorais e pertence à equipe do Anti-Tédio, licenciado sob MIT conforme o repositório público.\n\nAs recomendações geradas pela IA são baseadas em dados de APIs de terceiros (OMDB, Google Books, IsThereAnyDeal) que possuem seus próprios termos de uso. O Anti-Tédio não reivindica propriedade sobre capas, sinopses ou metadados de obras de terceiros exibidos na plataforma.",
+        content: "Todo o conteúdo original do Anti-Tédio: incluindo logotipo, design, textos, código-fonte e identidade visual: é protegido por direitos autorais e pertence à equipe do Anti-Tédio, licenciado sob MIT conforme o repositório público.\n\nAs recomendações geradas pela IA são baseadas em dados de APIs de terceiros (OMDB, Google Books, IsThereAnyDeal) que possuem seus próprios termos de uso. O Anti-Tédio não reivindica propriedade sobre capas, sinopses ou metadados de obras de terceiros exibidos na plataforma.",
       },
       {
         title: "7. Limitação de responsabilidade",
@@ -483,7 +520,7 @@ export default {
       },
       {
         title: "9. Legislação aplicável",
-        content: "Estes termos são regidos pelas leis da República Federativa do Brasil, incluindo a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018) e o Código de Defesa do Consumidor (Lei nº 8.078/1990).\n\nPara usuários fora do Brasil, pode haver leis locais adicionais aplicáveis, incluindo o GDPR para usuários da União Europeia.\n\nQualquer disputa decorrente destes termos será resolvida preferencialmente por meio de mediação. Na impossibilidade, fica eleito o foro da comarca de São Paulo/SP, Brasil.",
+        content: "Estes termos são regidos pelas leis da República Federativa do Brasil, incluindo a Lei Geral de Proteção de Dados (LGPD: Lei nº 13.709/2018) e o Código de Defesa do Consumidor (Lei nº 8.078/1990).\n\nPara usuários fora do Brasil, pode haver leis locais adicionais aplicáveis, incluindo o GDPR para usuários da União Europeia.\n\nQualquer disputa decorrente destes termos será resolvida preferencialmente por meio de mediação. Na impossibilidade, fica eleito o foro da comarca de São Paulo/SP, Brasil.",
       },
       {
         title: "10. Alterações nos termos",
@@ -500,12 +537,12 @@ export default {
     ctaLabel: "Ir para o app e descobrir novas atividades",
 
     projectTitle: "O que é o Anti-Tédio?",
-    projectText1: "O Anti-Tédio é uma solução inteligente para aquele clássico dilema do \"o que eu faço agora?\". Cruzamos inteligência artificial com diversas fontes de entretenimento para entregar sugestões certeiras de filmes, séries, livros, animes e jogos — tudo baseado no seu perfil, humor e bolso.",
+    projectText1: "O Anti-Tédio é uma solução inteligente para aquele clássico dilema do \"o que eu faço agora?\". Cruzamos inteligência artificial com diversas fontes de entretenimento para entregar sugestões certeiras de filmes, séries, livros, animes e jogos: tudo baseado no seu perfil, humor e bolso.",
     projectText2: "Nossa engine analisa seus gostos, vasculha APIs em tempo real e entrega recomendações que realmente fazem sentido para você. Tudo isso em uma interface moderna, rápida e totalmente pensada na sua experiência.",
 
     howTitle: "Três passos, zero tédio",
     step1Title: "Defina seu clima",
-    step1Desc: "Escolha traços que combinam com seu momento — seja algo aventureiro, nostálgico ou criativo. A gente se adapta ao que você sente.",
+    step1Desc: "Escolha traços que combinam com seu momento: seja algo aventureiro, nostálgico ou criativo. A gente se adapta ao que você sente.",
     step2Title: "Escolha uma categoria",
     step2Desc: "Filmes, séries, livros, animes, desenhos ou jogos. Você decide que tipo de experiência quer ter hoje.",
     step3Title: "Receba sua indicação",
@@ -516,7 +553,7 @@ export default {
     stat1Label: "Categorias de conteúdo",
     stat2Value: "10+",
     stat2Label: "APIs integradas",
-    stat3Value: "2",
+    stat3Value: "3",
     stat3Label: "Idiomas suportados",
     stat4Value: "∞",
     stat4Label: "Sugestões possíveis",
@@ -564,11 +601,38 @@ export default {
     viewSource: "Ver código fonte",
 
     creatorHeading: "Criado por",
-    creatorBio: "Sou um desenvolvedor focado em criar soluções que resolvem dores reais. O Anti-Tédio nasceu da vontade de aplicar IA de um jeito prático — ajudando as pessoas a descobrirem seu próximo conteúdo favorito sem estresse.",
+    creatorBio: "Sou um desenvolvedor focado em criar soluções que resolvem dores reais. O Anti-Tédio nasceu da vontade de aplicar IA de um jeito prático: ajudando as pessoas a descobrirem seu próximo conteúdo favorito sem estresse.",
     creatorRole: "Desenvolvedor Full-Stack & Fundador",
 
     copyright: "© {year} Anti-Tédio. Distribuído sob a licença MIT.",
     iconCredits: "Ícones por {lucide} e {svgrepo}",
     externalLinkLabel: "Abrir site de {name} em nova aba",
+  },
+
+  cookieConsent: {
+    ariaLabel: "Aviso de cookies",
+    title: "Usamos cookies",
+    description: "Utilizamos cookies para garantir o funcionamento adequado do site e melhorar sua experiência. Saiba mais em nossa ",
+    learnMore: "Política de Privacidade",
+    essential: "Somente essenciais",
+    acceptAll: "Aceitar todos",
+  },
+
+  credits: {
+    dialog: {
+      title: "Seus créditos acabaram",
+      buyCredits: "Comprar mais créditos"
+    },
+    watchOrBuy: {
+      description: "Assista um vídeo rápido para ganhar +1 crédito grátis agora, ou adquira créditos para continuar sem pausas.",
+      watchAd: "Assistir vídeo e ganhar +1 crédito",
+      adNote: "É um vídeo curto e o crédito cai na hora."
+    },
+    waitOrBuy: {
+      description: "Ops, você ficou sem créditos. A boa notícia é que amanhã você ganha mais um de graça!",
+      rechargeSoon: "Seu próximo crédito gratuito",
+      rechargeNote: "Você receberá 1 novo crédito amanhã. Volte quando quiser!",
+      wait: "Aguardar crédito diário"
+    }
   },
 }

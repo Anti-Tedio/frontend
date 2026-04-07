@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import router from '@/router/routes'
 import { CheckIcon } from 'lucide-vue-next'
-const goToApp = () => router.push({ name: 'person' })
+const goToApp = () => router.push({ name: 'home' })
 </script>
 
 <template>

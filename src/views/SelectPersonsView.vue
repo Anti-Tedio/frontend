@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import BadgePersonComponent from '@/components/BadgePersonComponent.vue'
-import PubliGoogleAdSenseComponent from '@/components/PubliGoogleAdSenseComponent.vue'
 import { Skeleton } from '@/components/ui/skeleton'
 import router from '@/router/routes'
 import usePersonsStore from '@/stores/persons.store'
@@ -68,8 +67,6 @@ onMounted(() => {
           $t('selectPerson.counterReady', { count: personsStore.selected.length })
         }}</span>
       </p>
-
-      <PubliGoogleAdSenseComponent :ad-slot="9853028881" />
 
       <button
         class="text-white text-xl font-bold py-sm rounded-2xl flex items-center justify-center gap-3 w-full max-w-90 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none"

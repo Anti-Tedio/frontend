@@ -2,31 +2,34 @@
 import Login from '@/components/login/Login.vue'
 import useUserStore from '../stores/user.store'
 import router from '../router/routes'
-import PubliGoogleAdSenseComponent from '@/components/PubliGoogleAdSenseComponent.vue'
 import useCategorysStore from '../stores/categorys.store'
-import { onMounted } from 'vue'
-import { refreshToken } from '../utils/refreshToken'
+import { computed, onMounted } from 'vue'
+import { refreshToken, token } from '../lib/refreshToken'
 import NavBarComponent from '@/components/NavBar/NavBarComponent.vue'
-import { auth } from '../middlewares'
 import { Zap } from 'lucide-vue-next'
 import useProductStore from '../stores/product.store'
 import usePersonsStore from '../stores/persons.store'
 import VerifyEmailCode from '@/components/login/VerifyEmailCode.vue'
-import { useRoute } from 'vue-router'
+import CookieConsentComponent from '@/components/CookieConsentComponent.vue'
+import CreditsExhaustedDialog from '@/components/CreditsExhaustedDialog.vue'
 
 const categoryStore = useCategorysStore()
 const userStore = useUserStore()
-const route = useRoute();
 
-async function fetchStart(){
+const openCreditsExhaustedDialog = computed(()=>{
+  if(userStore.credits<=0 && token.value)return true;
+  return false
+})
+
+function fetchStart(){
   categoryStore.getCategory()
   useProductStore().getProduct()
-  await refreshToken()
-  await userStore.getUser()
-  await usePersonsStore().getPersons()
+  refreshToken()
+  userStore.getUser()
+  usePersonsStore().getPersons()
 }
 
-onMounted(async () => {
+onMounted(() => {
   fetchStart();
 })
 </script>
@@ -43,7 +46,7 @@ onMounted(async () => {
       @click.prevent="router.push('/')"
     >
       <div class="w-12" aria-hidden="true">
-        <img src="/src/assets/logo.png" alt="Anti-Tédio logo" width="48" height="48" />
+        <img src="/src/assets/logo.webp" alt="Anti-Tédio logo" width="48" height="48" />
       </div>
       <span class="text-2xl font-bold font-sans tracking-tight">ANTI-TÉDIO</span>
     </a>
@@ -53,11 +56,12 @@ onMounted(async () => {
 
   <main class="mt-17 p-sm" id="main-content">
     <VerifyEmailCode />
+    <CreditsExhaustedDialog :open="openCreditsExhaustedDialog" @buy-credits="userStore.buyCredits=true"/>
     <Login />
     <router-view />
   </main>
 
-  <PubliGoogleAdSenseComponent :ad-slot="7035293850" v-if="route.name!='about'"/>
+  <CookieConsentComponent />
 
   <footer
     class="p-sm flex flex-wrap justify-between gap-10 mt-10 border-t border-gray-100"

@@ -1,4 +1,4 @@
-import { refreshToken, token } from '@/utils/refreshToken';
+import { refreshToken, token } from '@/lib/refreshToken';
 import axios, { type AxiosInstance } from 'axios';
 
 declare module 'vue' {
@@ -28,29 +28,32 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(response => response,
   async (error) => {
     const originalRequest = error.config;
+    const status = error.response?.status;
 
-    if (error.response.status === 401 && !originalRequest._retry) {
+    if (!status) {
+      return Promise.reject(error);
+    }
+
+    if (status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
 
       const novoToken = await refreshToken();
-      axios.defaults.headers.common['Authorization'] = `Bearer ${novoToken}`;
-
+      api.defaults.headers.common['Authorization'] = `Bearer ${novoToken}`;
       originalRequest.headers['Authorization'] = `Bearer ${novoToken}`;
 
-      const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-
-      await delay(3000);
+      await new Promise(resolve => setTimeout(resolve, 3000));
       return api(originalRequest);
-    } else if (error.response.status === 403) {
-      localStorage.removeItem('token')
-      token.value=null
     }
 
-    if (error.response.status === 500 && !originalRequest._retry) {
-      originalRequest._retry = true
-      const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+    if (status === 403) {
+      localStorage.removeItem('token');
+      token.value = null;
+    }
 
-      await delay(3000);
+    if (status === 500 && !originalRequest._retry500) {
+      originalRequest._retry500 = true;
+
+      await new Promise(resolve => setTimeout(resolve, 3000));
       return api(originalRequest);
     }
 

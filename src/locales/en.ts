@@ -11,7 +11,7 @@ export default {
     welcomeSubtitle: "Sign in to get started",
     openMenu: "Open navigation menu",
     accountMenu: "Account menu for {name}",
-    language: "language",
+    language: "Language",
   },
 
   footer: {
@@ -109,10 +109,10 @@ export default {
     title: "How would you describe yourself?",
     subtitle: "Pick the traits that best match your vibe right now.",
     loading: "Loading personality options",
-    traitsLabel: "Personality traits — select at least 3",
+    traitsLabel: "Personality traits (select at least 3)",
     counterNone: "Select at least 3 traits to continue",
     counterSome: "{count} more to go…",
-    counterReady: "✓ {count} selected — ready to continue!",
+    counterReady: "✓ {count} selected: ready to continue!",
     continueButton: "Continue",
     continueAriaLabel: "Continue to category selection",
   },
@@ -145,12 +145,12 @@ export default {
   },
 
   badgePerson: {
-    selected: "{trait} — selected, click to deselect",
-    unselected: "{trait} — click to select",
+    selected: "{trait}: selected, click to deselect",
+    unselected: "{trait}: click to select",
   },
 
   buyCredits: {
-    triggerLabel: "Buy more credits — view credit plans",
+    triggerLabel: "Buy more credits: view credit plans",
     dialogTitle: "Power Up Your Anti-Tédio",
     dialogSubtitle: "Choose a credit pack and unlock exclusive AI-powered recommendations.",
     credits: "{count} credits",
@@ -290,14 +290,14 @@ export default {
 
   paymentSuccess: {
     title: "Payment Confirmed!",
-    subtitle: "Your transaction was completed successfully. Get ready — boredom's days are numbered!",
+    subtitle: "Your transaction was completed successfully. Get ready, boredom's days are numbered!",
     startExploring: "Start Exploring",
     startExploringLabel: "Start exploring recommendations",
   },
 
   paymentFailure: {
     title: "Something went wrong",
-    subtitle: "Unfortunately, we couldn't process your payment. Boredom hasn't won yet — and neither should you give up!",
+    subtitle: "Unfortunately, we couldn't process your payment. Boredom hasn't won yet: and neither should you give up!",
     reasonsTitle: "Common reasons:",
     reason1: "Insufficient balance or card limit reached.",
     reason2: "Incorrect card details entered.",
@@ -313,8 +313,8 @@ export default {
     pixCodeLabel: "Pix code",
     pixCopyLabel: "Copy Pix code to clipboard",
     pixNote: "After payment, access to {brand} will be released instantly.",
-    checkButton: "I paid — check now",
-    checkButtonLabel: "I already paid — check payment status now",
+    checkButton: "I paid, check now",
+    checkButtonLabel: "I already paid: check payment status now",
     backButton: "Back to home",
   },
 
@@ -344,7 +344,7 @@ export default {
   emailVerification: {
     title: "Check your email: {email}",
     description: "Enter the 6-digit code sent to your email to unlock full access.",
-    otpLabel: "One-time verification code — 6 digits",
+    otpLabel: "One-time verification code: 6 digits",
     verifying: "Verifying…",
     confirmButton: "Confirm",
     changeEmail: "Change email",
@@ -358,14 +358,51 @@ export default {
     boredomWord: "boredom",
     subtitle: "{brand} is your personal leisure assistant. We use AI to understand your mood and suggest the perfect activity for today.",
     ctaButton: "Discover what to do",
-    ctaLabel: "Start discovering activities — powered by AI",
+    ctaLabel: "Start discovering activities: powered by AI",
     featuresHeading: "Why Anti-Tédio?",
     feature1Title: "Instant Suggestions",
-    feature1Desc: "Get activity ideas in seconds — no more wasting time deciding what to do.",
+    feature1Desc: "Get activity ideas in seconds: no more wasting time deciding what to do.",
     feature2Title: "Fully Personalized",
     feature2Desc: "Our AI learns your preferences to deliver increasingly accurate recommendations.",
     feature3Title: "Activity History",
     feature3Desc: "All your past recommendations are saved and easy to revisit anytime.",
+
+    catMovie: "Movies",
+    catSeries: "Series",
+    catAnime: "Anime",
+    catBook: "Books",
+    catGame: "Games",
+    catCartoon: "Cartoons",
+
+    categoriesTitle: "Content you can discover",
+    categoriesSubtitle: "From films and series to books and games: all tailored to your personality.",
+    categoriesAriaLabel: "Available content categories",
+
+    howTitle: "How it works",
+    howSubtitle: "Three simple steps to find your next favorite thing.",
+    howAriaLabel: "Steps to get a recommendation",
+    step1Title: "Pick your traits",
+    step1Desc: "Tell us a bit about your personality and current mood.",
+    step2Title: "Choose a category",
+    step2Desc: "Select the kind of experience you're in the mood for.",
+    step3Title: "Get your pick",
+    step3Desc: "Our AI generates a personalized suggestion in seconds.",
+
+    advantagesTitle: "Why choose Anti-Tédio?",
+    advantage1Title: "Lightning fast",
+    advantage1Desc: "No endless scrolling: get a single, quality recommendation instantly.",
+    advantage2Title: "Your data is safe",
+    advantage2Desc: "We use secure authentication and never share your personal information.",
+    advantage3Title: "Available anytime",
+    advantage3Desc: "Free daily credits renew automatically, no subscription needed.",
+
+    statsTitle: "Anti-Tédio by the numbers",
+    statCategories: "Content categories",
+    statAPIs: "Integrated APIs",
+    statSuggestions: "Possible suggestions",
+
+    finalTitle: "Ready to beat boredom?",
+    finalSubtitle: "Give us just a few seconds and we'll find the perfect experience for you.",
   },
 
   contact: {
@@ -417,19 +454,19 @@ export default {
       },
       {
         title: "3. Data sharing",
-        content: "Anti-Tédio does not sell your data. We share information only with partners essential to the operation of the service:\n\n• **Google (Gemini Pro, Books API, Cloud Translation, OAuth)** — for generating suggestions, book metadata, translation and authentication.\n• **Stripe and Mercado Pago** — for payment processing.\n• **OMDB API** — for film and series metadata.\n• **IsThereAnyDeal API** — for game prices and deals.\n• **Resend** — for sending transactional emails.\n• **Meta (Facebook OAuth)** — optional, only if you choose to sign in with Facebook.",
+        content: "Anti-Tédio does not sell your data. We share information only with partners essential to the operation of the service:\n\n• **Google (Gemini Pro, Books API, Cloud Translation, OAuth)**: for generating suggestions, book metadata, translation and authentication.\n• **Stripe and Mercado Pago**: for payment processing.\n• **OMDB API**: for film and series metadata.\n• **IsThereAnyDeal API**: for game prices and deals.\n• **Resend**: for sending transactional emails.\n• **Meta (Facebook OAuth)**: optional, only if you choose to sign in with Facebook.",
       },
       {
         title: "4. Storage and security",
-        content: "• Persistent data is stored in a MySQL database managed with Prisma ORM.\n• Sessions and temporary cache use Redis/Valkey with automatic expiry.\n• Passwords are stored exclusively as a secure hash — never in plain text.\n• Access tokens (JWT) have a short lifespan and are renewed by refresh tokens.\n• All communication between client and server occurs via HTTPS/TLS.",
+        content: "• Persistent data is stored in a MySQL database managed with Prisma ORM.\n• Sessions and temporary cache use Redis/Valkey with automatic expiry.\n• Passwords are stored exclusively as a secure hash: never in plain text.\n• Access tokens (JWT) have a short lifespan and are renewed by refresh tokens.\n• All communication between client and server occurs via HTTPS/TLS.",
       },
       {
         title: "5. Your rights (LGPD / GDPR)",
-        content: "You have the following rights over your personal data:\n\n• **Access:** request a copy of the data we hold about you.\n• **Correction:** update incorrect or outdated information.\n• **Deletion:** delete your account and all associated data — available directly in profile settings. After the request, data is removed within 30 days.\n• **Portability:** receive your data in a structured format.\n• **Withdrawal of consent:** withdraw consent for the use of your data at any time.\n\nTo exercise any of these rights, contact us: contato{'@'}mail.antitedio.com.br",
+        content: "You have the following rights over your personal data:\n\n• **Access:** request a copy of the data we hold about you.\n• **Correction:** update incorrect or outdated information.\n• **Deletion:** delete your account and all associated data: available directly in profile settings. After the request, data is removed within 30 days.\n• **Portability:** receive your data in a structured format.\n• **Withdrawal of consent:** withdraw consent for the use of your data at any time.\n\nTo exercise any of these rights, contact us: contato{'@'}mail.antitedio.com.br",
       },
       {
-        title: "6. Cookies and tracking",
-        content: "We use cookies and similar technologies to:\n\n• Keep your session authenticated.\n• Remember language preferences and settings.\n• Display relevant advertisements via Google AdSense (third-party cookies managed by Google).\n\nYou can manage or disable cookies in your browser settings.",
+        title: "6. Cookies, tracking and advertising",
+        content: "We use cookies and similar technologies to:\n\n• Keep your session authenticated.\n• Remember language preferences and settings.\n• Improve the user experience through analytics.\n\nYou can manage or disable cookies in your browser settings. At any time you can change your consent preferences through the cookie banner at the bottom of the page.",
       },
       {
         title: "7. Minors",
@@ -471,7 +508,7 @@ export default {
       },
       {
         title: "6. Intellectual property",
-        content: "All original content of Anti-Tédio — including logo, design, texts, source code and visual identity — is protected by copyright and belongs to the Anti-Tédio team, licensed under MIT as per the public repository.\n\nAI-generated recommendations are based on data from third-party APIs (OMDB, Google Books, IsThereAnyDeal) that have their own terms of use. Anti-Tédio does not claim ownership over covers, synopses or metadata of third-party works displayed on the platform.",
+        content: "All original content of Anti-Tédio: including logo, design, texts, source code and visual identity: is protected by copyright and belongs to the Anti-Tédio team, licensed under MIT as per the public repository.\n\nAI-generated recommendations are based on data from third-party APIs (OMDB, Google Books, IsThereAnyDeal) that have their own terms of use. Anti-Tédio does not claim ownership over covers, synopses or metadata of third-party works displayed on the platform.",
       },
       {
         title: "7. Limitation of liability",
@@ -483,7 +520,7 @@ export default {
       },
       {
         title: "9. Applicable law",
-        content: "These terms are governed by the laws of the Federative Republic of Brazil, including the General Data Protection Law (LGPD — Law No. 13,709/2018) and the Consumer Protection Code (Law No. 8,078/1990).\n\nFor users outside Brazil, additional local laws may apply, including GDPR for European Union users.\n\nAny dispute arising from these terms will preferably be resolved through mediation. If not possible, the courts of São Paulo/SP, Brazil, shall have jurisdiction.",
+        content: "These terms are governed by the laws of the Federative Republic of Brazil, including the General Data Protection Law (LGPD: Law No. 13,709/2018) and the Consumer Protection Code (Law No. 8,078/1990).\n\nFor users outside Brazil, additional local laws may apply, including GDPR for European Union users.\n\nAny dispute arising from these terms will preferably be resolved through mediation. If not possible, the courts of São Paulo/SP, Brazil, shall have jurisdiction.",
       },
       {
         title: "10. Changes to terms",
@@ -501,12 +538,12 @@ export default {
     ctaLabel: "Go to the app and start discovering activities",
 
     projectTitle: "What is Anti-Boredom?",
-    projectText1: "Anti-Boredom is a smart discovery tool designed to end the \"what now?\" dilemma. By blending AI with a wide range of entertainment sources, we deliver tailored picks for movies, series, books, anime, cartoons, and games—always keeping your personality, mood, and budget in mind.",
+    projectText1: "Anti-Boredom is a smart discovery tool designed to end the \"what now?\" dilemma. By blending AI with a wide range of entertainment sources, we deliver tailored picks for movies, series, books, anime, cartoons, and games, always keeping your personality, mood, and budget in mind.",
     projectText2: "Our engine analyzes your traits, scans live content APIs, and suggests options you’ll actually enjoy. Everything is wrapped in a modern, responsive interface that’s fully localized and easy to use.",
 
     howTitle: "Three steps, zero boredom",
     step1Title: "Set the mood",
-    step1Desc: "Pick personality traits that match your current vibe—whether you’re feeling adventurous, nostalgic, or creative. We adapt to your moment.",
+    step1Desc: "Pick personality traits that match your current vibe, whether you’re feeling adventurous, nostalgic, or creative. We adapt to your moment.",
     step2Title: "Pick a category",
     step2Desc: "Movies, series, books, anime, cartoons, or games. Choose the kind of experience you’re in the mood for today.",
     step3Title: "Get your pick",
@@ -517,7 +554,7 @@ export default {
     stat1Label: "Content categories",
     stat2Value: "10+",
     stat2Label: "Integrated APIs",
-    stat3Value: "2",
+    stat3Value: "3",
     stat3Label: "Supported languages",
     stat4Value: "∞",
     stat4Label: "Possible recommendations",
@@ -565,11 +602,38 @@ export default {
     viewSource: "View source code",
 
     creatorHeading: "Built by",
-    creatorBio: "I’m a developer who loves building digital experiences that solve real-world headaches. Anti-Boredom was born from a desire to use AI in a practical, creative way—helping people find their next favorite thing without the stress.",
+    creatorBio: "I’m a developer who loves building digital experiences that solve real-world headaches. Anti-Boredom was born from a desire to use AI in a practical, creative way, helping people find their next favorite thing without the stress.",
     creatorRole: "Full-Stack Developer & Founder",
 
     copyright: "© {year} Anti-Boredom. Distributed under the MIT License.",
     iconCredits: "Icons by {lucide} and {svgrepo}",
     externalLinkLabel: "Open {name} website in a new tab",
+  },
+
+  cookieConsent: {
+    ariaLabel: "Cookie notice",
+    title: "We use cookies",
+    description: "We use cookies to ensure the proper functioning of the site and improve your experience. Learn more in our ",
+    learnMore: "Privacy Policy",
+    essential: "Essential only",
+    acceptAll: "Accept all",
+  },
+
+  credits: {
+    dialog: {
+      title: "You're out of credits",
+      buyCredits: "Buy more credits"
+    },
+    watchOrBuy: {
+      description: "Watch a quick video to earn +1 free credit now, or buy credits to keep going without interruptions.",
+      watchAd: "Watch video & get +1 credit",
+      adNote: "It's a short video and you'll get your credit instantly."
+    },
+    waitOrBuy: {
+      description: "Oops, you're out of credits. The good news? You'll get a free one tomorrow!",
+      rechargeSoon: "Your next free credit",
+      rechargeNote: "You'll receive 1 new credit tomorrow. Come back anytime!",
+      wait: "Wait for daily credit"
+    }
   },
 }

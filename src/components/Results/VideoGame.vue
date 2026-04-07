@@ -16,9 +16,9 @@ const url_buy = computed(() => {
     case 'epic game store':
       return `https://store.epicgames.com/?q=${props.game.title}`
     case 'gog':
-      return `https://www.gog.com/game/${props.game.title.replace(' ', '_')}`
+      return `https://www.gog.com/game/${props.game.title.replace(/ /g, '_')}`
     case 'nuuvem':
-      return `https://www.nuuvem.com/item/${props.game.title.replace(' ', '-')}`
+      return `https://www.nuuvem.com/item/${props.game.title.replace(/ /g, '-')}`
     default:
       return `https://store.steampowered.com/`
   }

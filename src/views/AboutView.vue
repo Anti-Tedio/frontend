@@ -182,7 +182,7 @@ const repoBackend = 'https://github.com/Anti-Tedio/backend'
 
             <button
                 class="mt-2 bg-primary text-white font-bold text-lg py-md px-xl rounded-2xl inline-flex items-center gap-3 hover:bg-primary/90 hover:scale-105 transition-all duration-200 shadow-lg shadow-primary/25 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none"
-                :aria-label="$t('about.ctaLabel')" @click="router.push('/select-person')">
+                :aria-label="$t('about.ctaLabel')" @click="router.push('/persons')">
                 {{ $t('about.ctaButton') }}
                 <ArrowRight class="w-5 h-5" aria-hidden="true" />
             </button>

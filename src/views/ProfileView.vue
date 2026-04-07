@@ -10,7 +10,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import PubliGoogleAdSenseComponent from '@/components/PubliGoogleAdSenseComponent.vue'
 import { Skeleton } from '@/components/ui/skeleton'
 import { onMounted, ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -107,7 +106,6 @@ onMounted(async () => {
           </button>
         </div>
 
-        <PubliGoogleAdSenseComponent :ad-slot="8154894288" />
       </aside>
 
       <section class="lg:col-span-2 space-y-4" aria-labelledby="history-heading">

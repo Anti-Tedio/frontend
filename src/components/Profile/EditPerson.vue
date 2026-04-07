@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { Dialog, DialogClose, DialogContent } from '../ui/dialog'
 import usePersonsStore from '@/stores/persons.store'
 import BadgePersonComponent from '../BadgePersonComponent.vue'
@@ -12,13 +12,17 @@ const pronto = () => {
   isOpen.value = false
 }
 
+watch(isOpen, (val) => {
+  if (!val) personsStore.savePersons()
+})
+
 defineExpose({ isOpen })
 </script>
 
 <template>
   <Dialog v-model:open="isOpen" aria-labelledby="edit-person-title">
     <DialogContent class="w-full sm:max-w-150 min-h-60 max-h-150" :show-close-button="false" role="dialog" aria-modal="true">
-      <DialogClose class="absolute right-md top-md text-gray-400 cursor-pointer hover:text-gray-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full" @vue:before-unmount="personsStore.savePersons()" as-child :aria-label="$t('editPerson.closeAriaLabel')">
+      <DialogClose class="absolute right-md top-md text-gray-400 cursor-pointer hover:text-gray-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full" as-child :aria-label="$t('editPerson.closeAriaLabel')">
         <i class="material-symbols-rounded icon-filled" style="font-weight: 700; font-size: 20px" aria-hidden="true">close</i>
       </DialogClose>
       <header class="text-center my-3">

@@ -6,7 +6,6 @@ import { Label } from '@/components/ui/label'
 import router from '@/router/routes'
 import useSuggestStore from '@/stores/suggest.store'
 import { ArrowLeft } from 'lucide-vue-next'
-import PubliGoogleAdSenseComponent from '@/components/PubliGoogleAdSenseComponent.vue'
 
 const { t } = useI18n()
 const budget = ref<number>(0)
@@ -106,8 +105,6 @@ function formatOption(option: number): string {
           </li>
         </ul>
       </div>
-
-      <PubliGoogleAdSenseComponent :ad-slot="5528477355" />
 
       <Button
         size="lg"

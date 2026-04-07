@@ -11,12 +11,12 @@ type RecoveryStatus = 'recovering' | 'success' | 'error_impossible'
 const route = useRoute()
 const status = ref<RecoveryStatus>('recovering')
 const userStore = useUserStore()
-const userId = String(route.query.userId)
-const token = String(route.query.token)
+const userId = route.query.userId as string | undefined
+const token = route.query.token as string | undefined
 
 const handleRecovery = async () => {
   try {
-    await userStore.recoveryAccount(userId, token)
+    await userStore.recoveryAccount(userId!, token!)
     status.value = 'success'
   } catch {
     status.value = 'error_impossible'
@@ -26,6 +26,10 @@ const handleRecovery = async () => {
 const goToHome = () => router.push('/')
 
 onMounted(() => {
+  if (!userId || !token) {
+    status.value = 'error_impossible'
+    return
+  }
   setTimeout(async () => { await handleRecovery() }, 2000)
 })
 </script>

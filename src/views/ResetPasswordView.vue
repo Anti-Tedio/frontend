@@ -19,8 +19,8 @@ const showPassword = ref(false)
 const isSubmitting = ref(false)
 const isValidLink = ref(true)
 
-const userId = String(route.query.userId)
-const token = String(route.query.token)
+const userId = route.query.userId as string | undefined
+const token = route.query.token as string | undefined
 
 onMounted(() => {
   if (!userId || !token) isValidLink.value = false
@@ -42,6 +42,7 @@ const formSchema = toTypedSchema(
 const form = useForm({ validationSchema: formSchema })
 
 const onSubmit = form.handleSubmit(async (values) => {
+  if (!userId || !token) return
   isSubmitting.value = true
   try {
     await useUserStore().resetPassword(userId, values.confirmPassword, token)

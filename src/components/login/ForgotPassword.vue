@@ -69,7 +69,7 @@ const isSubmitting = ref(false)
 const emailInput = ref('')
 
 const formSchema = toTypedSchema(z.object({
-  email: z.string().email(t('resetPassword.validationMin')),
+  email: z.string().email(t('auth.validationEmailInvalid')),
 }))
 
 const form = useForm({ validationSchema: formSchema })

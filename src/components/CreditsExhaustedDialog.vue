@@ -96,6 +96,7 @@ watch(() => props.open, (val) => {
                     <Button
                         class="w-full h-12 text-base font-bold border-2 border-green-500/30 text-green-700 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-950/20 hover:border-green-500/50 transition-all hover:scale-[1.02] active:scale-[0.98] gap-2"
                         variant="outline"
+                        :disabled="true"
                         @click="emit('watch-ad')"
                     >
                         <Play class="h-5 w-5 fill-current" aria-hidden="true" />

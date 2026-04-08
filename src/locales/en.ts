@@ -14,6 +14,10 @@ export default {
     language: "Language",
   },
 
+  page: {
+    title: "Anti-Tédio — Unique Recommendations, Combined Personalities",
+  },
+
   footer: {
     tagline: "We turn idle moments into amazing experiences through artificial intelligence and smart curation.",
     navigation: "Navigation",
@@ -23,7 +27,7 @@ export default {
     privacy: "Privacy Policy",
     terms: "Terms of Service",
     contact: "Contact Us",
-    copyright: "© {year} Anti Tédio. All rights reserved.",
+    copyright: "© {year} Anti-Tédio. All rights reserved.",
   },
 
   auth: {

@@ -65,7 +65,7 @@ const onSubmit = form.handleSubmit(async (values) => {
         <CardTitle class="text-3xl font-black tracking-tight text-slate-900">{{ $t('resetPassword.title') }}</CardTitle>
         <CardDescription class="text-slate-500 text-base px-4">
           <i18n-t keypath="resetPassword.subtitle" tag="span">
-            <template #brand><strong>Anti-Tédio</strong></template>
+            <template #brand><strong>Anti Tédio</strong></template>
           </i18n-t>
         </CardDescription>
       </CardHeader>

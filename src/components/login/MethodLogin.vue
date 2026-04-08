@@ -10,7 +10,7 @@ defineEmits(['email'])
 <template>
   <section class="flex flex-col items-center justify-center gap-7 animate-in fade-in slide-in-from-right-2 duration-300" aria-labelledby="login-method-heading">
     <div class="rounded-2xl" aria-hidden="true">
-      <img src="/src/assets/logo.webp" class="w-25" alt="Anti-Tédio logo" width="100" height="100" />
+      <img src="/src/assets/logo.webp" class="w-25" alt="Anti Tédio logo" width="100" height="100" />
     </div>
     <header class="text-center">
       <h2 id="login-method-heading" class="text-2xl font-bold">{{ $t('auth.welcomeTitle') }}</h2>

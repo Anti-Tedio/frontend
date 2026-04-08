@@ -124,8 +124,8 @@ const creatorLinks: CreatorLink[] = [
     { icon: 'email', label: 'E-mail', href: 'mailto:ezequielqueiroz2007@outlook.com' },
 ]
 
-const repoFrontend = 'https://github.com/Anti-Tedio/frontend'
-const repoBackend = 'https://github.com/Anti-Tedio/backend'
+const repoFrontend = 'https://github.com/Anti Tédio/frontend'
+const repoBackend = 'https://github.com/Anti Tédio/backend'
 </script>
 
 <template>
@@ -166,7 +166,7 @@ const repoBackend = 'https://github.com/Anti-Tedio/backend'
 
             <h1 id="about-hero-heading"
                 class="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-slate-900 via-primary to-slate-900 bg-clip-text text-transparent">
-                Anti-Tédio
+                Anti Tédio
             </h1>
 
             <p class="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">

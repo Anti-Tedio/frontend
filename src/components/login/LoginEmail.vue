@@ -102,7 +102,7 @@ const toggleMode = () => {
     <!-- Header -->
     <header class="flex flex-col items-center">
       <div aria-hidden="true">
-        <img src="/src/assets/logo.webp" class="w-25" alt="Anti-Tédio logo" />
+        <img src="/src/assets/logo.webp" class="w-25" alt="Anti Tédio logo" />
       </div>
       <div class="text-center mt-2">
         <h2 id="auth-heading" class="text-2xl font-bold">

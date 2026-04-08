@@ -22,7 +22,7 @@ app.use(Vue3Lottie)
 watchEffect(() => {
   const locale = i18n.global.locale.value
   const messages = i18n.global.messages.value[locale] as any
-  document.title = messages?.page?.title || 'Anti-Tédio'
+  document.title = messages?.page?.title || 'Anti Tédio'
 })
 
 app.mount('#app')

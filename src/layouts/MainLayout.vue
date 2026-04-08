@@ -53,9 +53,9 @@ onMounted(() => {
     <a href="/" class="flex items-center gap-2 text-primary cursor-pointer no-underline" :aria-label="$t('nav.home')"
       @click.prevent="router.push('/')">
       <div class="w-12" aria-hidden="true">
-        <img src="/src/assets/logo.webp" alt="Anti-Tédio logo" width="48" height="48" />
+        <img src="/src/assets/logo.webp" alt="Anti Tédio logo" width="48" height="48" />
       </div>
-      <span class="text-2xl font-bold font-sans tracking-tight">ANTI-TÉDIO</span>
+      <span class="text-2xl font-bold font-sans tracking-tight">Anti Tédio</span>
     </a>
 
     <NavBarComponent @logout="userStore.logout()" />
@@ -76,7 +76,7 @@ onMounted(() => {
       <a href="/" class="flex items-center gap-2 text-primary no-underline" :aria-label="$t('nav.home')"
         @click.prevent="router.push('/')">
         <Zap class="fill-primary" aria-hidden="true" />
-        <span class="text-2xl font-bold font-sans tracking-tight">ANTI-TÉDIO</span>
+        <span class="text-2xl font-bold font-sans tracking-tight">Anti Tédio</span>
       </a>
       <p class="text-gray-400 text-md font-medium mt-sm leading-relaxed">
         {{ $t('footer.tagline') }}

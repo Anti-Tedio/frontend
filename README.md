@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="public/logo.png" alt="Anti-Tédio" width="80" />
-  <h1>Anti-Tédio — Frontend</h1>
+  <img src="public/logo.png" alt="Anti Tédio" width="80" />
+  <h1>Anti Tédio — Frontend</h1>
   <p>AI-powered leisure discovery app. Tell us your mood, get the perfect recommendation.</p>
 
   ![Vue 3](https://img.shields.io/badge/Vue-3.x-42b883?logo=vue.js&logoColor=white)
@@ -30,7 +30,7 @@
 
 ## Overview
 
-Anti-Tédio is a web application that uses artificial intelligence to suggest personalized leisure activities — movies, series, anime, books, cartoons and video games — based on the user's personality traits and current mood.
+Anti Tédio is a web application that uses artificial intelligence to suggest personalized leisure activities — movies, series, anime, books, cartoons and video games — based on the user's personality traits and current mood.
 
 The user flow is:
 
@@ -125,7 +125,7 @@ src/
 
 ```bash
 # Clone the repository
-git clone https://github.com/Anti-Tedio/frontend.git
+git clone https://github.com/Anti Tédio/frontend.git
 cd frontend
 
 # Install dependencies
@@ -160,7 +160,7 @@ VITE_API_URL=http://localhost:3000
 
 | Variable | Description |
 |---|---|
-| `VITE_API_URL` | Base URL of the Anti-Tédio backend API |
+| `VITE_API_URL` | Base URL of the Anti Tédio backend API |
 
 All Vite environment variables must be prefixed with `VITE_` to be exposed to the client.
 

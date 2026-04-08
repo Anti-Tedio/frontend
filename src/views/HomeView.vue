@@ -65,7 +65,7 @@ const advantages = [
       <p class="text-center mt-lg text-xl font-medium text-gray-400/80 px-sm max-w-2xl leading-relaxed">
         <i18n-t keypath="home.subtitle" tag="span">
           <template #brand>
-            <strong class="text-gray-500 font-semibold">Anti-Tédio</strong>
+            <strong class="text-gray-500 font-semibold">Anti Tédio</strong>
           </template>
         </i18n-t>
       </p>

@@ -7,7 +7,7 @@ export default {
     signOut: "Sair da conta",
     settings: "Configurações",
     credits: "{count} créditos",
-    welcome: "Bem-vindo ao ANTI-TÉDIO!",
+    welcome: "Bem-vindo ao Anti Tédio!",
     welcomeSubtitle: "Faça login para começar",
     openMenu: "Abrir menu de navegação",
     accountMenu: "Menu da conta de {name}",
@@ -15,7 +15,7 @@ export default {
   },
 
   page: {
-    title: "Anti-Tédio — Recomendações Únicas, Personalidades Combinadas",
+    title: "Anti Tédio — Recomendações Únicas, Personalidades Combinadas",
   },
 
   footer: {
@@ -27,14 +27,14 @@ export default {
     privacy: "Privacidade",
     terms: "Termos",
     contact: "Fale Conosco",
-    copyright: "© {year} Anti-Tédio. Todos os direitos reservados.",
+    copyright: "© {year} Anti Tédio. Todos os direitos reservados.",
   },
 
   auth: {
     welcomeBack: "Bem-vindo de volta",
-    createAccount: "Bem-vindo ao Anti-Tédio",
+    createAccount: "Bem-vindo ao Anti Tédio",
     signInSubtitle: "Faça login para continuar",
-    registerSubtitle: "Junte-se ao Anti-Tédio e acabe com o tédio",
+    registerSubtitle: "Junte-se ao Anti Tédio e acabe com o tédio",
     chooseMethod: "Escolha como deseja acessar sua conta",
     continueGoogle: "Continuar com Google",
     continueMeta: "Continuar com Meta",
@@ -57,7 +57,7 @@ export default {
     signUp: "Registre-se",
     showPassword: "Mostrar senha",
     hidePassword: "Ocultar senha",
-    welcomeTitle: "Bem-vindo ao Anti-Tédio",
+    welcomeTitle: "Bem-vindo ao Anti Tédio",
     backToMethods: "Voltar aos métodos de login",
     validationNameRequired: "Por favor, insira seu nome",
     validationEmailRequired: "Por favor, insira seu e-mail",
@@ -99,7 +99,7 @@ export default {
 
   changePassword: {
     title: "Nova Senha",
-    subtitle: "Defina uma senha segura para sua conta no Anti-tédio.",
+    subtitle: "Defina uma senha segura para sua conta no Anti Tédio.",
     newPasswordLabel: "Nova Senha",
     confirmPasswordLabel: "Confirmar Senha",
     updateButton: "Atualizar Senha",
@@ -155,7 +155,7 @@ export default {
 
   buyCredits: {
     triggerLabel: "Comprar créditos (ver planos)",
-    dialogTitle: "Turbine seu Anti-Tédio",
+    dialogTitle: "Turbine seu Anti Tédio",
     dialogSubtitle: "Escolha um pacote e receba recomendações exclusivas para te tirar do tédio.",
     credits: "{count} créditos",
     mostPopular: "Plano mais popular",
@@ -272,7 +272,7 @@ export default {
     creditsTitle: "Perda de Créditos",
     creditsDesc: "Todos os créditos comprados e não utilizados serão permanentemente removidos. Não há reembolso para contas excluídas.",
     historyTitle: "Histórico e Preferências",
-    historyDesc: "Suas sugestões personalizadas, histórico de atividades e conquistas no Anti-tédio serão apagados.",
+    historyDesc: "Suas sugestões personalizadas, histórico de atividades e conquistas no Anti Tédio serão apagados.",
     dataTitle: "Dados Pessoais",
     dataDesc: "Suas informações de perfil, integrações e configurações de conta deixarão de existir.",
     importantNote: "{strong} Sua conta não será excluída imediatamente. Ela ficará suspensa por {days}. Durante esse período, você pode reativá-la através do link enviado no seu {email}. Após 30 dias, a exclusão será definitiva.",
@@ -363,7 +363,7 @@ export default {
     subtitle: "O {brand} é o seu assistente pessoal de lazer. Usamos IA para entender seu humor e sugerir a atividade perfeita para hoje.",
     ctaButton: "Descobrir o que fazer",
     ctaLabel: "Começar a descobrir atividades com IA",
-    featuresHeading: "Por que o Anti-Tédio?",
+    featuresHeading: "Por que o Anti Tédio?",
     feature1Title: "Respostas Rápidas",
     feature1Desc: "Sugestões em segundos para você não perder tempo.",
     feature2Title: "Personalizado",
@@ -392,7 +392,7 @@ export default {
     step3Title: "Receba sua escolha",
     step3Desc: "Nossa IA gera uma sugestão personalizada em segundos.",
 
-    advantagesTitle: "Por que escolher o Anti-Tédio?",
+    advantagesTitle: "Por que escolher o Anti Tédio?",
     advantage1Title: "Super rápido",
     advantage1Desc: "Sem rolagem infinita. Receba uma recomendação de qualidade na hora.",
     advantage2Title: "Seus dados estão seguros",
@@ -400,7 +400,7 @@ export default {
     advantage3Title: "Disponível a qualquer hora",
     advantage3Desc: "Créditos diários gratuitos renovam automaticamente, sem assinatura.",
 
-    statsTitle: "O Anti-Tédio em números",
+    statsTitle: "O Anti Tédio em números",
     statCategories: "Categorias de conteúdo",
     statAPIs: "APIs integradas",
     statSuggestions: "Sugestões possíveis",
@@ -444,13 +444,13 @@ export default {
   privacy: {
     pageTitle: "Política de Privacidade",
     lastUpdated: "Última atualização: março de 2026",
-    intro: "Sua privacidade é importante para nós. Esta política explica como o Anti-Tédio coleta, usa e protege seus dados pessoais.",
+    intro: "Sua privacidade é importante para nós. Esta política explica como o Anti Tédio coleta, usa e protege seus dados pessoais.",
     contactQuestion: "Dúvidas sobre privacidade?",
     contactPrompt: "Entre em contato:",
     sections: [
       {
         title: "1. Quais dados coletamos",
-        content: "Coletamos apenas os dados necessários para oferecer a melhor experiência de recomendação:\n\n• **Dados de conta:** nome, endereço de e-mail e senha (armazenada com hash seguro) fornecidos no cadastro, ou informações de perfil obtidas via OAuth (Google/Facebook).\n• **Preferências de personalidade:** as características que você seleciona para receber sugestões personalizadas.\n• **Histórico de recomendações:** os títulos sugeridos e se você os curtiu, para aprimorar sugestões futuras.\n• **Dados de pagamento:** processados exclusivamente pelo Stripe (pagamentos internacionais) e Mercado Pago (Brasil). O Anti-Tédio nunca armazena dados de cartão.\n• **Dados técnicos:** endereço IP, tipo de navegador e logs de acesso coletados automaticamente para segurança e diagnóstico.",
+        content: "Coletamos apenas os dados necessários para oferecer a melhor experiência de recomendação:\n\n• **Dados de conta:** nome, endereço de e-mail e senha (armazenada com hash seguro) fornecidos no cadastro, ou informações de perfil obtidas via OAuth (Google/Facebook).\n• **Preferências de personalidade:** as características que você seleciona para receber sugestões personalizadas.\n• **Histórico de recomendações:** os títulos sugeridos e se você os curtiu, para aprimorar sugestões futuras.\n• **Dados de pagamento:** processados exclusivamente pelo Stripe (pagamentos internacionais) e Mercado Pago (Brasil). O Anti Tédio nunca armazena dados de cartão.\n• **Dados técnicos:** endereço IP, tipo de navegador e logs de acesso coletados automaticamente para segurança e diagnóstico.",
       },
       {
         title: "2. Como usamos seus dados",
@@ -458,7 +458,7 @@ export default {
       },
       {
         title: "3. Compartilhamento de dados",
-        content: "O Anti-Tédio não vende seus dados. Compartilhamos informações somente com os parceiros essenciais para o funcionamento do serviço:\n\n• **Google (Gemini Pro, Books API, Cloud Translation, OAuth)**: para geração de sugestões, metadados de livros, tradução e autenticação.\n• **Stripe e Mercado Pago**: para processamento de pagamentos.\n• **OMDB API**: para metadados de filmes e séries.\n• **IsThereAnyDeal API**: para preços e promoções de jogos.\n• **Resend**: para envio de e-mails transacionais.\n• **Meta (Facebook OAuth)**: opcional, somente se você optar por entrar com o Facebook.",
+        content: "O Anti Tédio não vende seus dados. Compartilhamos informações somente com os parceiros essenciais para o funcionamento do serviço:\n\n• **Google (Gemini Pro, Books API, Cloud Translation, OAuth)**: para geração de sugestões, metadados de livros, tradução e autenticação.\n• **Stripe e Mercado Pago**: para processamento de pagamentos.\n• **OMDB API**: para metadados de filmes e séries.\n• **IsThereAnyDeal API**: para preços e promoções de jogos.\n• **Resend**: para envio de e-mails transacionais.\n• **Meta (Facebook OAuth)**: opcional, somente se você optar por entrar com o Facebook.",
       },
       {
         title: "4. Armazenamento e segurança",
@@ -474,7 +474,7 @@ export default {
       },
       {
         title: "7. Menores de idade",
-        content: "O Anti-Tédio é destinado a usuários com 13 anos ou mais. Não coletamos intencionalmente dados de crianças menores de 13 anos. Se tomarmos conhecimento de que coletamos dados de uma criança sem consentimento parental verificável, excluiremos essas informações imediatamente.\n\nResponsáveis legais podem entrar em contato pelo e-mail contato{'@'}mail.antitedio.com.br para solicitar a exclusão de dados de menores.",
+        content: "O Anti Tédio é destinado a usuários com 13 anos ou mais. Não coletamos intencionalmente dados de crianças menores de 13 anos. Se tomarmos conhecimento de que coletamos dados de uma criança sem consentimento parental verificável, excluiremos essas informações imediatamente.\n\nResponsáveis legais podem entrar em contato pelo e-mail contato{'@'}mail.antitedio.com.br para solicitar a exclusão de dados de menores.",
       },
       {
         title: "8. Alterações nesta política",
@@ -486,41 +486,41 @@ export default {
   terms: {
     pageTitle: "Termos de Uso",
     lastUpdated: "Última atualização: março de 2026",
-    intro: "Leia com atenção estes termos antes de usar o Anti-Tédio. Ao utilizar a plataforma, você concorda com as condições abaixo.",
+    intro: "Leia com atenção estes termos antes de usar o Anti Tédio. Ao utilizar a plataforma, você concorda com as condições abaixo.",
     contactQuestion: "Dúvidas sobre os termos?",
     viewPrivacy: "→ Ver Política de Privacidade",
     sections: [
       {
         title: "1. Aceitação dos termos",
-        content: "Ao acessar ou usar o Anti-Tédio, você concorda com estes Termos de Uso e com nossa Política de Privacidade. Se não concordar com qualquer parte destes termos, não utilize o serviço.\n\nEstes termos se aplicam a todos os usuários, incluindo visitantes, usuários registrados e qualquer pessoa que acesse o conteúdo disponibilizado pela plataforma.",
+        content: "Ao acessar ou usar o Anti Tédio, você concorda com estes Termos de Uso e com nossa Política de Privacidade. Se não concordar com qualquer parte destes termos, não utilize o serviço.\n\nEstes termos se aplicam a todos os usuários, incluindo visitantes, usuários registrados e qualquer pessoa que acesse o conteúdo disponibilizado pela plataforma.",
       },
       {
         title: "2. Descrição do serviço",
-        content: "O Anti-Tédio é uma plataforma de recomendação de entretenimento que utiliza inteligência artificial (Google Gemini Pro) para sugerir filmes, séries, animes, desenhos, livros e jogos com base no perfil de personalidade e preferências do usuário.\n\nO serviço inclui:\n• Recomendações personalizadas mediante uso de créditos.\n• Histórico de sugestões recebidas.\n• Informações de preços para jogos via IsThereAnyDeal.\n• Metadados de mídias via OMDB API e Google Books API.\n• Tradução automática de conteúdo via Google Cloud Translation.",
+        content: "O Anti Tédio é uma plataforma de recomendação de entretenimento que utiliza inteligência artificial (Google Gemini Pro) para sugerir filmes, séries, animes, desenhos, livros e jogos com base no perfil de personalidade e preferências do usuário.\n\nO serviço inclui:\n• Recomendações personalizadas mediante uso de créditos.\n• Histórico de sugestões recebidas.\n• Informações de preços para jogos via IsThereAnyDeal.\n• Metadados de mídias via OMDB API e Google Books API.\n• Tradução automática de conteúdo via Google Cloud Translation.",
       },
       {
         title: "3. Cadastro e conta",
-        content: "Para usar funcionalidades completas do Anti-Tédio, você precisa criar uma conta. Ao se cadastrar, você concorda em:\n\n• Fornecer informações verdadeiras, precisas e atualizadas.\n• Manter a confidencialidade da sua senha e não compartilhá-la com terceiros.\n• Notificar imediatamente o Anti-Tédio em caso de uso não autorizado da sua conta pelo e-mail contato{'@'}mail.antitedio.com.br.\n• Ser responsável por todas as atividades realizadas sob sua conta.",
+        content: "Para usar funcionalidades completas do Anti Tédio, você precisa criar uma conta. Ao se cadastrar, você concorda em:\n\n• Fornecer informações verdadeiras, precisas e atualizadas.\n• Manter a confidencialidade da sua senha e não compartilhá-la com terceiros.\n• Notificar imediatamente o Anti Tédio em caso de uso não autorizado da sua conta pelo e-mail contato{'@'}mail.antitedio.com.br.\n• Ser responsável por todas as atividades realizadas sob sua conta.",
       },
       {
         title: "4. Sistema de créditos e pagamentos",
-        content: "O Anti-Tédio opera com um sistema de créditos para geração de recomendações:\n\n• Cada recomendação gerada pela IA consome um crédito da sua conta.\n• Créditos podem ser adquiridos via Stripe (pagamentos internacionais com cartão) ou Mercado Pago (Brasil, incluindo Pix).\n• Os créditos não possuem prazo de validade e não são transferíveis entre contas.\n• **Política de reembolso:** créditos não utilizados podem ser reembolsados em até 7 dias corridos após a compra. Créditos parcialmente utilizados não são elegíveis para reembolso.\n• Preços estão sujeitos a alterações com aviso prévio de 15 dias por e-mail.",
+        content: "O Anti Tédio opera com um sistema de créditos para geração de recomendações:\n\n• Cada recomendação gerada pela IA consome um crédito da sua conta.\n• Créditos podem ser adquiridos via Stripe (pagamentos internacionais com cartão) ou Mercado Pago (Brasil, incluindo Pix).\n• Os créditos não possuem prazo de validade e não são transferíveis entre contas.\n• **Política de reembolso:** créditos não utilizados podem ser reembolsados em até 7 dias corridos após a compra. Créditos parcialmente utilizados não são elegíveis para reembolso.\n• Preços estão sujeitos a alterações com aviso prévio de 15 dias por e-mail.",
       },
       {
         title: "5. Uso aceitável",
-        content: "Você concorda em não usar o Anti-Tédio para:\n\n• Violar qualquer lei ou regulamento aplicável.\n• Fazer engenharia reversa, descompilar ou tentar extrair o código-fonte da plataforma.\n• Usar bots, scripts ou qualquer meio automatizado para acessar o serviço sem autorização expressa.\n• Realizar ataques de negação de serviço (DoS/DDoS) ou sobrecarregar deliberadamente a infraestrutura.\n• Tentar contornar mecanismos de autenticação ou segurança.\n• Coletar dados de outros usuários sem consentimento.",
+        content: "Você concorda em não usar o Anti Tédio para:\n\n• Violar qualquer lei ou regulamento aplicável.\n• Fazer engenharia reversa, descompilar ou tentar extrair o código-fonte da plataforma.\n• Usar bots, scripts ou qualquer meio automatizado para acessar o serviço sem autorização expressa.\n• Realizar ataques de negação de serviço (DoS/DDoS) ou sobrecarregar deliberadamente a infraestrutura.\n• Tentar contornar mecanismos de autenticação ou segurança.\n• Coletar dados de outros usuários sem consentimento.",
       },
       {
         title: "6. Propriedade intelectual",
-        content: "Todo o conteúdo original do Anti-Tédio: incluindo logotipo, design, textos, código-fonte e identidade visual: é protegido por direitos autorais e pertence à equipe do Anti-Tédio, licenciado sob MIT conforme o repositório público.\n\nAs recomendações geradas pela IA são baseadas em dados de APIs de terceiros (OMDB, Google Books, IsThereAnyDeal) que possuem seus próprios termos de uso. O Anti-Tédio não reivindica propriedade sobre capas, sinopses ou metadados de obras de terceiros exibidos na plataforma.",
+        content: "Todo o conteúdo original do Anti Tédio: incluindo logotipo, design, textos, código-fonte e identidade visual: é protegido por direitos autorais e pertence à equipe do Anti Tédio, licenciado sob MIT conforme o repositório público.\n\nAs recomendações geradas pela IA são baseadas em dados de APIs de terceiros (OMDB, Google Books, IsThereAnyDeal) que possuem seus próprios termos de uso. O Anti Tédio não reivindica propriedade sobre capas, sinopses ou metadados de obras de terceiros exibidos na plataforma.",
       },
       {
         title: "7. Limitação de responsabilidade",
-        content: "O Anti-Tédio é fornecido \"no estado em que se encontra\" e \"conforme disponível\", sem garantias de qualquer tipo, expressas ou implícitas.\n\nNão garantimos que:\n• As recomendações atenderão a todos os gostos ou expectativas pessoais.\n• O serviço estará sempre disponível sem interrupções ou erros.\n• As informações de preço de jogos (via IsThereAnyDeal) são precisas no momento da compra.",
+        content: "O Anti Tédio é fornecido \"no estado em que se encontra\" e \"conforme disponível\", sem garantias de qualquer tipo, expressas ou implícitas.\n\nNão garantimos que:\n• As recomendações atenderão a todos os gostos ou expectativas pessoais.\n• O serviço estará sempre disponível sem interrupções ou erros.\n• As informações de preço de jogos (via IsThereAnyDeal) são precisas no momento da compra.",
       },
       {
         title: "8. Encerramento e exclusão de conta",
-        content: "Você pode encerrar sua conta a qualquer momento nas configurações do perfil. Ao solicitar a exclusão:\n\n• Seus dados pessoais e histórico são removidos em até 30 dias.\n• Créditos remanescentes poderão ser reembolsados conforme a política de reembolso (seção 4).\n• Após 30 dias, a exclusão é irreversível.\n\nO Anti-Tédio pode suspender ou encerrar sua conta sem aviso prévio em caso de violação grave destes termos, atividade fraudulenta ou por determinação legal.",
+        content: "Você pode encerrar sua conta a qualquer momento nas configurações do perfil. Ao solicitar a exclusão:\n\n• Seus dados pessoais e histórico são removidos em até 30 dias.\n• Créditos remanescentes poderão ser reembolsados conforme a política de reembolso (seção 4).\n• Após 30 dias, a exclusão é irreversível.\n\nO Anti Tédio pode suspender ou encerrar sua conta sem aviso prévio em caso de violação grave destes termos, atividade fraudulenta ou por determinação legal.",
       },
       {
         title: "9. Legislação aplicável",
@@ -536,12 +536,12 @@ export default {
     badge: "Nossa história",
     title: "Criado para dar um fim no {boredom}.",
     boredomWord: "tédio",
-    subtitle: "O Anti-Tédio surgiu de um incômodo real: perder mais tempo escolhendo o que fazer do que aproveitando o momento. Criamos a ferramenta que a gente sempre quis usar.",
+    subtitle: "O Anti Tédio surgiu de um incômodo real: perder mais tempo escolhendo o que fazer do que aproveitando o momento. Criamos a ferramenta que a gente sempre quis usar.",
     ctaButton: "Começar agora",
     ctaLabel: "Ir para o app e descobrir novas atividades",
 
-    projectTitle: "O que é o Anti-Tédio?",
-    projectText1: "O Anti-Tédio é uma solução inteligente para aquele clássico dilema do \"o que eu faço agora?\". Cruzamos inteligência artificial com diversas fontes de entretenimento para entregar sugestões certeiras de filmes, séries, livros, animes e jogos: tudo baseado no seu perfil, humor e bolso.",
+    projectTitle: "O que é o Anti Tédio?",
+    projectText1: "O Anti Tédio é uma solução inteligente para aquele clássico dilema do \"o que eu faço agora?\". Cruzamos inteligência artificial com diversas fontes de entretenimento para entregar sugestões certeiras de filmes, séries, livros, animes e jogos: tudo baseado no seu perfil, humor e bolso.",
     projectText2: "Nossa engine analisa seus gostos, vasculha APIs em tempo real e entrega recomendações que realmente fazem sentido para você. Tudo isso em uma interface moderna, rápida e totalmente pensada na sua experiência.",
 
     howTitle: "Três passos, zero tédio",
@@ -552,7 +552,7 @@ export default {
     step3Title: "Receba sua indicação",
     step3Desc: "Nossa IA processa seu perfil e gera uma sugestão personalizada na hora. Chega de scroll infinito e fadiga de decisão.",
 
-    statsTitle: "O Anti-Tédio em números",
+    statsTitle: "O Anti Tédio em números",
     stat1Value: "6",
     stat1Label: "Categorias de conteúdo",
     stat2Value: "10+",
@@ -605,10 +605,10 @@ export default {
     viewSource: "Ver código fonte",
 
     creatorHeading: "Criado por",
-    creatorBio: "Sou um desenvolvedor focado em criar soluções que resolvem dores reais. O Anti-Tédio nasceu da vontade de aplicar IA de um jeito prático: ajudando as pessoas a descobrirem seu próximo conteúdo favorito sem estresse.",
+    creatorBio: "Sou um desenvolvedor focado em criar soluções que resolvem dores reais. O Anti Tédio nasceu da vontade de aplicar IA de um jeito prático: ajudando as pessoas a descobrirem seu próximo conteúdo favorito sem estresse.",
     creatorRole: "Desenvolvedor Full-Stack & Fundador",
 
-    copyright: "© {year} Anti-Tédio. Distribuído sob a licença MIT.",
+    copyright: "© {year} Anti Tédio. Distribuído sob a licença MIT.",
     iconCredits: "Ícones por {lucide} e {svgrepo}",
     externalLinkLabel: "Abrir site de {name} em nova aba",
   },

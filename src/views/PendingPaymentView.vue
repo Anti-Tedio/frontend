@@ -50,7 +50,7 @@ const goBack = () => router.push('/')
         </div>
         <p class="mt-4 text-[10px] text-amber-700 leading-relaxed">
           <i18n-t keypath="paymentPending.pixNote" tag="span">
-            <template #brand><strong>Anti-Tédio</strong></template>
+            <template #brand><strong>Anti Tédio</strong></template>
           </i18n-t>
         </p>
       </section>

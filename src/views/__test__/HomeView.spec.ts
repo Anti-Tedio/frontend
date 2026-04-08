@@ -15,7 +15,7 @@ const i18n = createI18n({
         subtitle: '{brand} is your personal leisure assistant.',
         ctaButton: 'Discover what to do',
         ctaLabel: 'Start discovering activities',
-        featuresHeading: 'Why Anti-Tédio?',
+        featuresHeading: 'Why Anti Tédio?',
         feature1Title: 'Instant Suggestions',
         feature1Desc: 'Get activity ideas in seconds.',
         feature2Title: 'Fully Personalized',

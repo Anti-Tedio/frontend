@@ -10,7 +10,7 @@ const i18n = createI18n({
   messages: {
     en: {
       auth: {
-        welcomeTitle: 'Welcome to Anti-Tédio',
+        welcomeTitle: 'Welcome to Anti Tédio',
         chooseMethod: 'Choose how you\'d like to sign in',
         continueGoogle: 'Continue with Google',
         continueMeta: 'Continue with Meta',
@@ -30,7 +30,7 @@ describe('MethodLogin.vue', () => {
 
   it('mostra título de boas-vindas', () => {
     const wrapper = shallowMount(MethodLogin, { global: { plugins: [i18n] } })
-    expect(wrapper.html()).toContain('Welcome to Anti-Tédio')
+    expect(wrapper.html()).toContain('Welcome to Anti Tédio')
   })
 
   it('mostra botão de login com Google', () => {

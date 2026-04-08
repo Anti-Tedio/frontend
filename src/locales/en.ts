@@ -7,7 +7,7 @@ export default {
     signOut: "Sign Out",
     settings: "Settings",
     credits: "{count} credits",
-    welcome: "Welcome to ANTI-TÉDIO!",
+    welcome: "Welcome to Anti Tédio!",
     welcomeSubtitle: "Sign in to get started",
     openMenu: "Open navigation menu",
     accountMenu: "Account menu for {name}",
@@ -15,7 +15,7 @@ export default {
   },
 
   page: {
-    title: "Anti-Tédio — Unique Recommendations, Combined Personalities",
+    title: "Anti Tédio — Unique Recommendations, Combined Personalities",
   },
 
   footer: {
@@ -27,14 +27,14 @@ export default {
     privacy: "Privacy Policy",
     terms: "Terms of Service",
     contact: "Contact Us",
-    copyright: "© {year} Anti-Tédio. All rights reserved.",
+    copyright: "© {year} Anti Tédio. All rights reserved.",
   },
 
   auth: {
     welcomeBack: "Welcome back",
     createAccount: "Create your account",
     signInSubtitle: "Sign in to continue your experience",
-    registerSubtitle: "Join Anti-Tédio and beat boredom",
+    registerSubtitle: "Join Anti Tédio and beat boredom",
     chooseMethod: "Choose how you'd like to sign in",
     continueGoogle: "Continue with Google",
     continueMeta: "Continue with Meta",
@@ -57,7 +57,7 @@ export default {
     signUp: "Sign Up",
     showPassword: "Show password",
     hidePassword: "Hide password",
-    welcomeTitle: "Welcome to Anti-Tédio",
+    welcomeTitle: "Welcome to Anti Tédio",
     backToMethods: "Back to sign in methods",
     validationNameRequired: "Please enter your name",
     validationEmailRequired: "Please enter your email address",
@@ -99,7 +99,7 @@ export default {
 
   changePassword: {
     title: "New Password",
-    subtitle: "Set a strong password for your Anti-Tédio account.",
+    subtitle: "Set a strong password for your Anti Tédio account.",
     newPasswordLabel: "New Password",
     confirmPasswordLabel: "Confirm Password",
     updateButton: "Update Password",
@@ -155,7 +155,7 @@ export default {
 
   buyCredits: {
     triggerLabel: "Buy more credits: view credit plans",
-    dialogTitle: "Power Up Your Anti-Tédio",
+    dialogTitle: "Power Up Your Anti Tédio",
     dialogSubtitle: "Choose a credit pack and unlock exclusive AI-powered recommendations.",
     credits: "{count} credits",
     mostPopular: "Most popular plan",
@@ -272,7 +272,7 @@ export default {
     creditsTitle: "Credits Lost",
     creditsDesc: "All purchased and unused credits will be permanently removed. There are no refunds for deleted accounts.",
     historyTitle: "History & Preferences",
-    historyDesc: "Your personalized suggestions, activity history, and Anti-Tédio achievements will be erased.",
+    historyDesc: "Your personalized suggestions, activity history, and Anti Tédio achievements will be erased.",
     dataTitle: "Personal Data",
     dataDesc: "Your profile information, integrations, and account settings will be permanently removed.",
     importantNote: "{strong} Your account won't be deleted immediately. It will be suspended for {days}. During this period, you can reactivate it via the link sent to your {email}. After 30 days, deletion is permanent and all data will be removed from our servers.",
@@ -363,7 +363,7 @@ export default {
     subtitle: "{brand} is your personal leisure assistant. We use AI to understand your mood and suggest the perfect activity for today.",
     ctaButton: "Discover what to do",
     ctaLabel: "Start discovering activities: powered by AI",
-    featuresHeading: "Why Anti-Tédio?",
+    featuresHeading: "Why Anti Tédio?",
     feature1Title: "Instant Suggestions",
     feature1Desc: "Get activity ideas in seconds: no more wasting time deciding what to do.",
     feature2Title: "Fully Personalized",
@@ -392,7 +392,7 @@ export default {
     step3Title: "Get your pick",
     step3Desc: "Our AI generates a personalized suggestion in seconds.",
 
-    advantagesTitle: "Why choose Anti-Tédio?",
+    advantagesTitle: "Why choose Anti Tédio?",
     advantage1Title: "Lightning fast",
     advantage1Desc: "No endless scrolling: get a single, quality recommendation instantly.",
     advantage2Title: "Your data is safe",
@@ -400,7 +400,7 @@ export default {
     advantage3Title: "Available anytime",
     advantage3Desc: "Free daily credits renew automatically, no subscription needed.",
 
-    statsTitle: "Anti-Tédio by the numbers",
+    statsTitle: "Anti Tédio by the numbers",
     statCategories: "Content categories",
     statAPIs: "Integrated APIs",
     statSuggestions: "Possible suggestions",
@@ -444,13 +444,13 @@ export default {
   privacy: {
     pageTitle: "Privacy Policy",
     lastUpdated: "Last updated: March 2026",
-    intro: "Your privacy matters to us. This policy explains how Anti-Tédio collects, uses and protects your personal data.",
+    intro: "Your privacy matters to us. This policy explains how Anti Tédio collects, uses and protects your personal data.",
     contactQuestion: "Questions about privacy?",
     contactPrompt: "Get in touch:",
     sections: [
       {
         title: "1. What data we collect",
-        content: "We collect only the data necessary to provide the best recommendation experience:\n\n• **Account data:** name, email address and password (stored as a secure hash) provided at sign-up, or profile information obtained via OAuth (Google/Facebook).\n• **Personality preferences:** the traits you select to receive personalised suggestions.\n• **Recommendation history:** suggested titles and whether you liked them, to improve future suggestions.\n• **Payment data:** processed exclusively by Stripe (international payments) and Mercado Pago (Brazil). Anti-Tédio never stores card data.\n• **Technical data:** IP address, browser type and access logs collected automatically for security and diagnostics.",
+        content: "We collect only the data necessary to provide the best recommendation experience:\n\n• **Account data:** name, email address and password (stored as a secure hash) provided at sign-up, or profile information obtained via OAuth (Google/Facebook).\n• **Personality preferences:** the traits you select to receive personalised suggestions.\n• **Recommendation history:** suggested titles and whether you liked them, to improve future suggestions.\n• **Payment data:** processed exclusively by Stripe (international payments) and Mercado Pago (Brazil). Anti Tédio never stores card data.\n• **Technical data:** IP address, browser type and access logs collected automatically for security and diagnostics.",
       },
       {
         title: "2. How we use your data",
@@ -458,7 +458,7 @@ export default {
       },
       {
         title: "3. Data sharing",
-        content: "Anti-Tédio does not sell your data. We share information only with partners essential to the operation of the service:\n\n• **Google (Gemini Pro, Books API, Cloud Translation, OAuth)**: for generating suggestions, book metadata, translation and authentication.\n• **Stripe and Mercado Pago**: for payment processing.\n• **OMDB API**: for film and series metadata.\n• **IsThereAnyDeal API**: for game prices and deals.\n• **Resend**: for sending transactional emails.\n• **Meta (Facebook OAuth)**: optional, only if you choose to sign in with Facebook.",
+        content: "Anti Tédio does not sell your data. We share information only with partners essential to the operation of the service:\n\n• **Google (Gemini Pro, Books API, Cloud Translation, OAuth)**: for generating suggestions, book metadata, translation and authentication.\n• **Stripe and Mercado Pago**: for payment processing.\n• **OMDB API**: for film and series metadata.\n• **IsThereAnyDeal API**: for game prices and deals.\n• **Resend**: for sending transactional emails.\n• **Meta (Facebook OAuth)**: optional, only if you choose to sign in with Facebook.",
       },
       {
         title: "4. Storage and security",
@@ -474,7 +474,7 @@ export default {
       },
       {
         title: "7. Minors",
-        content: "Anti-Tédio is intended for users aged 13 and over. We do not intentionally collect data from children under 13. If we become aware that we have collected data from a child without verifiable parental consent, we will delete that information immediately.\n\nLegal guardians may contact us at contato{'@'}mail.antitedio.com.br to request the deletion of a minor's data.",
+        content: "Anti Tédio is intended for users aged 13 and over. We do not intentionally collect data from children under 13. If we become aware that we have collected data from a child without verifiable parental consent, we will delete that information immediately.\n\nLegal guardians may contact us at contato{'@'}mail.antitedio.com.br to request the deletion of a minor's data.",
       },
       {
         title: "8. Changes to this policy",
@@ -486,41 +486,41 @@ export default {
   terms: {
     pageTitle: "Terms of Use",
     lastUpdated: "Last updated: March 2026",
-    intro: "Please read these terms carefully before using Anti-Tédio. By using the platform, you agree to the conditions below.",
+    intro: "Please read these terms carefully before using Anti Tédio. By using the platform, you agree to the conditions below.",
     contactQuestion: "Questions about the terms?",
     viewPrivacy: "→ View Privacy Policy",
     sections: [
       {
         title: "1. Acceptance of terms",
-        content: "By accessing or using Anti-Tédio, you agree to these Terms of Use and our Privacy Policy. If you do not agree with any part of these terms, do not use the service.\n\nThese terms apply to all users, including visitors, registered users and anyone who accesses the content made available by the platform.",
+        content: "By accessing or using Anti Tédio, you agree to these Terms of Use and our Privacy Policy. If you do not agree with any part of these terms, do not use the service.\n\nThese terms apply to all users, including visitors, registered users and anyone who accesses the content made available by the platform.",
       },
       {
         title: "2. Description of service",
-        content: "Anti-Tédio is an entertainment recommendation platform that uses artificial intelligence (Google Gemini Pro) to suggest films, series, anime, cartoons, books and games based on the user's personality profile and preferences.\n\nThe service includes:\n• Personalised recommendations using credits.\n• History of received suggestions.\n• Game price information via IsThereAnyDeal.\n• Media metadata via OMDB API and Google Books API.\n• Automatic content translation via Google Cloud Translation.",
+        content: "Anti Tédio is an entertainment recommendation platform that uses artificial intelligence (Google Gemini Pro) to suggest films, series, anime, cartoons, books and games based on the user's personality profile and preferences.\n\nThe service includes:\n• Personalised recommendations using credits.\n• History of received suggestions.\n• Game price information via IsThereAnyDeal.\n• Media metadata via OMDB API and Google Books API.\n• Automatic content translation via Google Cloud Translation.",
       },
       {
         title: "3. Registration and account",
-        content: "To use the full features of Anti-Tédio, you need to create an account. By registering, you agree to:\n\n• Provide truthful, accurate and up-to-date information.\n• Keep your password confidential and not share it with third parties.\n• Immediately notify Anti-Tédio of any unauthorised use of your account at contato{'@'}mail.antitedio.com.br.\n• Be responsible for all activities carried out under your account.",
+        content: "To use the full features of Anti Tédio, you need to create an account. By registering, you agree to:\n\n• Provide truthful, accurate and up-to-date information.\n• Keep your password confidential and not share it with third parties.\n• Immediately notify Anti Tédio of any unauthorised use of your account at contato{'@'}mail.antitedio.com.br.\n• Be responsible for all activities carried out under your account.",
       },
       {
         title: "4. Credits and payments",
-        content: "Anti-Tédio operates with a credit system for generating recommendations:\n\n• Each AI-generated recommendation consumes one credit from your account.\n• Credits can be purchased via Stripe (international card payments) or Mercado Pago (Brazil, including Pix).\n• Credits have no expiry date and are non-transferable between accounts.\n• **Refund policy:** unused credits can be refunded within 7 calendar days of purchase. Partially used credits are not eligible for refund.\n• Prices are subject to change with 15 days' prior notice by email.",
+        content: "Anti Tédio operates with a credit system for generating recommendations:\n\n• Each AI-generated recommendation consumes one credit from your account.\n• Credits can be purchased via Stripe (international card payments) or Mercado Pago (Brazil, including Pix).\n• Credits have no expiry date and are non-transferable between accounts.\n• **Refund policy:** unused credits can be refunded within 7 calendar days of purchase. Partially used credits are not eligible for refund.\n• Prices are subject to change with 15 days' prior notice by email.",
       },
       {
         title: "5. Acceptable use",
-        content: "You agree not to use Anti-Tédio to:\n\n• Violate any applicable law or regulation.\n• Reverse-engineer, decompile or attempt to extract the source code of the platform.\n• Use bots, scripts or any automated means to access the service without express authorisation.\n• Carry out denial-of-service attacks (DoS/DDoS) or deliberately overload the infrastructure.\n• Attempt to bypass authentication or security mechanisms.\n• Collect data from other users without consent.",
+        content: "You agree not to use Anti Tédio to:\n\n• Violate any applicable law or regulation.\n• Reverse-engineer, decompile or attempt to extract the source code of the platform.\n• Use bots, scripts or any automated means to access the service without express authorisation.\n• Carry out denial-of-service attacks (DoS/DDoS) or deliberately overload the infrastructure.\n• Attempt to bypass authentication or security mechanisms.\n• Collect data from other users without consent.",
       },
       {
         title: "6. Intellectual property",
-        content: "All original content of Anti-Tédio: including logo, design, texts, source code and visual identity: is protected by copyright and belongs to the Anti-Tédio team, licensed under MIT as per the public repository.\n\nAI-generated recommendations are based on data from third-party APIs (OMDB, Google Books, IsThereAnyDeal) that have their own terms of use. Anti-Tédio does not claim ownership over covers, synopses or metadata of third-party works displayed on the platform.",
+        content: "All original content of Anti Tédio: including logo, design, texts, source code and visual identity: is protected by copyright and belongs to the Anti Tédio team, licensed under MIT as per the public repository.\n\nAI-generated recommendations are based on data from third-party APIs (OMDB, Google Books, IsThereAnyDeal) that have their own terms of use. Anti Tédio does not claim ownership over covers, synopses or metadata of third-party works displayed on the platform.",
       },
       {
         title: "7. Limitation of liability",
-        content: "Anti-Tédio is provided \"as is\" and \"as available\", without warranties of any kind, express or implied.\n\nWe do not guarantee that:\n• Recommendations will meet all personal tastes or expectations.\n• The service will always be available without interruptions or errors.\n• Game price information (via IsThereAnyDeal) is accurate at the time of purchase.",
+        content: "Anti Tédio is provided \"as is\" and \"as available\", without warranties of any kind, express or implied.\n\nWe do not guarantee that:\n• Recommendations will meet all personal tastes or expectations.\n• The service will always be available without interruptions or errors.\n• Game price information (via IsThereAnyDeal) is accurate at the time of purchase.",
       },
       {
         title: "8. Account termination and deletion",
-        content: "You can close your account at any time in the profile settings. When requesting deletion:\n\n• Your personal data and history are removed within 30 days.\n• Remaining credits may be refunded according to the refund policy (section 4).\n• After 30 days, deletion is irreversible.\n\nAnti-Tédio may suspend or close your account without prior notice in the event of a serious violation of these terms, fraudulent activity or by legal order.",
+        content: "You can close your account at any time in the profile settings. When requesting deletion:\n\n• Your personal data and history are removed within 30 days.\n• Remaining credits may be refunded according to the refund policy (section 4).\n• After 30 days, deletion is irreversible.\n\nAnti Tédio may suspend or close your account without prior notice in the event of a serious violation of these terms, fraudulent activity or by legal order.",
       },
       {
         title: "9. Applicable law",

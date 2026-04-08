@@ -20,7 +20,7 @@ const i18n = createI18n({
         privacy: 'Privacidade',
         terms: 'Termos',
         contact: 'Contato',
-        copyright: '© {year} Anti-Tédio.',
+        copyright: '© {year} Anti Tédio.',
       },
     },
   },
@@ -50,7 +50,7 @@ describe('MainLayout.vue', () => {
     const wrapper = shallowMount(MainLayout, {
       global: { plugins: [i18n, createTestRouter()] },
     })
-    expect(wrapper.html()).toContain('ANTI-TÉDIO')
+    expect(wrapper.html()).toContain('Anti Tédio')
   })
 
   it('renderiza o NavBarComponent no cabeçalho', () => {
@@ -96,6 +96,6 @@ describe('MainLayout.vue', () => {
     const wrapper = shallowMount(MainLayout, {
       global: { plugins: [i18n, createTestRouter()] },
     })
-    expect(wrapper.html()).toContain('Anti-Tédio')
+    expect(wrapper.html()).toContain('Anti Tédio')
   })
 })

@@ -14,10 +14,16 @@ const useHistoryStore = defineStore('history', () => {
     const cursor = ref<string | null>(null);
     const cursorCategory = ref<string | null>(null);
 
-    function processeRating(incoming: Rating[] | null) {
+    function processRating(incoming: Rating[] | null) {
         if (!incoming) return;
         if (!rating.value.length) rating.value = incoming
         rating.value.push(...incoming)
+    }
+
+    function addHistoryNoRepeat(newHistoryItems: History[]) {
+        const existingIds = new Set(history.value.map(h => h.recommended.id));
+        const uniqueNewItems = newHistoryItems.filter(h => !existingIds.has(h.recommended.id));
+        history.value.push(...uniqueNewItems);
     }
 
     async function getRecentHistory() {
@@ -55,8 +61,8 @@ const useHistoryStore = defineStore('history', () => {
             }>('/history/continue', { lang, cursor: cursor.value });
 
             cursor.value = data.nextCursor ?? null;
-            history.value.push(...data.history);
-            processeRating(data.rating);
+            addHistoryNoRepeat(data.history)
+            processRating(data.rating);
         } catch (error) {
             cursor.value = null;
             console.error('Erro ao buscar mais histórico:', error);
@@ -86,9 +92,8 @@ const useHistoryStore = defineStore('history', () => {
 
             if (!history.value.length) history.value = data.history;
 
-            history.value.push(...data.history);
-
-            processeRating(data.rating);
+            addHistoryNoRepeat(data.history);
+            processRating(data.rating);
         } catch (error) {
             cursorCategory.value = null;
             console.error('Erro ao buscar histórico por categoria:', error);

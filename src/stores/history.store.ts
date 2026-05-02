@@ -81,7 +81,6 @@ const useHistoryStore = defineStore('history', () => {
             });
 
             cursorCategory.value = data.nextCursor ?? null;
-            rating.value = data.rating ?? [];
 
             if (!data.history.length) return;
 

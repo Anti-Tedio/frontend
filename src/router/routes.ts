@@ -36,8 +36,8 @@ const router = createRouter({
           component: () => import('@/views/SelectPersonsView.vue'),
         },
         {
-          path: '/categorys',
-          name: 'categorys',
+          path: '/categories',
+          name: 'categories',
           component: () => import('@/views/SelectCategoryView.vue'),
         },
         {

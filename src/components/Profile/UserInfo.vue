@@ -22,7 +22,7 @@ const isHoveringAvatar = ref(false)
       <div class="flex flex-col items-center gap-5 sm:flex-row sm:items-center" @mouseenter="isHoveringAvatar = true" @mouseleave="isHoveringAvatar = false">
         <div class="relative w-30 h-30 sm:w-18 sm:h-18 shrink-0 self-center">
           <div class="w-30 h-30 sm:w-18 sm:h-18 rounded-full overflow-hidden bg-muted ring-2 ring-border flex items-center justify-center">
-            <img v-if="avatarUrl" :src="avatarUrl" :alt="`${username}'s profile photo`" class="w-full h-full object-cover" />
+            <img v-if="avatarUrl" :src="avatarUrl || ''" :alt="`${username}'s profile photo`" class="w-full h-full object-cover" />
             <User v-else class="w-20 h-20 sm:w-7 sm:h-7 text-muted-foreground" aria-hidden="true" />
           </div>
           <button :class="['absolute inset-0 rounded-full flex items-center justify-center', 'bg-black/50 transition-opacity duration-200', isHoveringAvatar ? 'opacity-100' : 'opacity-0', 'focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2']" :aria-label="$t('profile.editPhotoLabel')" @click="emit('edit-photo')">

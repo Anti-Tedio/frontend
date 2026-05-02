@@ -22,6 +22,7 @@ const useUserStore = defineStore('user', {
     credits: 0,
     avatarUrl: '',
     loading: false,
+    darkMode: false,
   }),
   actions: {
     toogleLogin() {
@@ -44,7 +45,8 @@ const useUserStore = defineStore('user', {
         const { data } = await api.post<UserLogin>('/auth/login', user);
 
         if (data.login) {
-          window.location.reload()
+          router.push('/')
+          await this.getUser()
         }
       } catch (error) {
         console.error('Error Login:', error);
@@ -70,7 +72,7 @@ const useUserStore = defineStore('user', {
       }
     },
     async loginProvider(provider: string) {
-      provider.trim().toLowerCase();
+      provider = provider.trim().toLowerCase();
       window.location.href = `https://api.antitedio.com.br/auth/${provider}`
     },
     async logout() {
@@ -79,11 +81,10 @@ const useUserStore = defineStore('user', {
         this.$reset();
         localStorage.removeItem('token')
         token.value=null
+        router.push('/login')
       } catch (error) {
         console.error('Error Logout:', error);
         throw error
-      } finally {
-        window.location.reload();
       }
     },
     async editAvatar(newImg: File) {
@@ -155,7 +156,7 @@ const useUserStore = defineStore('user', {
   },
   persist: {
     storage: localStorage,
-    pick: ['name', 'email', 'credits', 'avatarUrl']
+    pick: ['name', 'email', 'credits', 'avatarUrl', 'darkMode'],
   }
 })
 

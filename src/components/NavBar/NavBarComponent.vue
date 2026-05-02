@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { Menu, Home, User, Info, LogOut, Zap, Globe, Check } from 'lucide-vue-next'
+import { Menu, Home, User, Info, LogOut, Zap, Globe, Check, Moon, Sun } from 'lucide-vue-next'
 import IconProfile from '../Profile/IconProfile.vue'
 import { token } from '@/lib/refreshToken'
 import useUserStore from '@/stores/user.store'
@@ -44,7 +44,7 @@ router.beforeEach((to) => {
 })
 
 watch(() => userStore.credits, () => {
-  if (userStore.credits === 0 && userStore.name && route.name==='categorys')
+  if (userStore.credits === 0 && userStore.name && route.name === 'categories')
     openCreditsExhausted.value = true
 }, { immediate: true })
 
@@ -70,7 +70,7 @@ function buyCredits() {
 </script>
 
 <template>
-  <CreditsExhaustedDialog :open="openCreditsExhausted" @buy-credits="buyCredits"/>
+  <CreditsExhaustedDialog :open="openCreditsExhausted" @buy-credits="buyCredits" />
   <nav class="flex items-center" :aria-label="$t('nav.home')">
     <div class="hidden md:flex items-center gap-6" role="menubar">
       <template v-if="token">
@@ -108,7 +108,20 @@ function buyCredits() {
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <IconProfile />
+        <!-- Dark Mode Toggle -->
+        <!-- <button
+          class="flex items-center gap-1.5 text-sm text-zinc-600 hover:text-primary transition-colors uppercase font-semibold focus:outline-none"
+          :aria-label="$t('nav.toggleTheme')"
+          @click="userStore.toggleDarkMode">
+          <template v-if="!userStore.darkMode">
+            <Moon class="w-4 h-4" aria-hidden="true" />
+          </template>
+          <template v-else>
+            <Sun class="w-4 h-4" aria-hidden="true" />
+          </template>
+        </button> -->
+
+        <IconProfile :avatar-url="userStore.avatarUrl" :user-name="userStore.name" @logout="userStore.logout" />
       </template>
 
       <template v-else>
@@ -157,7 +170,7 @@ function buyCredits() {
           <div class="px-6 pb-4">
             <template v-if="token">
               <div class="flex items-center gap-3">
-                <IconProfile />
+                <IconProfile :avatar-url="userStore.avatarUrl" :user-name="userStore.name" />
                 <div>
                   <p class="text-sm font-semibold text-zinc-800">{{ useUserStore().name }}</p>
                   <div class="flex items-center gap-1"
@@ -217,6 +230,18 @@ function buyCredits() {
               <span>{{ lang.flag }} {{ lang.label }}</span>
               <Check v-if="locale === lang.code" class="w-3.5 h-3.5 ml-auto" aria-hidden="true" />
             </button>
+
+            <!-- Dark Mode Toggle -->
+            <!-- <div class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-colors w-full text-left"
+              @click="userStore.toggleDarkMode">
+              <template v-if="!userStore.darkMode">
+                <Moon class="w-4 h-4" aria-hidden="true" />
+              </template>
+              <template v-else>
+                <Sun class="w-4 h-4" aria-hidden="true" />
+              </template>
+              <span class="flex-1">{{ $t('nav.toggleTheme') }}</span>
+            </div>-->
           </nav>
 
           <Separator />

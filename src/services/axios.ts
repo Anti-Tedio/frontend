@@ -9,7 +9,7 @@ declare module 'vue' {
 }
 
 const api: AxiosInstance = axios.create({
-  baseURL: 'https://api.antitedio.com.br/',
+  baseURL: 'https://back.antitedio.com.br/',
   // baseURL: 'http://192.168.0.101:3000/',
   headers: {
     'Content-Type': 'application/json',

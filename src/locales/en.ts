@@ -12,10 +12,11 @@ export default {
     openMenu: "Open navigation menu",
     accountMenu: "Account menu for {name}",
     language: "Language",
+    toggleTheme: "Toggle Theme",
   },
 
   page: {
-    title: "Anti Tédio — Unique Recommendations, Combined Personalities",
+    title: "Anti Tédio - Unique Recommendations, Combined Personalities",
   },
 
   footer: {
@@ -178,6 +179,7 @@ export default {
     noTraitsSubtitle: "You haven't added any personality traits yet.",
     chooseTraits: "Choose traits",
     historyTitle: "Recommendation History",
+    historySubtitle: "Review all the incredible experiences we've chosen for you.",
     noHistoryTitle: "No recommendations yet",
     noHistorySubtitle: "We haven't generated any recommendations for you yet.",
     exploreNow: "Explore now",
@@ -188,8 +190,10 @@ export default {
     clearFilter: "Clear filter",
     loadingTraits: "Loading traits",
     myPersonality: "My Personality",
-    editTraitsLabel: "Edit personality traits",
+    editTraitsLabel: "Edit",
     selectedTraitsLabel: "Selected traits",
+    loadMore: "Load more",
+    loadingMore: "Loading more...",
   },
 
   editAvatar: {
@@ -221,6 +225,17 @@ export default {
     score: "Score",
     criticScore: "Critic score: {score}",
     rating: "Rating: {score} stars",
+    yourRating: "Your Rating",
+    notRecommend: "Not recommend for anyone",
+    notRecommendHint: "Not recommend for anyone",
+    dislike: "Dislike",
+    dislikeHint: "I didn't like it",
+    neutral: "Neutral",
+    neutralHint: "It was okay",
+    like: "Like",
+    likeHint: "I liked it",
+    love: "Like very much",
+    loveHint: "I loved it!",
   },
 
   result: {

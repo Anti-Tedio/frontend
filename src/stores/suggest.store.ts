@@ -3,13 +3,14 @@ import { defineStore } from "pinia";
 import { api } from "@/services/axios";
 import type { AxiosProgressEvent } from "axios";
 import type { SuggestMidia, SuggestVideoGame } from "@/types/suggest";
-import useCategorysStore from "./categorys.store";
+import useCategoriesStore from "./categories.store";
+
 import type { Suggestion } from "@/types";
 import i18n from "@/i18n";
 
 
 const useSuggestStore = defineStore('suggest', () => {
-    const categoryStore = useCategorysStore();
+    const categoriestore = useCategoriesStore();
 
     const locale = i18n.global.locale;
     
@@ -54,7 +55,7 @@ const useSuggestStore = defineStore('suggest', () => {
     }
 
     async function getRecommendation() {
-        const selected = categoryStore.selected;
+        const selected = categoriestore.selected;
 
         if (!selected) return;
 

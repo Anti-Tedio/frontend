@@ -1,145 +1,159 @@
 <script setup lang="ts">
-import type { History } from '@/types'
-import { Card, CardContent } from '@/components/ui/card'
-import { Calendar, User2 } from 'lucide-vue-next'
-import useCategorysStore from '@/stores/categorys.store'
-import Badge from '../ui/badge/Badge.vue'
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useDateFormat } from '@vueuse/core'
+import {
+  User2, AlertTriangle, ThumbsDown,
+  Meh, ThumbsUp, Heart, Star
+} from 'lucide-vue-next'
+import { Badge } from '@/components/ui/badge'
+import type { Category, History, Rating } from '@/types'
 
-const props = defineProps<{ item: History }>()
-const { locale } = useI18n()
-const categoryStore = useCategorysStore()
+const props = defineProps<{
+  item: History,
+  categories: Category[],
+  rating: Rating
+}>()
+
+const emit = defineEmits(['saveRating'])
+
+const { locale, t } = useI18n()
 const expanded = ref(false)
+const selectedRating = ref<Rating>(props.rating)
+const plotEl = ref<HTMLElement | null>(null)
+const isTruncated = ref(false)
 
 const category = computed(() =>
-  categoryStore.categorys.find((c) => c.id == props.item.recommended.categoryId),
+  props.categories.find((c) => c.id == props.item.recommended.categoryId)
 )
 
-// category.title is Record<string, string> — pick current locale, fallback to 'en'
-const categoryLabel = computed(
-  () => category.value?.title[locale.value] ?? category.value?.title['en'] ?? '',
+const categoryLabel = computed(() =>
+  category.value?.title[locale.value] ?? category.value?.title['en'] ?? ''
 )
 
-// 'video-game' and 'book' are the internal keys used in the en locale
 const isVideoGame = computed(() => category.value?.title['en']?.toLowerCase() === 'video game')
 const isBook = computed(() => category.value?.title['en']?.toLowerCase() === 'book')
 
-const formatDate = (dateStr: string) =>
-  new Date(dateStr).toLocaleDateString(locale.value === 'pt' ? 'pt-BR' : 'en-US', {
-    day: '2-digit',
-    month: '2-digit',
-    year: '2-digit',
-  })
+const formattedDate = useDateFormat(props.item.createdAt, 'DD/MM/YY', {
+  locales: locale.value === 'pt' ? 'pt-BR' : 'en-US'
+})
 
 const imageUrl = computed(() =>
-  props.item.recommended.img?.replace('http://', 'https://').replace('&edge=curl', ''),
+  props.item.recommended.img?.replace('http://', 'https://').replace('&edge=curl', '')
 )
+
+const toggleRating = (value: number) => {
+  selectedRating.value.value = selectedRating.value.value === value ? null : value
+  emit('saveRating', selectedRating.value)
+}
+
+function checkTruncation() {
+  if (plotEl.value) {
+    isTruncated.value = plotEl.value.scrollHeight > plotEl.value.clientHeight
+  }
+}
+
+onMounted(() => {
+  checkTruncation()
+})
+
+watch(expanded, () => {
+  if (!expanded.value) {
+    setTimeout(checkTruncation, 50)
+  }
+})
+
+const ratingOptions = [
+  { value: 0, icon: AlertTriangle, bgColor: 'bg-destructive', textColor: 'text-destructive', ring: 'ring-destructive/30', label: 'notRecommend' },
+  { value: 1, icon: ThumbsDown, bgColor: 'bg-orange-500', textColor: 'text-orange-500', ring: 'ring-orange-500/30', label: 'dislike' },
+  { value: 2, icon: Meh, bgColor: 'bg-yellow-400', textColor: 'text-yellow-400', ring: 'ring-yellow-400/30', label: 'neutral' },
+  { value: 3, icon: ThumbsUp, bgColor: 'bg-blue-400', textColor: 'text-blue-400', ring: 'ring-blue-400/30', label: 'like' },
+  { value: 4, icon: Heart, bgColor: 'bg-pink-500', textColor: 'text-pink-500', ring: 'ring-pink-500/30', label: 'love' },
+] as const
 </script>
 
 <template>
   <article
-    class="overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 group"
-    :aria-label="`${$t('result.articleLabel')}: ${item.recommended.title}`"
-  >
-    <Card class="p-0">
-      <CardContent class="p-5 sm:p-3">
-        <div class="flex flex-col sm:flex-row min-h-[180px]">
+    class="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/50 bg-white/60 backdrop-blur-xl transition-all duration-300 hover:border-primary/30 hover:shadow-lg dark:border-slate-800/50 dark:bg-slate-950/60 sm:flex-row"
+    :aria-label="`${t('result.articleLabel')}: ${item.recommended.title}`">
+    <figure class="relative aspect-[3/4] shrink-0 overflow-hidden sm:w-40 md:w-44">
+      <img class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" :src="imageUrl"
+        :alt="item.recommended.title" />
 
-          <!-- Cover image -->
-          <figure
-            class="relative sm:w-32 md:w-40 h-fit overflow-hidden border-b sm:border-b-0 sm:border-r border-slate-100 rounded-lg"
-          >
-            <img
-              class="w-full object-cover transition-transform duration-500 group-hover:scale-110"
-              :src="imageUrl"
-              :alt="`Cover of ${item.recommended.title}`"
-              loading="lazy"
-            />
+      <div v-if="!isBook && !isVideoGame"
+        class="absolute top-2 left-2 flex items-center gap-1 rounded-lg border border-white/20 bg-white/80 px-1.5 py-0.5 shadow-sm backdrop-blur-md dark:bg-slate-900/80">
+        <Star class="size-3 fill-yellow-500 text-yellow-500" />
+        <span class="text-xs font-bold text-slate-800 dark:text-slate-100">
+          {{ item.recommended.rating }}
+        </span>
+      </div>
 
-            <!-- Score badge — video game -->
-            <div
-              v-if="isVideoGame"
-              class="absolute top-4 left-4 sm:top-2 sm:left-2 w-18 h-18 sm:w-13 sm:h-13 flex flex-col items-center justify-center bg-emerald-500 text-white rounded-2xl shadow-xl border-4 border-white"
-              :aria-label="$t('historyCard.criticScore', { score: item.recommended.rating })"
-            >
-              <span class="text-xs sm:text-[7px] font-bold uppercase leading-none" aria-hidden="true">
-                {{ $t('historyCard.score') }}
-              </span>
-              <span class="text-2xl sm:text-sm font-black">{{ item.recommended.rating }}</span>
-            </div>
+      <div v-else-if="isVideoGame"
+        class="absolute top-2 left-2 flex h-11 w-11 flex-col items-center justify-center rounded-xl bg-emerald-500 shadow-lg ring-2 ring-white dark:ring-slate-900">
+        <span class="text-[8px] font-bold text-emerald-100 uppercase leading-none">
+          {{ t('videoGame.score') }}
+        </span>
+        <span class="text-sm font-black text-white">{{ item.recommended.rating }}</span>
+      </div>
+    </figure>
 
-            <!-- Rating badge — everything except book -->
-            <div
-              v-else-if="!isBook"
-              class="absolute top-4 left-4 sm:top-2 sm:left-2 flex items-center gap-1.5 px-3 py-1.5 sm:px-1 sm:py-0.5 bg-white/95 backdrop-blur-md rounded-xl sm:rounded-md shadow-xl border border-yellow-200"
-              :aria-label="$t('historyCard.rating', { score: item.recommended.rating })"
-            >
-              <i class="material-symbols-rounded text-yellow-500 !text-[22px] sm:!text-[15px] icon-filled" aria-hidden="true">star_rate</i>
-              <span class="font-bold text-slate-800 text-lg sm:text-xs">{{ item.recommended.rating }}</span>
-            </div>
-          </figure>
+    <div class="flex flex-1 flex-col p-4 sm:p-5">
+      <header class="flex items-center justify-between">
+        <Badge variant="outline"
+          class="h-6 border-primary/20 bg-primary/5 px-2.5 text-[11px] font-bold uppercase tracking-wider text-primary">
+          {{ categoryLabel || t('historyCard.uncategorized') }}
+        </Badge>
+        <time class="text-xs font-semibold text-slate-400">
+          {{ formattedDate }}
+        </time>
+      </header>
 
-          <!-- Content -->
-          <div class="flex-1 p-4 md:p-5 flex flex-col">
-            <header class="flex items-center justify-between mb-3">
-              <Badge
-                variant="secondary"
-                class="bg-primary/5 text-primary border-none text-[10px] uppercase tracking-wider font-bold"
-              >
-                {{ categoryLabel || $t('historyCard.uncategorized') }}
-              </Badge>
-              <time
-                class="flex items-center text-[10px] font-medium text-slate-400"
-                :datetime="item.createdAt"
-                :aria-label="$t('historyCard.recommendedOn', { date: formatDate(item.createdAt) })"
-              >
-                <Calendar class="w-3 h-3 mr-1" aria-hidden="true" />
-                {{ formatDate(item.createdAt) }}
-              </time>
-            </header>
+      <main class="mt-3 grow">
+        <h3 class="line-clamp-1 text-xl font-black tracking-tight text-slate-900 dark:text-slate-100">
+          {{ item.recommended.title }}
+        </h3>
 
-            <div class="mb-3">
-              <h3 class="font-bold text-lg md:text-xl leading-tight text-slate-900 group-hover:text-primary transition-colors line-clamp-1">
-                {{ item.recommended.title }}
-              </h3>
-              <p class="flex items-center gap-1.5 text-xs text-slate-500 mt-1">
-                <User2 class="w-3 h-3" aria-hidden="true" />
-                {{ $t('historyCard.by', { name: item.recommended.creator }) }}
-              </p>
-            </div>
-
-            <div class="relative">
-              <p
-                :id="`plot-${item.recommended.id}`"
-                class="text-sm text-slate-600 italic leading-relaxed transition-all duration-300"
-                :class="expanded ? '' : 'line-clamp-2 md:line-clamp-3'"
-              >
-                <span class="text-primary/20 text-2xl font-serif not-italic" aria-hidden="true">"</span>
-                {{ item.recommended.plot }}
-              </p>
-              <button
-                class="text-xs font-semibold text-primary mt-1 hover:underline focus-visible:outline-none focus-visible:underline"
-                :aria-expanded="expanded"
-                :aria-controls="`plot-${item.recommended.id}`"
-                @click="expanded = !expanded"
-              >
-                {{ expanded ? $t('historyCard.showLess') : $t('historyCard.readMore') }}
-              </button>
-            </div>
-          </div>
-
+        <div class="mt-1 flex items-center gap-1.5 text-xs font-medium text-slate-500">
+          <User2 class="size-3.5 text-primary/70" />
+          <span class="truncate">{{ t('historyCard.by', { name: item.recommended.creator }) }}</span>
         </div>
-      </CardContent>
-    </Card>
+
+        <div class="mt-3">
+          <p ref="plotEl" :id="`plot-${item.recommended.id}`"
+            class="text-sm leading-relaxed text-slate-600 dark:text-slate-400 transition-all"
+            :class="expanded ? '' : 'line-clamp-2'">
+            {{ item.recommended.plot }}
+          </p>
+          <button v-if="isTruncated || expanded"
+            class="mt-1.5 text-xs font-semibold text-primary hover:underline underline-offset-2"
+            @click="expanded = !expanded">
+            {{ expanded ? t('historyCard.showLess') : t('historyCard.readMore') }}
+          </button>
+        </div>
+      </main>
+
+      <footer class="mt-4 flex flex-col gap-3 border-t border-slate-100 pt-3 dark:border-slate-800/50">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold uppercase tracking-widest text-slate-400">
+            {{ t('historyCard.yourRating') }}
+          </span>
+          <span v-if="selectedRating.value !== null" class="text-xs font-semibold text-shadow"
+            :class="`${ratingOptions[selectedRating.value]!.textColor}`">
+            {{ t(`historyCard.${ratingOptions[selectedRating.value]!.label}`) }}
+          </span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button v-for="rate in ratingOptions" :key="rate.value" @click="toggleRating(rate.value)" :class="[
+            'relative flex size-9 items-center justify-center rounded-lg border transition-all duration-200 active:scale-90',
+            rating.value === rate.value
+              ? `${rate.bgColor} border-transparent text-white shadow-md ring-2 ${rate.ring}`
+              : 'border-slate-200 bg-white text-slate-400 hover:border-primary/50 dark:border-slate-800 dark:bg-slate-900'
+          ]">
+            <component :is="rate.icon" class="size-4" />
+          </button>
+        </div>
+      </footer>
+    </div>
   </article>
 </template>
-
-<style scoped>
-.line-clamp-2,
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-</style>

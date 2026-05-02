@@ -83,7 +83,7 @@ src/
 ├── router/
 │   └── routes.ts       # Vue Router route definitions
 ├── stores/             # Pinia stores
-│   ├── categorys.store.ts
+│   ├── categories.store.ts
 │   ├── history.store.ts
 │   ├── persons.store.ts
 │   ├── product.store.ts
@@ -292,7 +292,7 @@ Base UI primitives (`Button`, `Input`, `Dialog`, `Card`, `Select`, etc.) come fr
 | `/` | `HomeView` | No |
 | `/about` | `AboutView` | No |
 | `/select-person` | `SelectPersonView` | Yes |
-| `/categorys` | `SelectCategoryView` | Yes |
+| `/categories` | `SelectCategoryView` | Yes |
 | `/extra-info` | `ExtraInfoView` | Yes |
 | `/result` | `ResultView` | Yes |
 | `/profile` | `ProfileView` | Yes |
@@ -320,7 +320,7 @@ const userStore = useUserStore()
 |---|---|
 | `user.store` | Auth state, profile data, login/logout, avatar, password |
 | `persons.store` | Personality traits list, selection, persistence |
-| `categorys.store` | Categories list, active selection |
+| `categories.store` | Categories list, active selection |
 | `suggest.store` | Recommendation result, loading state, price |
 | `history.store` | User recommendation history |
 | `product.store` | Credit packs, purchase flow |

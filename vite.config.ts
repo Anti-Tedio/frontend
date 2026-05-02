@@ -2,12 +2,22 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
+import vueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig({
   plugins: [
     vue(),
     tailwindcss(),
+    vueDevTools()
   ],
+
+  server:{
+    hmr: {
+      host: 'preview.antitedio.com.br',
+      protocol: 'ws', // Use 'ws' se não estiver usando HTTPS no preview
+    },
+    allowedHosts:['preview.antitedio.com.br'],
+  },
 
   resolve: {
     alias: {
@@ -63,8 +73,6 @@ export default defineConfig({
             return 'vendor-utils'
           }
         },
-
-        // ✅ Nomes de arquivo com hash para cache busting
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
         assetFileNames: (assetInfo) => {

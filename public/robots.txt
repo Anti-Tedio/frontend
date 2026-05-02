@@ -7,7 +7,7 @@ User-agent: *
 
 # Bloqueia fluxo de uso (não agrega valor ao SEO)
 Disallow: /persons
-Disallow: /categorys
+Disallow: /categories
 Disallow: /extra-info
 Disallow: /result
 

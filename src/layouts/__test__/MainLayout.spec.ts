@@ -33,7 +33,7 @@ function createTestRouter() {
       { path: '/', component: { template: '<div>Home</div>' }, name: 'home' },
       { path: '/profile', component: { template: '<div>Profile</div>' }, name: 'profile' },
       { path: '/persons', component: { template: '<div>Persons</div>' }, name: 'persons' },
-      { path: '/categorys', component: { template: '<div>Categorys</div>' }, name: 'categorys' },
+      { path: '/categories', component: { template: '<div>categories</div>' }, name: 'categories' },
       { path: '/extra-info', component: { template: '<div>Extra</div>' }, name: 'extra-info' },
       { path: '/result', component: { template: '<div>Result</div>' }, name: 'result' },
     ],

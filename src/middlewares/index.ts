@@ -1,4 +1,4 @@
-import useCategorysStore from "@/stores/categorys.store";
+import useCategoriesStore from "@/stores/categories.store";
 import usePersonsStore from "@/stores/persons.store";
 import useUserStore from "@/stores/user.store";
 import { token } from "@/lib/refreshToken";
@@ -9,21 +9,21 @@ export const auth = (router: Router) => {
 
         const userStore = useUserStore()
         const personStore = usePersonsStore();
-        const categoryStore = useCategorysStore();
+        const categoriestore = useCategoriesStore();
 
         if (to.name === 'persons') {
             if (personStore.selected.length < 3) return true;
-            else return { name: 'categorys' };
+            else return { name: 'categories' };
 
         }
 
-        if (to.name === 'categorys') {
+        if (to.name === 'categories') {
             if (personStore.selected.length >= 3) return true
             else return { name: 'persons' };
         }
 
         if (to.name === 'result') {
-            if (!categoryStore.selected?.id) return { name: 'categorys' }
+            if (!categoriestore.selected?.id) return { name: 'categories' }
 
             if (token.value) return true;
             else { userStore.popUpLogin = true; return { name: 'persons' } };

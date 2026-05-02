@@ -6,7 +6,7 @@ import { createMemoryHistory, createRouter } from 'vue-router'
 import ResultView from '@/views/ResultView.vue'
 import useUserStore from '@/stores/user.store'
 import useSuggestStore from '@/stores/suggest.store'
-import useCategorysStore from '@/stores/categorys.store'
+import useCategoriesStore from '@/stores/categories.store'
 
 const i18n = createI18n({
   legacy: false,
@@ -37,8 +37,8 @@ describe('ResultView.vue', () => {
     suggestStore.suggestMidia = null as any
     suggestStore.suggestBook = null as any
     suggestStore.suggestVideoGame = null as any
-    const categoryStore = useCategorysStore()
-    categoryStore.categorys = [{ id: 1, title: { en: 'Movie' }, select: true, isActive: true }]
+    const categoriestore = useCategoriesStore()
+    categoriestore.categories = [{ id: 1, title: { en: 'Movie' }, select: true, isActive: true }]
   })
 
   it('renderiza a view', () => {

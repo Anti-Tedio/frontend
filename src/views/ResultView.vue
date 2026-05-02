@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import useSuggestStore from '@/stores/suggest.store'
-import useCategorysStore from '@/stores/categorys.store'
+import useCategoriesStore from '@/stores/categories.store'
 import router from '@/router/routes'
 import { computed, onMounted } from 'vue'
 import Midia from '@/components/Results/Midia.vue'
@@ -10,20 +10,20 @@ import Loading from '@/components/Results/Loading.vue'
 import useUserStore from '@/stores/user.store'
 
 const suggestStore = useSuggestStore()
-const categoryStore = useCategorysStore()
-const category = computed(() => categoryStore.selected?.title['en']?.toLowerCase())
+const categoriestore = useCategoriesStore()
+const category = computed(() => categoriestore.selected?.title['en']?.toLowerCase())
 
 async function fetchSuggestion() {
   if (useUserStore().credits <= 0) {
     useUserStore().buyCredits = true
-    return router.replace({ name: 'categorys' })
+    return router.replace({ name: 'categories' })
   }
   try {
     suggestStore.loading = true
     await suggestStore.getRecommendation()
     useUserStore().credits--
   } catch {
-    router.replace({ name: 'categorys' })
+    router.replace({ name: 'categories' })
   } finally {
     setTimeout(() => {
       suggestStore.loading = false
@@ -53,7 +53,7 @@ onMounted(() => {
     <div class="flex flex-wrap justify-center gap-4 mt-10" role="group" :aria-label="$t('result.actionsLabel')">
       <button
         class="flex items-center gap-2 px-6 py-3 rounded-2xl border-2 border-slate-200 text-slate-500 font-bold text-sm hover:border-primary/30 hover:text-primary hover:bg-primary/5 transition-all focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
-        :aria-label="$t('result.tryDifferentLabel')" @click="router.push('/categorys')">
+        :aria-label="$t('result.tryDifferentLabel')" @click="router.push('/categories')">
         <i class="material-symbols-rounded !text-[18px]" aria-hidden="true">shuffle</i>
         {{ $t('result.tryDifferent') }}
       </button>

@@ -12,10 +12,11 @@ export default {
     openMenu: "Abrir menú de navegación",
     accountMenu: "Menú de la cuenta de {name}",
     language: "Idioma",
+    toggleTheme: "Cambiar Tema",
   },
 
   page: {
-    title: "Anti Tédio — Recomendaciones Únicas, Personalidades Combinadas",
+    title: "Anti Tédio - Recomendaciones Únicas, Personalidades Combinadas",
   },
 
   footer: {
@@ -178,6 +179,7 @@ export default {
     noTraitsSubtitle: "Aún no tenemos ningún rasgo tuyo registrado.",
     chooseTraits: "Elegir",
     historyTitle: "Historial de Recomendaciones",
+    historySubtitle: "Repasa todas las increíbles experiencias que hemos seleccionado para ti.",
     noHistoryTitle: "No hay recomendaciones disponibles",
     noHistorySubtitle: "Aún no hemos encontrado ninguna recomendación hecha para ti.",
     exploreNow: "Explorar ahora",
@@ -188,7 +190,7 @@ export default {
     clearFilter: "Limpiar filtro",
     loadingTraits: "Cargando rasgos",
     myPersonality: "Mi personalidad",
-    editTraitsLabel: "Editar rasgos de personalidad",
+    editTraitsLabel: "Editar",
     selectedTraitsLabel: "Rasgos seleccionados",
   },
 
@@ -221,6 +223,17 @@ export default {
     score: "Puntuación",
     criticScore: "Evaluación de la crítica: {score}",
     rating: "Evaluación: {score} estrellas",
+    yourRating: "Tu Valoración",
+    notRecommend: "No lo recomendaría a nadie",
+    notRecommendHint: "No lo recomendaría a nadie",
+    dislike: "No me gustó",
+    dislikeHint: "No me gustó",
+    neutral: "Neutral",
+    neutralHint: "Está bien",
+    like: "Me gustó",
+    likeHint: "Me gustó",
+    love: "Me encantó",
+    loveHint: "¡Me encantó!",
   },
 
   result: {

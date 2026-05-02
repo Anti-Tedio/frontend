@@ -4,7 +4,7 @@ import { createPinia, setActivePinia } from 'pinia'
 import { createI18n } from 'vue-i18n'
 import { createMemoryHistory, createRouter } from 'vue-router'
 import SelectCategoryView from '@/views/SelectCategoryView.vue'
-import useCategorysStore from '@/stores/categorys.store'
+import useCategoriesStore from '@/stores/categories.store'
 import useUserStore from '@/stores/user.store'
 
 const i18n = createI18n({
@@ -34,8 +34,8 @@ function createTestRouter() {
 describe('SelectCategoryView.vue', () => {
   beforeEach(() => {
     setActivePinia(createPinia())
-    const categoryStore = useCategorysStore()
-    categoryStore.categorys = [
+    const categoriestore = useCategoriesStore()
+    categoriestore.categories = [
       { id: 1, title: { en: 'Movie', pt: 'Filme' }, isActive: true },
       { id: 2, title: { en: 'Book', pt: 'Livro' }, isActive: true },
     ]

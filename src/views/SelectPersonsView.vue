@@ -11,7 +11,7 @@ const isReady = ref(false)
 
 const nextPage = () => {
   personsStore.savePersons()
-  router.push('/categorys')
+  router.push('/categories')
 }
 
 watch(
@@ -24,7 +24,7 @@ watch(
 onMounted(() => {
   if (personsStore.persons.length > 0) isReady.value = true
   if (personsStore.selected.length >= 3) {
-    router.replace({ name: 'categorys' })
+    router.replace({ name: 'categories' })
   }
 })
 </script>

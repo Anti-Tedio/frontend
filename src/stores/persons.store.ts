@@ -60,7 +60,6 @@ const usePersonsStore = defineStore('persons', {
       const personsId = this.selected.map(({ id }) => ({ id }))
 
       try {
-        this.loading = true;
 
         await api.post('/user-person', { persons: personsId })
 
@@ -69,8 +68,6 @@ const usePersonsStore = defineStore('persons', {
         console.error('Error Save Person:', error)
         throw error
 
-      } finally {
-        this.loading = false
       }
     }
   }

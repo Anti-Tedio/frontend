@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import router from '@/router/routes'
-import useCategorysStore from '@/stores/categorys.store'
+import useCategoriesStore from '@/stores/categories.store'
 import usePersonsStore from '@/stores/persons.store'
 import useUserStore from '@/stores/user.store'
 import { ArrowLeft, ArrowRight } from 'lucide-vue-next'
 import { defineAsyncComponent, type Component } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const categoryStore = useCategorysStore()
+const categoriestore = useCategoriesStore()
 
 const { locale } = useI18n()
 
@@ -26,7 +26,7 @@ async function handleNext() {
   await usePersonsStore()
     .savePersons()
     .then(() => {
-      if (categoryStore.selected?.title['en']?.toLowerCase() === 'video game') return router.push('/extra-info')
+      if (categoriestore.selected?.title['en']?.toLowerCase() === 'video game') return router.push('/extra-info')
       router.push('/result')
     })
     .catch(() => {
@@ -60,12 +60,12 @@ async function handleNext() {
         :aria-label="$t('selectCategory.categoriesLabel')"
       >
         <li
-          v-for="cat in categoryStore.categorys"
+          v-for="cat in categoriestore.categories"
           :key="cat.id"
           v-show="cat.isActive"
-          @click="categoryStore.selectCategory(cat)"
-          @keydown.enter="categoryStore.selectCategory(cat)"
-          @keydown.space.prevent="categoryStore.selectCategory(cat)"
+          @click="categoriestore.selectCategory(cat)"
+          @keydown.enter="categoriestore.selectCategory(cat)"
+          @keydown.space.prevent="categoriestore.selectCategory(cat)"
           role="radio"
           :aria-checked="cat.select"
           :aria-label="`${cat.title}${cat.select ? ' — ' + $t('selectCategory.selected') : ''}`"
@@ -114,20 +114,20 @@ async function handleNext() {
       <button
         class="text-white text-xl font-bold py-sm rounded-2xl flex items-center justify-center gap-3 max-w-100 w-full transition-all duration-200 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none"
         :class="
-          categoryStore.selected
+          categoriestore.selected
             ? 'bg-primary hover:bg-primary/90 hover:scale-[1.02] shadow-md shadow-primary/25'
             : 'bg-primary/40 cursor-not-allowed'
         "
-        :disabled="!categoryStore.selected"
+        :disabled="!categoriestore.selected"
         :aria-label="
-          categoryStore.selected?.title['en'] === 'video game'
+          categoriestore.selected?.title['en'] === 'video game'
             ? $t('selectCategory.continueAriaLabel')
             : $t('selectCategory.resultAriaLabel')
         "
         @click="handleNext"
       >
         {{
-          categoryStore.selected?.title['en'] === 'video game'
+          categoriestore.selected?.title['en'] === 'video game'
             ? $t('selectCategory.continueButton')
             : $t('selectCategory.resultButton')
         }}

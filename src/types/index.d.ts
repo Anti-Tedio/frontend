@@ -10,6 +10,11 @@ export interface Recommended {
   link?: string
 }
 
+export interface Rating {
+  value: number | null,
+  recommendedId: string
+}
+
 export interface Suggestion extends Recommended {
   genres: string[]
 }
@@ -37,15 +42,15 @@ export interface User {
 
 export interface Person {
   id: number,
-  trait: Record<string,string>,
+  trait: Record<string, string>,
   icon: string,
-  desc: Record<string,string>,
+  desc: Record<string, string>,
   isActive: boolean
 }
 
 export interface Category {
   id: number,
-  title: Record<string,string>,
+  title: Record<string, string>,
   select?: boolean,
   isActive: boolean
 }

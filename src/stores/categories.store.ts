@@ -3,29 +3,29 @@ import type { Category } from "@/types";
 import { defineStore } from "pinia";
 
 interface StateCategory {
-  categorys: Category[]
+  categories: Category[]
 }
-const useCategorysStore = defineStore('categorys', {
+const useCategoriesStore = defineStore('categories', {
   state: (): StateCategory => ({
-    categorys: []
+    categories: []
   }),
   getters: {
     selected: (state) => {
-      const selectCategorys = state.categorys.find(c => c.select == true);
-      return selectCategorys;
+      const selectcategories = state.categories.find(c => c.select == true);
+      return selectcategories;
     }
   },
   actions: {
     async getCategory() {
       const { data } = await api.get<Category[]>('/category')
-      this.categorys = data
+      this.categories = data
     },
     selectCategory(category: Category) {
-      this.categorys.forEach(at => at.select = false);
+      this.categories.forEach(at => at.select = false);
       if (category.select) category.select = false;
       else category.select = true;
     }
   }
 })
 
-export default useCategorysStore;
+export default useCategoriesStore;

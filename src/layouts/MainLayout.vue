@@ -2,7 +2,7 @@
 import Login from '@/components/login/Login.vue'
 import useUserStore from '../stores/user.store'
 import router from '../router/routes'
-import useCategorysStore from '../stores/categorys.store'
+import useCategoriesStore from '../stores/categories.store'
 import { onMounted, ref, watch } from 'vue'
 import { refreshToken, token } from '../lib/refreshToken'
 import NavBarComponent from '@/components/NavBar/NavBarComponent.vue'
@@ -13,7 +13,7 @@ import VerifyEmailCode from '@/components/login/VerifyEmailCode.vue'
 import CookieConsentComponent from '@/components/CookieConsentComponent.vue'
 import CreditsExhaustedDialog from '@/components/CreditsExhaustedDialog.vue'
 
-const categoryStore = useCategorysStore()
+const categoriestore = useCategoriesStore()
 const userStore = useUserStore()
 
 const openCreditsExhaustedDialog = ref(false)
@@ -24,7 +24,7 @@ watch(
     if (newCredits <= 0 && token.value) {
       setTimeout(() => {
         openCreditsExhaustedDialog.value = true;
-      }, 1000);
+      }, 300);
     } else {
       openCreditsExhaustedDialog.value = false;
     }
@@ -32,13 +32,25 @@ watch(
   { immediate: true }
 );
 
-function fetchStart() {
-  categoryStore.getCategory()
-  useProductStore().getProduct()
-  refreshToken().then(async () => {
+function buyCredits(){
+  userStore.buyCredits=true;
+  openCreditsExhaustedDialog.value=false
+}
+
+async function fetchStart() {
+  try {
+    await Promise.all([
+      categoriestore.getCategory(),
+      useProductStore().getProduct(),
+      usePersonsStore().getPersons()
+    ])
+
+    // Refresh token and get user after parallel loads
+    await refreshToken()
     await userStore.getUser()
-  })
-  usePersonsStore().getPersons()
+  } catch (error) {
+    console.error('Failed to load initial data:', error)
+  }
 }
 
 onMounted(() => {
@@ -55,15 +67,15 @@ onMounted(() => {
       <div class="w-12" aria-hidden="true">
         <img src="/src/assets/logo.webp" alt="Anti Tédio logo" width="48" height="48" />
       </div>
-      <span class="text-2xl font-bold font-sans tracking-tight">Anti Tédio</span>
+      <span class="text-2xl font-bold font-sans tracking-tight uppercase">Anti Tédio</span>
     </a>
 
-    <NavBarComponent @logout="userStore.logout()" />
+    <NavBarComponent @logout="userStore.logout" />
   </header>
 
   <main class="mt-17 p-sm" id="main-content">
     <VerifyEmailCode />
-    <CreditsExhaustedDialog :open="openCreditsExhaustedDialog" @buy-credits="userStore.buyCredits = true" />
+    <CreditsExhaustedDialog :open="openCreditsExhaustedDialog" @buy-credits="buyCredits" />
     <Login />
     <router-view />
   </main>
@@ -76,7 +88,7 @@ onMounted(() => {
       <a href="/" class="flex items-center gap-2 text-primary no-underline" :aria-label="$t('nav.home')"
         @click.prevent="router.push('/')">
         <Zap class="fill-primary" aria-hidden="true" />
-        <span class="text-2xl font-bold font-sans tracking-tight">Anti Tédio</span>
+        <span class="text-2xl font-bold font-sans tracking-tight uppercase">Anti Tédio</span>
       </a>
       <p class="text-gray-400 text-md font-medium mt-sm leading-relaxed">
         {{ $t('footer.tagline') }}

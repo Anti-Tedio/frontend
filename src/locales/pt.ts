@@ -12,10 +12,11 @@ export default {
     openMenu: "Abrir menu de navegação",
     accountMenu: "Menu da conta de {name}",
     language: "Idioma",
+    toggleTheme: "Alternar Tema",
   },
 
   page: {
-    title: "Anti Tédio — Recomendações Únicas, Personalidades Combinadas",
+    title: "Anti Tédio - Recomendações Únicas, Personalidades Combinadas",
   },
 
   footer: {
@@ -178,6 +179,7 @@ export default {
     noTraitsSubtitle: "Ainda não temos nenhum traço seu cadastrado.",
     chooseTraits: "Escolher",
     historyTitle: "Histórico de Recomendações",
+    historySubtitle: "Reveja todas as experiências incríveis que escolhemos para você.",
     noHistoryTitle: "Nenhuma recomendação disponível",
     noHistorySubtitle: "Ainda não encontramos nenhuma recomendação feita pra você.",
     exploreNow: "Explorar agora",
@@ -188,8 +190,10 @@ export default {
     clearFilter: "Limpar filtro",
     loadingTraits: "Carregando traços",
     myPersonality: "Minha personalidade",
-    editTraitsLabel: "Editar traços de personalidade",
+    editTraitsLabel: "Editar",
     selectedTraitsLabel: "Traços selecionados",
+    loadMore: "Carregar mais",
+    loadingMore: "Carregando mais...",
   },
 
   editAvatar: {
@@ -221,6 +225,17 @@ export default {
     score: "Score",
     criticScore: "Avaliação da crítica: {score}",
     rating: "Avaliação: {score} estrelas",
+    yourRating: "Sua Avaliação",
+    notRecommend: "Não recomendaria para ninguém",
+    notRecommendHint: "Não recomendaria para ninguém",
+    dislike: "Não gostei",
+    dislikeHint: "Eu não gostei",
+    neutral: "Neutro",
+    neutralHint: "Foi ok",
+    like: "Gostei",
+    likeHint: "Eu gostei",
+    love: "Gostei muito",
+    loveHint: "Eu amei!",
   },
 
   result: {

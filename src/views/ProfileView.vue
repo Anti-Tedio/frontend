@@ -99,8 +99,8 @@ function handleSelectedCategory() {
 
 function findOrCreateRating(recommendedId: string) {
   const selectedRating = historyStore.rating.find(r => r.recommendedId === recommendedId)
-  if (selectedRating) return selectedRating
-  return { value: null, recommendedId }
+  if (!selectedRating) return { value: null, recommendedId }
+  return selectedRating
 }
 
 onMounted(async () => {
@@ -181,10 +181,8 @@ onMounted(async () => {
           <div class="space-y-8">
             <div class="grid grid-cols-1  gap-8">
               <HistoryCard v-for="history in filteredHistory" :key="history.recommended.id" :item="history"
-                :rating="findOrCreateRating(history.recommended.id)"
-                :categories="categoriesStore.categories"
-                @save-rating="historyStore.saveRating"
-                class="hover:translate-y-[-4px] transition-all duration-500" />
+                :rating="findOrCreateRating(history.recommended.id)" :categories="categoriesStore.categories"
+                @save-rating="historyStore.saveRating" class="hover:translate-y-[-4px] transition-all duration-500" />
               <template v-if="historyStore.loading">
                 <div class="grid grid-cols-1  gap-6">
                   <Skeleton v-for="n in 3" :key="n" class="w-full h-64 rounded-[2rem] bg-slate-200/50" />

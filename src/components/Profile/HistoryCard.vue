@@ -42,7 +42,7 @@ const imageUrl = computed(() =>
   props.item.recommended.img?.replace('http://', 'https://').replace('&edge=curl', '')
 )
 
-const toggleRating = (value: number) => {
+function toggleRating(value: number){
   selectedRating.value.value = selectedRating.value.value === value ? null : value
   emit('saveRating', selectedRating.value)
 }

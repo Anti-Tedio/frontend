@@ -31,7 +31,7 @@ function acceptEssential() {
       role="dialog"
       aria-modal="false"
       :aria-label="t('cookieConsent.ariaLabel')"
-      class="fixed bottom-0 left-0 right-0 z-[9999] bg-white border-t border-gray-100 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] px-4 py-4 sm:py-5"
+      class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] px-4 py-4 sm:py-5"
     >
       <div class="max-w-5xl mx-auto flex flex-col sm:flex-row sm:items-center gap-4">
         <div class="flex-1 min-w-0">

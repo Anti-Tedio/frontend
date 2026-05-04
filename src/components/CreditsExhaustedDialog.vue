@@ -33,7 +33,7 @@ watch(() => props.open, (val) => {
 
 <template>
     <Dialog v-model:open="isOpen">
-        <DialogContent class="sm:max-w-[380px] overflow-hidden p-0 border-none shadow-2xl">
+        <DialogContent class="sm:max-w-[380px] overflow-hidden p-0 border-none shadow-2xl z-50">
             <div 
                 class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600" 
                 role="presentation"

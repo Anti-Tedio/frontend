@@ -21,7 +21,7 @@ const openCreditsExhaustedDialog = ref(false)
 watch(
   () => userStore.credits,
   (newCredits) => {
-    if (newCredits <= 0 && token.value) {
+    if (newCredits <= 0 && token.value && userStore.firstOpenCreditsExhaustedDialog) {
       setTimeout(() => {
         openCreditsExhaustedDialog.value = true;
       }, 300);
@@ -32,9 +32,13 @@ watch(
   { immediate: true }
 );
 
-function buyCredits(){
-  userStore.buyCredits=true;
-  openCreditsExhaustedDialog.value=false
+function buyCredits() {
+  userStore.buyCredits = true;
+  openCreditsExhaustedDialog.value = false
+}
+
+function closeCreditsExhaustedDialog() {
+  userStore.firstOpenCreditsExhaustedDialog = false;
 }
 
 async function fetchStart() {
@@ -45,7 +49,6 @@ async function fetchStart() {
       usePersonsStore().getPersons()
     ])
 
-    // Refresh token and get user after parallel loads
     await refreshToken()
     await userStore.getUser()
   } catch (error) {
@@ -75,7 +78,8 @@ onMounted(() => {
 
   <main class="mt-17 p-sm" id="main-content">
     <VerifyEmailCode />
-    <CreditsExhaustedDialog :open="openCreditsExhaustedDialog" @buy-credits="buyCredits" />
+    <CreditsExhaustedDialog :open="openCreditsExhaustedDialog" @buy-credits="buyCredits"
+      @vue:before-unmount="closeCreditsExhaustedDialog" />
     <Login />
     <router-view />
   </main>

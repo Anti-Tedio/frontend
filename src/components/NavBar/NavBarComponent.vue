@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet'
 import { Separator } from '@/components/ui/separator'
@@ -15,12 +14,10 @@ import IconProfile from '../Profile/IconProfile.vue'
 import { token } from '@/lib/refreshToken'
 import useUserStore from '@/stores/user.store'
 import BuyCreditComponent from '../BuyCreditComponent.vue'
-import CreditsExhaustedDialog from '@/components/CreditsExhaustedDialog.vue'
 import router from '@/router/routes'
 
 const { locale } = useI18n()
 
-const route = useRoute();
 const userStore = useUserStore();
 
 const emit = defineEmits<{ logout: [] }>()
@@ -36,18 +33,6 @@ const languages = [
   { code: 'es', label: 'Español', flag: '🇪🇸' },
 ]
 
-router.beforeEach((to) => {
-  if (to.name === 'result' && userStore.credits === 0) {
-    openCreditsExhausted.value = true;
-    return false;
-  }
-})
-
-watch(() => userStore.credits, () => {
-  if (userStore.credits === 0 && userStore.name && route.name === 'categories')
-    openCreditsExhausted.value = true
-}, { immediate: true })
-
 function setLocale(code: string) {
   localStorage.setItem('lang', code)
   window.location.reload()
@@ -62,15 +47,9 @@ function handleLogout() {
   emit('logout')
   isSheetOpen.value = false
 }
-
-function buyCredits() {
-  openCreditsExhausted.value = false
-  userStore.buyCredits = true
-}
 </script>
 
 <template>
-  <CreditsExhaustedDialog :open="openCreditsExhausted" @buy-credits="buyCredits" />
   <nav class="flex items-center" :aria-label="$t('nav.home')">
     <div class="hidden md:flex items-center gap-6" role="menubar">
       <template v-if="token">

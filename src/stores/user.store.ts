@@ -23,6 +23,7 @@ const useUserStore = defineStore('user', {
     avatarUrl: '',
     loading: false,
     darkMode: false,
+    firstOpenCreditsExhaustedDialog: true
   }),
   actions: {
     toogleLogin() {
@@ -80,7 +81,7 @@ const useUserStore = defineStore('user', {
         await api.post('/auth/logout');
         this.$reset();
         localStorage.removeItem('token')
-        token.value=null
+        token.value = null
         router.push('/login')
       } catch (error) {
         console.error('Error Logout:', error);
@@ -154,10 +155,16 @@ const useUserStore = defineStore('user', {
       }
     }
   },
-  persist: {
-    storage: localStorage,
-    pick: ['name', 'email', 'credits', 'avatarUrl', 'darkMode'],
-  }
+  persist: [
+    {
+      storage: localStorage,
+      pick: ['name', 'email', 'credits', 'avatarUrl', 'darkMode'],
+    },
+    {
+      storage: sessionStorage,
+      pick: ['firstOpenCreditsExhaustedDialog']
+    }
+  ]
 })
 
 export default useUserStore;

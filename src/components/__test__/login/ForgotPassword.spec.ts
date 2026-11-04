@@ -20,8 +20,10 @@ const i18n = createI18n({
         successMessage: 'We sent a reset link to {email}.',
         understood: 'Got it, back to sign in',
       },
-      auth: { emailPlaceholder: 'you@example.com' },
-      resetPassword: { validationMin: 'Invalid email' },
+      auth: {
+        emailPlaceholder: "you{'@'}example.com",
+        validationEmailInvalid: 'Please enter a valid email address',
+      },
     },
   },
 })
@@ -37,16 +39,18 @@ describe('ForgotPassword.vue', () => {
   })
 
   it('mostra estado inicial do formulário (ainda não enviado)', () => {
-    const wrapper = shallowMount(ForgotPassword, { global: { plugins: [i18n] } })
-    expect(wrapper.html()).toContain('Send Reset Link')
+    const wrapper = mount(ForgotPassword, { global: { plugins: [i18n] } })
+    const submitButton = wrapper.get('button[type="submit"]')
+
+    expect(wrapper.find('form').exists()).toBe(true)
+    expect(submitButton.text()).toContain('Send Reset Link')
   })
 
   it('emite evento back quando o botão de voltar é clicado', async () => {
     const wrapper = mount(ForgotPassword, { global: { plugins: [i18n] } })
-    const backBtn = wrapper.findAll('button').find((b) => b.text().includes('Back to sign in'))
-    if (backBtn) {
-      await backBtn.trigger('click')
-      expect(wrapper.emitted('back')).toHaveLength(1)
-    }
+    const backBtn = wrapper.get('button[aria-label="Back to sign in"]')
+
+    await backBtn.trigger('click')
+    expect(wrapper.emitted('back')).toHaveLength(1)
   })
 })

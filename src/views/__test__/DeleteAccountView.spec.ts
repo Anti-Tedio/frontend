@@ -61,13 +61,15 @@ describe('DeleteAccountView.vue', () => {
   })
 
   it('renderiza o botão de prosseguir com deleção', () => {
-    const wrapper = shallowMount(DeleteAccountView, { global: { plugins: [i18n, createTestRouter()] } })
-    expect(wrapper.html()).toContain('proceedButton')
+    const wrapper = mount(DeleteAccountView, { global: { plugins: [i18n, createTestRouter()] } })
+    const proceedButton = wrapper.get('button[aria-haspopup="dialog"]')
+    expect(proceedButton.text()).toContain('Prosseguir com Deleção')
   })
 
   it('renderiza o botão de cancelar', () => {
-    const wrapper = shallowMount(DeleteAccountView, { global: { plugins: [i18n, createTestRouter()] } })
-    expect(wrapper.html()).toContain('cancelButton')
+    const wrapper = mount(DeleteAccountView, { global: { plugins: [i18n, createTestRouter()] } })
+    const cancelButton = wrapper.get('button[aria-label="Mudei de ideia, manter minha conta"]')
+    expect(cancelButton.text()).toContain('Mudei de ideia, manter minha conta')
   })
 
   it('mostra aviso sobre os 30 dias', () => {

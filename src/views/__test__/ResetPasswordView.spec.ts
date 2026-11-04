@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { shallowMount, mount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import { createPinia, setActivePinia } from 'pinia'
 import { createMemoryHistory, createRouter } from 'vue-router'
@@ -43,45 +43,57 @@ function createTestRouter() {
   })
 }
 
+async function mountView() {
+  const router = createTestRouter()
+
+  await router.push({
+    path: '/reset-password',
+    query: { userId: '1', token: 'valid-token' },
+  })
+  await router.isReady()
+
+  return mount(ResetPasswordView, {
+    global: { plugins: [i18n, router] },
+  })
+}
+
 describe('ResetPasswordView.vue', () => {
   beforeEach(() => {
     setActivePinia(createPinia())
     localStorage.removeItem('cookie_consent')
   })
 
-  it('renderiza o cabeçalho do card', () => {
-    const wrapper = shallowMount(ResetPasswordView, {
-      global: { plugins: [i18n, createTestRouter()] },
-    })
-    expect(wrapper.html()).toContain('Nova Senha')
+  it('renderiza o cabeçalho do card', async () => {
+    const wrapper = await mountView()
+
+    expect(wrapper.text()).toContain('Nova Senha')
   })
 
-  it('renderiza o subtítulo com o nome da marca', () => {
-    const wrapper = shallowMount(ResetPasswordView, {
-      global: { plugins: [i18n, createTestRouter()] },
-    })
-    expect(wrapper.html()).toContain('Crie uma senha forte')
+  it('renderiza o subtítulo com o nome da marca', async () => {
+    const wrapper = await mountView()
+
+    expect(wrapper.text()).toContain('Crie uma senha forte')
+    expect(wrapper.text()).toContain('Anti Tédio')
   })
 
-  it('renderiza o formulário com campos de senha', () => {
-    const wrapper = shallowMount(ResetPasswordView, {
-      global: { plugins: [i18n, createTestRouter()] },
-    })
-    expect(wrapper.html()).toContain('Nova Senha')
-    expect(wrapper.html()).toContain('Confirmar Senha')
+  it('renderiza o formulário com campos de senha', async () => {
+    const wrapper = await mountView()
+    const form = wrapper.get('form')
+
+    expect(form.text()).toContain('Nova Senha')
+    expect(form.text()).toContain('Confirmar Senha')
   })
 
-  it('renderiza o botão de redefinir senha', () => {
-    const wrapper = shallowMount(ResetPasswordView, {
-      global: { plugins: [i18n, createTestRouter()] },
-    })
-    expect(wrapper.html()).toContain('Redefinir Senha')
+  it('renderiza o botão de redefinir senha', async () => {
+    const wrapper = await mountView()
+
+    expect(wrapper.get('button[type="submit"]').text()).toContain('Redefinir Senha')
   })
 
-  it('renderiza o link "Lembrou a senha?"', () => {
-    const wrapper = shallowMount(ResetPasswordView, {
-      global: { plugins: [i18n, createTestRouter()] },
-    })
-    expect(wrapper.html()).toContain('Lembrou a senha?')
+  it('renderiza o link "Lembrou a senha?"', async () => {
+    const wrapper = await mountView()
+
+    expect(wrapper.text()).toContain('Lembrou a senha?')
+    expect(wrapper.get('a[href="/"]').text()).toContain('Entrar')
   })
 })

@@ -45,7 +45,8 @@ const handlePurchase = async (prod: Product) => {
         <Plus class="size-4" aria-hidden="true" />
       </button>
     </DialogTrigger>
-    <DialogContent class="sm:max-w-[90dvw] max-w-dvw max-h-dvh p-6 overflow-auto" role="dialog" aria-modal="true"
+    <DialogContent
+class="sm:max-w-[90dvw] max-w-dvw max-h-dvh p-6 overflow-auto" role="dialog" aria-modal="true"
       aria-labelledby="credits-dialog-title">
       <DialogHeader class="text-center space-y-2 pb-2">
         <div class="flex items-center justify-center gap-2">
@@ -60,7 +61,8 @@ const handlePurchase = async (prod: Product) => {
         <li v-for="(prod, index) in productStore.products" :key="prod.id" role="listitem">
           <Card
             :class="['relative flex flex-col h-full transition-all duration-200 hover:shadow-md hover:-translate-y-1', isPopular(index) ? 'border-primary shadow-primary/50 scale-[1.03] z-10' : 'border-border']">
-            <div v-if="isPopular(index)" class="absolute -top-3 left-1/2 -translate-x-1/2"
+            <div
+v-if="isPopular(index)" class="absolute -top-3 left-1/2 -translate-x-1/2"
               :aria-label="$t('buyCredits.mostPopular')">
               <Badge class="bg-primary hover:bg-primary text-white text-xs px-3 py-0.5 shadow-sm">
                 <Star class="size-3 mr-1 fill-white" aria-hidden="true" />
@@ -78,7 +80,8 @@ const handlePurchase = async (prod: Product) => {
               <p class="text-xs text-muted-foreground">{{ pricePerCredit(prod) }}</p>
             </CardContent>
             <CardFooter class="pt-0 pb-4">
-              <Button class="w-full gap-2 transition-all duration-200"
+              <Button
+class="w-full gap-2 transition-all duration-200"
                 :class="isPopular(index) ? 'bg-primary hover:bg-primary shadow-sm shadow-primary/30' : 'variant-outline'"
                 :variant="isPopular(index) ? 'default' : 'outline'" :disabled="loading === prod.id"
                 :aria-busy="loading === prod.id"

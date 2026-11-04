@@ -11,7 +11,6 @@ defineProps<{ person: Person }>()
 
 <template>
   <button
-    @click="usePersonsStore().selectPerson(person)"
     :aria-pressed="person.isActive"
     :aria-label="
       person.isActive
@@ -20,6 +19,7 @@ defineProps<{ person: Person }>()
     "
     :disabled="usePersonsStore().selected.length >= 8 && !person.isActive"
     class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 rounded-xl"
+    @click="usePersonsStore().selectPerson(person)"
   >
     <Badge
       variant="secondary"
@@ -35,7 +35,7 @@ defineProps<{ person: Person }>()
     >
       <span class="text-xl" aria-hidden="true">{{ person.icon }}</span>
       <span class="leading-tight">{{ person.trait[locale||'en'] }}</span>
-      <div @click.stop :aria-label="$t('infoPerson.triggerLabel')">
+      <div :aria-label="$t('infoPerson.triggerLabel')" @click.stop>
         <InfoPersonComponent :info="person.desc[locale||'en']!" :active="person.isActive" />
       </div>
     </Badge>

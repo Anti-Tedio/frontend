@@ -77,10 +77,12 @@ const ratingOptions = [
     class="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/50 bg-white/60 backdrop-blur-xl transition-all duration-300 hover:border-primary/30 hover:shadow-lg dark:border-slate-800/50 dark:bg-slate-950/60 sm:flex-row"
     :aria-label="`${t('result.articleLabel')}: ${item.recommended.title}`">
     <figure class="relative aspect-[3/4] shrink-0 overflow-hidden sm:w-40 md:w-44">
-      <img class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" :src="imageUrl"
+      <img
+class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" :src="imageUrl"
         :alt="item.recommended.title" />
 
-      <div v-if="!isBook && !isVideoGame"
+      <div
+v-if="!isBook && !isVideoGame"
         class="absolute top-2 left-2 flex items-center gap-1 rounded-lg border border-white/20 bg-white/80 px-1.5 py-0.5 shadow-sm backdrop-blur-md dark:bg-slate-900/80">
         <Star class="size-3 fill-yellow-500 text-yellow-500" />
         <span class="text-xs font-bold text-slate-800 dark:text-slate-100">
@@ -88,7 +90,8 @@ const ratingOptions = [
         </span>
       </div>
 
-      <div v-else-if="isVideoGame"
+      <div
+v-else-if="isVideoGame"
         class="absolute top-2 left-2 flex h-11 w-11 flex-col items-center justify-center rounded-xl bg-emerald-500 shadow-lg ring-2 ring-white dark:ring-slate-900">
         <span class="text-[8px] font-bold text-emerald-100 uppercase leading-none">
           {{ t('videoGame.score') }}
@@ -99,7 +102,8 @@ const ratingOptions = [
 
     <div class="flex flex-1 flex-col p-4 sm:p-5">
       <header class="flex items-center justify-between">
-        <Badge variant="outline"
+        <Badge
+variant="outline"
           class="h-6 border-primary/20 bg-primary/5 px-2.5 text-[11px] font-bold uppercase tracking-wider text-primary">
           {{ categoryLabel || t('historyCard.uncategorized') }}
         </Badge>
@@ -119,12 +123,14 @@ const ratingOptions = [
         </div>
 
         <div class="mt-3">
-          <p ref="plotEl" :id="`plot-${item.recommended.id}`"
+          <p
+:id="`plot-${item.recommended.id}`" ref="plotEl"
             class="text-sm leading-relaxed text-slate-600 dark:text-slate-400 transition-all"
             :class="expanded ? '' : 'line-clamp-2'">
             {{ item.recommended.plot }}
           </p>
-          <button v-if="isTruncated || expanded"
+          <button
+v-if="isTruncated || expanded"
             class="mt-1.5 text-xs font-semibold text-primary hover:underline underline-offset-2"
             @click="expanded = !expanded">
             {{ expanded ? t('historyCard.showLess') : t('historyCard.readMore') }}
@@ -137,19 +143,21 @@ const ratingOptions = [
           <span class="text-xs font-bold uppercase tracking-widest text-slate-400">
             {{ t('historyCard.yourRating') }}
           </span>
-          <span v-if="selectedRating.value !== null" class="text-xs font-semibold text-shadow"
+          <span
+v-if="selectedRating.value !== null" class="text-xs font-semibold text-shadow"
             :class="`${ratingOptions[selectedRating.value]!.textColor}`">
             {{ t(`historyCard.${ratingOptions[selectedRating.value]!.label}`) }}
           </span>
         </div>
 
         <div class="flex items-center gap-2">
-          <button v-for="rate in ratingOptions" :key="rate.value" @click="toggleRating(rate.value)" :class="[
+          <button
+v-for="rate in ratingOptions" :key="rate.value" :class="[
             'relative flex size-9 items-center justify-center rounded-lg border transition-all duration-200 active:scale-90',
             rating.value === rate.value
               ? `${rate.bgColor} border-transparent text-white shadow-md ring-2 ${rate.ring}`
               : 'border-slate-200 bg-white text-slate-400 hover:border-primary/50 dark:border-slate-800 dark:bg-slate-900'
-          ]">
+          ]" @click="toggleRating(rate.value)">
             <component :is="rate.icon" class="size-4" />
           </button>
         </div>

@@ -77,9 +77,9 @@ onMounted(() => {
         <h1 class="text-2xl font-bold text-slate-800 mb-2">{{ $t('accountRecovery.successTitle') }}</h1>
         <p class="text-slate-500 mb-8 text-balance">{{ $t('accountRecovery.successSubtitle') }}</p>
         <Button
-          @click="goToHome"
           class="w-full h-12 rounded-2xl bg-primary font-bold focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
           :aria-label="$t('accountRecovery.goToApp')"
+          @click="goToHome"
         >
           {{ $t('accountRecovery.goToApp') }}
         </Button>

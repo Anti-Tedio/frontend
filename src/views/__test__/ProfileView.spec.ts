@@ -1,13 +1,15 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
-import { shallowMount, mount } from '@vue/test-utils'
+import { shallowMount, mount, flushPromises } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import { createI18n } from 'vue-i18n'
 import { createMemoryHistory, createRouter } from 'vue-router'
 import ProfileView from '@/views/ProfileView.vue'
+import HistoryCard from '@/components/Profile/HistoryCard.vue'
 import useHistoryStore from '@/stores/history.store'
 import useUserStore from '@/stores/user.store'
 import useCategoriesStore from '@/stores/categories.store'
 import usePersonsStore from '@/stores/persons.store'
+import type { Category, History } from '@/types'
 
 const i18n = createI18n({
   legacy: false,
@@ -20,6 +22,7 @@ const i18n = createI18n({
         accountOptionsLabel: 'Account options', loadingTraits: 'Loading...',
         noTraitsTitle: 'No traits found', noTraitsSubtitle: 'No traits yet.',
         chooseTraits: 'Choose traits', historyTitle: 'Recommendation History',
+        historySubtitle: 'Review your recommendations.',
         noHistoryTitle: 'No recommendations yet', noHistorySubtitle: 'Explore!',
         exploreNow: 'Explore now', filterLabel: 'Filter by category', filterAll: 'All categories',
         noFilterResults: 'No results', noFilterResultsSubtitle: 'Clear filter',
@@ -28,11 +31,40 @@ const i18n = createI18n({
         loadMore: 'Load more',
         loadingMore: 'Loading more...',
       },
-      historyCard: { uncategorized: 'Uncategorized', by: 'By {name}', showLess: 'Show less', readMore: 'Read more', recommendedOn: 'Recommended on {date}', score: 'Score', criticScore: 'Critic score: {score}', rating: 'Rating: {score} stars' },
+      historyCard: { uncategorized: 'Uncategorized', by: 'By {name}', showLess: 'Show less', readMore: 'Read more', recommendedOn: 'Recommended on {date}', score: 'Score', criticScore: 'Critic score: {score}', rating: 'Rating: {score} stars', yourRating: 'Your Rating', dislike: 'Dislike', neutral: 'Neutral', like: 'Like', likeVeryMuch: 'Like very much', notRecommend: 'Not recommend' },
       result: { articleLabel: 'Recommendation' },
+      changePassword: { validationMin: 'Min', validationMatch: 'Match' },
     },
   },
 })
+
+const mockCategory: Category = {
+  id: 1,
+  title: { en: 'Test Category', pt: 'Categoria de Teste', es: 'Categoria de Prueba' },
+  isActive: true,
+}
+
+function makeHistory(id: string, title: string): History {
+  return {
+    recommended: {
+      id,
+      title,
+      img: '',
+      plot: `Plot for ${title}`,
+      year: '2024',
+      creator: 'Test Creator',
+      rating: '8.0',
+      categoryId: mockCategory.id,
+    },
+    createdAt: new Date().toISOString(),
+  }
+}
+
+const mockHistory: History[] = [
+  makeHistory('1', 'Test Recommendation 1'),
+  makeHistory('2', 'Test Recommendation 2'),
+  makeHistory('3', 'Test Recommendation 3'),
+]
 
 function createTestRouter() {
   return createRouter({ history: createMemoryHistory(), routes: [{ path: '/', component: { template: '<div />' } }] })
@@ -47,8 +79,11 @@ describe('ProfileView.vue', () => {
     userStore.credits = 5
 
     const historyStore = useHistoryStore()
-    historyStore.historys = []
+    historyStore.history = []
+    historyStore.rating = []
     historyStore.loading = false
+    historyStore.cursor = null
+    historyStore.cursorCategory = null
 
     const categoriestore = useCategoriesStore()
     categoriestore.categories = []
@@ -78,64 +113,30 @@ describe('ProfileView.vue', () => {
     expect(wrapper.html()).toBeDefined()
   })
 
-  it('mostra histórico com carregamento progressivo', async () => {
+  it('carrega mais histórico ao clicar em "Load more"', async () => {
     const historyStore = useHistoryStore()
-    const categoriestore = useCategoriesStore()
-    // Mock historical data
-    historyStore.historys = [
-      {
-        recommended: {
-          id: '1',
-          categoryId: '1',
-          title: 'Test Recommendation 1',
-          imageUrl: '',
-          createdAt: new Date().toISOString(),
-          score: 8.5
-        }
-      },
-      {
-        recommended: {
-          id: '2',
-          categoryId: '1',
-          title: 'Test Recommendation 2',
-          imageUrl: '',
-          createdAt: new Date().toISOString(),
-          score: 7.5
-        }
-      },
-      {
-        recommended: {
-          id: '3',
-          categoryId: '1',
-          title: 'Test Recommendation 3',
-          imageUrl: '',
-          createdAt: new Date().toISOString(),
-          score: 9.0
-        }
-      }
-    ]
-    historyStore.loading = false
+    const categoriesStore = useCategoriesStore()
 
-    // Mock category data
-    categoriestore.categories = [{ id: '1', title: { en: 'Test Category', pt: 'Categoria de Teste', es: 'Categoria de Prueba' } }]
+    historyStore.history = mockHistory
+    historyStore.cursor = 'cursor-1'
+    historyStore.loading = false
+    categoriesStore.categories = [mockCategory]
+
+    const getRecentHistory = vi.spyOn(historyStore, 'getRecentHistory').mockResolvedValue(undefined)
+    const getMoreHistory = vi.spyOn(historyStore, 'getMoreHistory').mockResolvedValue(undefined)
 
     const wrapper = mount(ProfileView, { global: { plugins: [i18n, createTestRouter()] } })
+    await flushPromises()
 
-    // Aguarda a atualização do componente
-    await wrapper.vm.$nextTick()
+    expect(getRecentHistory).toHaveBeenCalledTimes(1)
+    expect(wrapper.findAllComponents(HistoryCard)).toHaveLength(mockHistory.length)
 
-    // Verifica que o componente renderiza sem erro
-    expect(wrapper.exists()).toBe(true)
+    const loadMoreButton = wrapper.findAll('button').find((b) => b.text().includes('Load more'))
+    expect(loadMoreButton).toBeDefined()
 
-    // Verifica que o estado de carregamento progressivo existe
-    expect(wrapper.vm.visibleHistoryCount).toBeDefined()
-    expect(wrapper.vm.loadMoreHistory).toBeDefined()
-    expect(typeof wrapper.vm.loadMoreHistory).toBe('function')
+    await loadMoreButton!.trigger('click')
+    await flushPromises()
 
-    // Inicialmente deve mostrar pelo menos um item (se houver dados)
-    // O número exato depende da implementação de paginatedFilteredHistory
-    const historyCards = wrapper.findAllComponents({ name: 'HistoryCard' })
-    // Pelo menos devemos ter algum histórico renderizado se tivermos dados
-    expect(historyCards.length).toBeGreaterThanOrEqual(0)
+    expect(getMoreHistory).toHaveBeenCalledTimes(1)
   })
 })

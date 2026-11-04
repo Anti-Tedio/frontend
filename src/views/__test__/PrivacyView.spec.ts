@@ -52,6 +52,6 @@ describe('PrivacyView.vue', () => {
 
   it('possui ícone de escudo no cabeçalho', () => {
     const wrapper = mount(PrivacyView, { global: { plugins: [i18n, createTestRouter()] } })
-    expect(wrapper.html()).toContain('ShieldCheckIcon')
+    expect(wrapper.find('svg.lucide-shield-check').exists()).toBe(true)
   })
 })

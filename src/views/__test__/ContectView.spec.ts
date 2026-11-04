@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import { createPinia, setActivePinia } from 'pinia'
 import ContectView from '@/views/ContectView.vue'
@@ -26,7 +26,7 @@ const i18n = createI18n({
         formName: 'Name',
         formNamePlaceholder: 'Your name',
         formEmail: 'E-mail',
-        formEmailPlaceholder: 'you@example.com',
+        formEmailPlaceholder: "you{'@'}example.com",
         formSubject: 'Subject',
         formSubjectPlaceholder: 'What is it about?',
         formMessage: 'Message',
@@ -50,17 +50,17 @@ describe('ContectView.vue', () => {
   })
 
   it('renderiza o cabeçalho de contato', () => {
-    const wrapper = shallowMount(ContectView, { global: { plugins: [i18n] } })
+    const wrapper = mount(ContectView, { global: { plugins: [i18n] } })
     expect(wrapper.html()).toContain('Get in')
   })
 
   it('renderiza a estrutura do formulário', () => {
-    const wrapper = shallowMount(ContectView, { global: { plugins: [i18n] } })
+    const wrapper = mount(ContectView, { global: { plugins: [i18n] } })
     expect(wrapper.find('form').exists()).toBe(true)
   })
 
   it('renderiza estrutura de contato', () => {
-    const wrapper = shallowMount(ContectView, { global: { plugins: [i18n] } })
-    expect(wrapper.html()).toContain('contato@')
+    const wrapper = mount(ContectView, { global: { plugins: [i18n] } })
+    expect(wrapper.text()).toContain('contato@mail.antitedio.com.br')
   })
 })

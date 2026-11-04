@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import { createMemoryHistory, createRouter } from 'vue-router'
 import TermsView from '@/views/TermsView.vue'
@@ -39,9 +39,9 @@ describe('TermsView.vue', () => {
     expect(wrapper.html()).toContain('Please read these terms')
   })
 
-  it('renderiza o botão de voltar', () => {
-    const wrapper = shallowMount(TermsView, { global: { plugins: [i18n, createTestRouter()] } })
-    expect(wrapper.html()).toContain('ScrollText')
+  it('possui ícone de termos no cabeçalho', () => {
+    const wrapper = mount(TermsView, { global: { plugins: [i18n, createTestRouter()] } })
+    expect(wrapper.find('svg.lucide-scroll-text').exists()).toBe(true)
   })
 
   it('renderiza o footer com link de contato', () => {

@@ -11,8 +11,6 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-  DialogFooter,
-  DialogClose,
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -57,8 +55,8 @@ const onSubmit = form.handleSubmit(async (values) => {
 <template>
   <Dialog
     :open="props.isOpen"
-    @update:open="(v) => !v && emit('close')"
     aria-labelledby="change-password-title"
+    @update:open="(v) => !v && emit('close')"
   >
     <DialogContent class="sm:max-w-120 rounded-2xl p-8" role="dialog" aria-modal="true">
       <DialogHeader class="text-center items-center space-y-1">
@@ -68,7 +66,7 @@ const onSubmit = form.handleSubmit(async (values) => {
         <DialogDescription>{{ $t('changePassword.subtitle') }}</DialogDescription>
       </DialogHeader>
 
-      <form @submit="onSubmit" class="space-y-5 pt-4" novalidate>
+      <form class="space-y-5 pt-4" novalidate @submit="onSubmit">
         <FormField v-slot="{ componentField }" name="password">
           <FormItem>
             <FormLabel class="font-bold text-slate-700">{{
@@ -84,10 +82,10 @@ const onSubmit = form.handleSubmit(async (values) => {
                 />
                 <button
                   type="button"
-                  @click="showPassword = !showPassword"
                   :aria-label="showPassword ? $t('auth.hidePassword') : $t('auth.showPassword')"
                   :aria-pressed="showPassword"
                   class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors focus-visible:outline-none"
+                  @click="showPassword = !showPassword"
                 >
                   <EyeIcon v-if="!showPassword" :size="18" aria-hidden="true" />
                   <EyeOffIcon v-else :size="18" aria-hidden="true" />

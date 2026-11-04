@@ -41,16 +41,16 @@ const isHoveringAvatar = ref(false)
         <DropdownMenuContent align="end" class="w-52" role="menu">
           <DropdownMenuLabel>{{ $t('profile.myAccount') }}</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem @click="emit('change-password')" class="cursor-pointer" role="menuitem">
+          <DropdownMenuItem class="cursor-pointer" role="menuitem" @click="emit('change-password')">
             <KeyRound class="w-4 h-4 mr-2" aria-hidden="true" />
             {{ $t('profile.changePassword') }}
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem @click="emit('logout')" class="cursor-pointer" role="menuitem">
+          <DropdownMenuItem class="cursor-pointer" role="menuitem" @click="emit('logout')">
             <LogOut class="w-4 h-4 mr-2" aria-hidden="true" />
             {{ $t('profile.signOut') }}
           </DropdownMenuItem>
-          <DropdownMenuItem @click="emit('delete-account')" class="cursor-pointer text-destructive focus:text-destructive focus:bg-destructive/10" role="menuitem">
+          <DropdownMenuItem class="cursor-pointer text-destructive focus:text-destructive focus:bg-destructive/10" role="menuitem" @click="emit('delete-account')">
             <Trash2 class="w-4 h-4 mr-2" aria-hidden="true" />
             {{ $t('profile.deleteAccount') }}
           </DropdownMenuItem>

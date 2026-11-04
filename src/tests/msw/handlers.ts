@@ -3,9 +3,9 @@ import type { Category, History, Person, Product, Rating, Suggestion, User } fro
 import type { SuggestMidia, SuggestVideoGame } from '@/types/suggest'
 import { api } from '@/services/axios';
 
-// Não foi usada a api do axios para separar a real de uma URL de teste.
-// Talvez mude no futuro.
-export const API_URL = api
+// String necessária para os patterns do MSW. A URL vem da configuração do axios
+// para manter os testes alinhados com o ambiente real.
+export const API_URL = api.defaults.baseURL?.replace(/\/$/, '') ?? ''
 
 const userFixture: User = {
   name: 'Test User',

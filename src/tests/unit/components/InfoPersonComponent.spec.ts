@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import { mount, shallowMount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import InfoPersonComponent from '@/components/InfoPersonComponent.vue'

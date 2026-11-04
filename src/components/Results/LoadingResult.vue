@@ -29,9 +29,10 @@ onUnmounted(() => {
   <Dialog :open="suggestStore.loading">
 
     <!-- Backdrop overlay -->
-    <div class="fixed inset-0 z-50 bg-white/30 backdrop-blur-sm" v-if="suggestStore.loading" aria-hidden="true" />
+    <div v-if="suggestStore.loading" class="fixed inset-0 z-50 bg-white/30 backdrop-blur-sm" aria-hidden="true" />
 
-    <DialogContent class="sm:max-w-120 flex flex-col items-center gap-6 p-10 rounded-3xl border-none shadow-2xl"
+    <DialogContent
+class="sm:max-w-120 flex flex-col items-center gap-6 p-10 rounded-3xl border-none shadow-2xl"
       role="dialog" aria-modal="true" :aria-label="$t('loading.title')" :aria-busy="suggestStore.loading">
       <div class="relative flex items-center justify-center" aria-hidden="true">
         <div class="absolute inset-0 bg-primary/30 rounded-full animate-ping opacity-30 scale-110" />
@@ -48,7 +49,8 @@ onUnmounted(() => {
       </div>
 
       <div class="w-full space-y-1">
-        <Progress :model-value="suggestStore.progress"
+        <Progress
+:model-value="suggestStore.progress"
           class="h-2 rounded-full bg-primary/10 transition-all duration-300 ease-in-out"
           :aria-label="$t('loading.progressLabel')" :aria-valuenow="suggestStore.progress" aria-valuemin="0"
           aria-valuemax="100" />

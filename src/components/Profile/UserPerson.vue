@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Pencil } from 'lucide-vue-next'
 import { Badge } from '@/components/ui/badge'
 import type { Person } from '@/types'
 import { useI18n } from 'vue-i18n'

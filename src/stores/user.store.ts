@@ -96,7 +96,7 @@ const useUserStore = defineStore('user', {
 
         this.avatarUrl = data.avatarUrl
 
-      } catch (e: any) {
+      } catch (e: unknown) {
         console.error('Erro na hora de enviar imagem', e)
         throw e
       }
@@ -104,7 +104,7 @@ const useUserStore = defineStore('user', {
     async reqResetPassword(email: string) {
       try {
         await api.post('auth/reset-password/request', { email });
-      } catch (e) {
+      } catch {
         console.error('Erro ao enviar o pedido de reset password')
       }
     },

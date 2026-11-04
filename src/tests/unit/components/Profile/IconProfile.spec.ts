@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
-import { mount, shallowMount } from '@vue/test-utils'
+import { flushPromises, mount, shallowMount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import { createI18n } from 'vue-i18n'
 import IconProfile from '@/components/Profile/IconProfile.vue'
@@ -43,11 +43,13 @@ describe('IconProfile.vue', () => {
     const router = createTestRouter()
     const pushSpy = vi.spyOn(router, 'push')
     const wrapper = mount(IconProfile, { global: { plugins: [i18n, router] } })
-    const settingsItems = wrapper.findAll('[role="menuitem"]')
+    await wrapper.get('[aria-haspopup="menu"]').trigger('pointerdown')
+    await wrapper.get('[aria-haspopup="menu"]').trigger('click')
+    await flushPromises()
+    const settingsItems = wrapper.findAllComponents({ name: 'DropdownMenuItem' })
     const settingsItem = settingsItems.find((item) => item.text().includes('Settings'))
-    if (settingsItem) {
-      await settingsItem.trigger('click')
-      expect(pushSpy).toHaveBeenCalledWith('/profile')
-    }
+    expect(settingsItem).toBeDefined()
+    await settingsItem!.trigger('click')
+    expect(pushSpy).toHaveBeenCalledWith('/profile')
   })
 })

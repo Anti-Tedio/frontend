@@ -69,7 +69,7 @@ const onSubmit = handleSubmit(async (values) => {
       await userStore.register(values as { name: string; email: string; password: string })
     }
     window.location.reload()
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error(error)
   } finally {
     isSubmitting.value = false

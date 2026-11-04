@@ -2,9 +2,6 @@
 import CardComponent from '@/components/CardComponent.vue'
 import router from '@/router/routes'
 import { ArrowRight, Sparkles, Zap, Shield, Clock } from 'lucide-vue-next'
-import { useI18n } from 'vue-i18n'
-
-const { locale } = useI18n()
 
 const categories = [
   { icon: 'movie', labelKey: 'home.catMovie' as const },
@@ -69,7 +66,7 @@ const advantages = [
           </template>
         </i18n-t>
       </p>
-      <button class="bg-primary py-md px-xl flex items-center gap-4 text-white text-xl font-bold rounded-2xl mt-md hover:bg-primary/90 hover:scale-105 transition-all duration-200 shadow-lg shadow-primary/25 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none" @click="router.push('/persons')" :aria-label="$t('home.ctaLabel')">
+      <button class="bg-primary py-md px-xl flex items-center gap-4 text-white text-xl font-bold rounded-2xl mt-md hover:bg-primary/90 hover:scale-105 transition-all duration-200 shadow-lg shadow-primary/25 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none" :aria-label="$t('home.ctaLabel')" @click="router.push('/persons')">
         {{ $t('home.ctaButton') }}
         <ArrowRight aria-hidden="true" />
       </button>
@@ -144,7 +141,7 @@ const advantages = [
     <section class="mt-35 mb-8 flex flex-col items-center px-sm" aria-labelledby="final-cta-heading">
       <h2 id="final-cta-heading" class="text-3xl font-bold text-center tracking-tight">{{ $t('home.finalTitle') }}</h2>
       <p class="text-gray-400/80 text-center mt-2 max-w-100">{{ $t('home.finalSubtitle') }}</p>
-      <button class="bg-primary py-md px-xl flex items-center gap-4 text-white text-xl font-bold rounded-2xl mt-8 hover:bg-primary/90 hover:scale-105 transition-all duration-200 shadow-lg shadow-primary/25 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none" @click="router.push('/persons')" :aria-label="$t('home.ctaLabel')">
+      <button class="bg-primary py-md px-xl flex items-center gap-4 text-white text-xl font-bold rounded-2xl mt-8 hover:bg-primary/90 hover:scale-105 transition-all duration-200 shadow-lg shadow-primary/25 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none" :aria-label="$t('home.ctaLabel')" @click="router.push('/persons')">
         {{ $t('home.ctaButton') }}
         <ArrowRight aria-hidden="true" />
       </button>

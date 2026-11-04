@@ -5,7 +5,7 @@
         <h2 id="forgot-heading" class="text-2xl font-black text-slate-900 tracking-tight">{{ $t('forgotPassword.title') }}</h2>
         <p class="text-sm text-slate-500 leading-relaxed px-4">{{ $t('forgotPassword.subtitle') }}</p>
       </header>
-      <form @submit="onSubmit" class="space-y-4" novalidate>
+      <form class="space-y-4" novalidate @submit="onSubmit">
         <FormField v-slot="{ componentField }" name="email">
           <FormItem class="space-y-1">
             <FormLabel class="text-xs font-bold text-slate-400 ml-1 uppercase tracking-wider">{{ $t('forgotPassword.emailLabel') }}</FormLabel>
@@ -24,7 +24,7 @@
         </Button>
       </form>
       <footer class="text-center">
-        <button type="button" @click="$emit('back')" class="text-sm font-bold text-slate-400 hover:text-primary transition-colors inline-flex items-center gap-2 focus-visible:outline-none focus-visible:underline" :aria-label="$t('forgotPassword.backToLogin')">
+        <button type="button" class="text-sm font-bold text-slate-400 hover:text-primary transition-colors inline-flex items-center gap-2 focus-visible:outline-none focus-visible:underline" :aria-label="$t('forgotPassword.backToLogin')" @click="emit('back')">
           <ChevronLeftIcon :size="16" aria-hidden="true" />
           {{ $t('forgotPassword.backToLogin') }}
         </button>
@@ -43,7 +43,7 @@
       <p class="text-slate-500 text-sm leading-relaxed mb-8">
         {{ $t('forgotPassword.successMessage', { email: emailInput }) }}
       </p>
-      <Button variant="outline" @click="$emit('back')" class="w-full h-14 rounded-2xl border-2 border-slate-100 font-bold text-slate-600 hover:bg-slate-50">
+      <Button variant="outline" class="w-full h-14 rounded-2xl border-2 border-slate-100 font-bold text-slate-600 hover:bg-slate-50" @click="emit('back')">
         {{ $t('forgotPassword.understood') }}
       </Button>
     </div>

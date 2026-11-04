@@ -3,7 +3,7 @@ import type { SuggestMidia } from '@/types/suggest';
 import { ref } from 'vue'
 
 defineProps<{
-  midia: SuggestMidia
+  midia: SuggestMidia | null
 }>()
 
 const expanded = ref(false)
@@ -78,10 +78,10 @@ const expanded = ref(false)
             {{ midia.plot }}
           </p>
           <button
-            @click="expanded = !expanded"
             :aria-expanded="expanded"
             :aria-controls="`plot-${midia.title}`"
             class="text-xs font-semibold text-primary mt-1 hover:underline focus-visible:outline-none focus-visible:underline"
+            @click="expanded = !expanded"
           >
             {{ expanded ? $t('midia.showLess') : $t('midia.readMore') }}
           </button>

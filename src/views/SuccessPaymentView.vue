@@ -19,7 +19,7 @@ const goToApp = () => router.push({ name: 'home' })
         {{ $t('paymentSuccess.title') }}
       </h1>
       <p class="text-slate-500 mb-8">{{ $t('paymentSuccess.subtitle') }}</p>
-      <button @click="goToApp" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-2xl transition-all active:scale-95 shadow-lg shadow-indigo-200 focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 focus-visible:outline-none" :aria-label="$t('paymentSuccess.startExploringLabel')">
+      <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-2xl transition-all active:scale-95 shadow-lg shadow-indigo-200 focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 focus-visible:outline-none" :aria-label="$t('paymentSuccess.startExploringLabel')" @click="goToApp">
         {{ $t('paymentSuccess.startExploring') }}
       </button>
     </div>

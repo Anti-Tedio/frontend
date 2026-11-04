@@ -3,7 +3,7 @@ import { shallowMount } from '@vue/test-utils'
 import { nextTick } from 'vue'
 import { createPinia, setActivePinia } from 'pinia'
 import { createI18n } from 'vue-i18n'
-import Loading from '@/components/Results/Loading.vue'
+import Loading from '@/components/Results/LoadingResult.vue'
 import useSuggestStore from '@/stores/suggest.store'
 
 const i18n = createI18n({

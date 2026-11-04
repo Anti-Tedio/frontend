@@ -129,8 +129,8 @@ src/
 
 ### Prerequisites
 
-- Node.js 18+
-- npm 9+
+- Node.js `^20.19.0 || >=22.12.0`
+- Bun 1.x (recommended) or npm 9+
 
 ### Installation
 
@@ -140,13 +140,15 @@ git clone https://github.com/Anti Tédio/frontend.git
 cd frontend
 
 # Install dependencies
-npm install
+bun install
 ```
+
+> Os scripts também funcionam com npm: substitua `bun run` por `npm run`.
 
 ### Development server
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 The app will be available at `http://localhost:5173`.
@@ -154,7 +156,7 @@ The app will be available at `http://localhost:5173`.
 ### Production build
 
 ```bash
-npm run build
+bun run build
 ```
 
 Build output goes to `dist/`.
@@ -181,13 +183,16 @@ All Vite environment variables must be prefixed with `VITE_` to be exposed to th
 
 | Script | Description |
 |---|---|
-| `npm run dev` | Start development server with HMR |
-| `npm run build` | Type-check and build for production |
-| `npm run preview` | Preview the production build locally |
-| `npm run test:unit` | Run unit tests with Vitest |
-| `npm run type-check` | Run `vue-tsc` without emitting |
-| `npm run lint` | Run ESLint |
-| `npm run format` | Run Prettier |
+| `bun run dev` | Start development server with HMR |
+| `bun run build` | Type-check and build for production |
+| `bun run preview` | Preview the production build locally |
+| `bun run test:unit` | Run unit tests with Vitest in watch mode |
+| `bun run test:unit:run` | Run the unit test suite once |
+| `bun run type-check` | Run `vue-tsc` without emitting |
+| `bun run lint` | Run ESLint with the flat config |
+| `bun run lint:fix` | Run ESLint and apply safe automatic fixes |
+| `bun run check` | Run type-check, lint and unit tests in parallel |
+| `bun run format` | Run Prettier |
 
 ---
 
@@ -224,7 +229,7 @@ src/tests/
 
 ```bash
 # Run the whole unit suite in watch mode
-npm run test:unit
+bun run test:unit
 
 # Run the suite once (useful for CI)
 bunx vitest run

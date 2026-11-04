@@ -43,16 +43,16 @@ function renderContent(text: string) {
   <div class="max-w-3xl mx-auto py-12 px-4 animate-in fade-in duration-500">
     <nav class="flex items-center justify-between mb-8">
       <button
-        @click="router.back()"
         class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-primary transition-colors"
+        @click="router.back()"
       >
         <ArrowLeftIcon :size="18" />
       </button>
 
       <div class="relative">
         <button
-          @click="showLocaleMenu = !showLocaleMenu"
           class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-primary transition-colors uppercase"
+          @click="showLocaleMenu = !showLocaleMenu"
         >
           <LanguagesIcon :size="18" />
           {{ locale }}
@@ -65,9 +65,9 @@ function renderContent(text: string) {
           <button
             v-for="lang in languages"
             :key="lang.code"
-            @click="changeLanguage(lang.code)"
             class="w-full text-left px-4 py-2 text-sm hover:bg-slate-50 transition-colors"
             :class="{ 'text-primary font-bold': locale === lang.code }"
+            @click="changeLanguage(lang.code)"
           >
             {{ lang.name }}
           </button>
@@ -124,6 +124,7 @@ function renderContent(text: string) {
             v-if="openSection === index"
             class="px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-50"
           >
+            <!-- eslint-disable-next-line vue/no-v-html -- conteúdo estático dos locales, não input do usuário -->
             <div class="pt-4 space-y-1" v-html="renderContent(section.content)" />
           </div>
         </Transition>

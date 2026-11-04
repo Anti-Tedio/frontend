@@ -19,9 +19,15 @@ app.use(pinia)
 app.use(router)
 app.use(Vue3Lottie)
 
+interface PageMessages {
+  page?: {
+    title?: string
+  }
+}
+
 watchEffect(() => {
   const locale = i18n.global.locale.value
-  const messages = i18n.global.messages.value[locale] as any
+  const messages = i18n.global.messages.value[locale] as PageMessages | undefined
   document.title = messages?.page?.title || 'Anti Tédio'
 })
 

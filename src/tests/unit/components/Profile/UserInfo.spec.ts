@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeEach } from 'vitest'
-import { mount } from '@vue/test-utils'
+import { describe, it, expect } from 'vitest'
+import { flushPromises, mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import UserInfo from '@/components/Profile/UserInfo.vue'
 
@@ -72,10 +72,9 @@ describe('UserInfo.vue', () => {
     expect(overlay.length).toBeGreaterThan(0)
     // Trigger click on overlay button
     const photoBtn = wrapper.findAll('button').find((b) => b.attributes('aria-label') === 'Edit profile photo')
-    if (photoBtn) {
-      await photoBtn.trigger('click')
-      expect(wrapper.emitted('edit-photo')).toHaveLength(1)
-    }
+    expect(photoBtn).toBeDefined()
+    await photoBtn!.trigger('click')
+    expect(wrapper.emitted('edit-photo')).toHaveLength(1)
   })
 
   it('emite evento delete-account', async () => {
@@ -83,12 +82,14 @@ describe('UserInfo.vue', () => {
       props: { username: 'John Doe' },
       global: { plugins: [i18n] },
     })
-    const dropdownItems = wrapper.findAll('[role="menuitem"]')
+    await wrapper.get('[aria-haspopup="menu"]').trigger('pointerdown')
+    await wrapper.get('[aria-haspopup="menu"]').trigger('click')
+    await flushPromises()
+    const dropdownItems = wrapper.findAllComponents({ name: 'DropdownMenuItem' })
     const delItem = dropdownItems.find((item) => item.text().includes('Delete Account'))
-    if (delItem) {
-      await delItem.trigger('click')
-      expect(wrapper.emitted('delete-account')).toHaveLength(1)
-    }
+    expect(delItem).toBeDefined()
+    await delItem!.trigger('click')
+    expect(wrapper.emitted('delete-account')).toHaveLength(1)
   })
 
   it('emite evento logout', async () => {
@@ -96,12 +97,14 @@ describe('UserInfo.vue', () => {
       props: { username: 'John Doe' },
       global: { plugins: [i18n] },
     })
-    const dropdownItems = wrapper.findAll('[role="menuitem"]')
+    await wrapper.get('[aria-haspopup="menu"]').trigger('pointerdown')
+    await wrapper.get('[aria-haspopup="menu"]').trigger('click')
+    await flushPromises()
+    const dropdownItems = wrapper.findAllComponents({ name: 'DropdownMenuItem' })
     const logoutItem = dropdownItems.find((item) => item.text().includes('Sign Out'))
-    if (logoutItem) {
-      await logoutItem.trigger('click')
-      expect(wrapper.emitted('logout')).toHaveLength(1)
-    }
+    expect(logoutItem).toBeDefined()
+    await logoutItem!.trigger('click')
+    expect(wrapper.emitted('logout')).toHaveLength(1)
   })
 
   it('emite evento change-password', async () => {
@@ -109,11 +112,13 @@ describe('UserInfo.vue', () => {
       props: { username: 'John Doe' },
       global: { plugins: [i18n] },
     })
-    const dropdownItems = wrapper.findAll('[role="menuitem"]')
+    await wrapper.get('[aria-haspopup="menu"]').trigger('pointerdown')
+    await wrapper.get('[aria-haspopup="menu"]').trigger('click')
+    await flushPromises()
+    const dropdownItems = wrapper.findAllComponents({ name: 'DropdownMenuItem' })
     const pwItem = dropdownItems.find((item) => item.text().includes('Change Password'))
-    if (pwItem) {
-      await pwItem.trigger('click')
-      expect(wrapper.emitted('change-password')).toHaveLength(1)
-    }
+    expect(pwItem).toBeDefined()
+    await pwItem!.trigger('click')
+    expect(wrapper.emitted('change-password')).toHaveLength(1)
   })
 })

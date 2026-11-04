@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from 'vitest'
 import { mount, shallowMount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import { createI18n } from 'vue-i18n'
-import Login from '@/components/login/Login.vue'
+import Login from '@/components/login/LoginDialog.vue'
 
 const i18n = createI18n({
   legacy: false,

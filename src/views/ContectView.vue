@@ -169,7 +169,7 @@ function resetStatus() {
         <div class="lg:col-span-3">
           <Card class="border border-border/50 shadow-sm">
             <CardContent>
-              <form class="space-y-6" @submit.prevent="handleSubmit" novalidate>
+              <form class="space-y-6" novalidate @submit.prevent="handleSubmit">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div class="space-y-2">
                     <Label for="name" class="text-xs font-medium tracking-wide uppercase text-muted-foreground">
@@ -180,13 +180,13 @@ function resetStatus() {
                       v-model="form.name"
                       type="text"
                       :placeholder="$t('contact.formNamePlaceholder')"
-                      @input="clearFieldError('name')"
                       class="focus-visible:ring-transparent focus-visible:border-primary"
                       :class="fieldErrors.name ? 'border-destructive focus-visible:ring-destructive' : ''"
                       :disabled="status === 'loading'"
                       :aria-invalid="!!fieldErrors.name"
                       aria-describedby="name-error"
                       required
+                      @input="clearFieldError('name')"
                     />
                     <p v-if="fieldErrors.name?.[0]" id="name-error" class="text-xs text-destructive" role="alert">{{ fieldErrors.name[0] }}</p>
                   </div>
@@ -200,13 +200,13 @@ function resetStatus() {
                       v-model="form.email"
                       type="email"
                       :placeholder="$t('contact.formEmailPlaceholder')"
-                      @input="clearFieldError('email')"
                       class="focus-visible:ring-transparent focus-visible:border-primary"
                       :class="fieldErrors.email ? 'border-destructive focus-visible:ring-destructive' : ''"
                       :disabled="status === 'loading'"
                       :aria-invalid="!!fieldErrors.email"
                       aria-describedby="email-error"
                       required
+                      @input="clearFieldError('email')"
                     />
                     <p v-if="fieldErrors.email?.[0]" id="email-error" class="text-xs text-destructive" role="alert">{{ fieldErrors.email[0] }}</p>
                   </div>
@@ -221,13 +221,13 @@ function resetStatus() {
                     v-model="form.subject"
                     type="text"
                     :placeholder="$t('contact.formSubjectPlaceholder')"
-                    @input="clearFieldError('subject')"
                     class="focus-visible:ring-transparent focus-visible:border-primary"
                     :class="fieldErrors.subject ? 'border-destructive focus-visible:ring-destructive' : ''"
                     :disabled="status === 'loading'"
                     :aria-invalid="!!fieldErrors.subject"
                     aria-describedby="subject-error"
                     required
+                    @input="clearFieldError('subject')"
                   />
                   <p v-if="fieldErrors.subject?.[0]" id="subject-error" class="text-xs text-destructive" role="alert">{{ fieldErrors.subject[0] }}</p>
                 </div>
@@ -242,13 +242,13 @@ function resetStatus() {
                     :placeholder="$t('contact.formMessagePlaceholder')"
                     rows="6"
                     maxlength="2000"
-                    @input="clearFieldError('message')"
                     class="focus-visible:ring-transparent focus-visible:border-primary"
                     :class="fieldErrors.message ? 'border-destructive focus-visible:ring-destructive resize-none' : 'resize-none'"
                     :disabled="status === 'loading'"
                     :aria-invalid="!!fieldErrors.message"
                     aria-describedby="message-error"
                     required
+                    @input="clearFieldError('message')"
                   />
                   <div class="flex items-center justify-between">
                     <p v-if="fieldErrors.message?.[0]" id="message-error" class="text-xs text-destructive" role="alert">{{ fieldErrors.message[0] }}</p>

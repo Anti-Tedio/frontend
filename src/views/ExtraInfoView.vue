@@ -50,8 +50,8 @@ function formatOption(option: number): string {
     <section class="flex flex-col items-center flex-1 w-full gap-8 mt-5">
       <div>
         <Label
-          class="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3 block text-center"
           id="budget-label"
+          class="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3 block text-center"
         >
           {{ $t('extraInfo.budgetLabel') }}
         </Label>

@@ -3,10 +3,10 @@ import useSuggestStore from '@/stores/suggest.store'
 import useCategoriesStore from '@/stores/categories.store'
 import router from '@/router/routes'
 import { computed, onMounted } from 'vue'
-import Midia from '@/components/Results/Midia.vue'
-import Book from '@/components/Results/Book.vue'
+import Midia from '@/components/Results/MidiaResult.vue'
+import Book from '@/components/Results/BookResult.vue'
 import VideoGame from '@/components/Results/VideoGame.vue'
-import Loading from '@/components/Results/Loading.vue'
+import Loading from '@/components/Results/LoadingResult.vue'
 import useUserStore from '@/stores/user.store'
 
 const suggestStore = useSuggestStore()
@@ -39,14 +39,17 @@ onMounted(() => {
 <template>
   <div class="animate-in fade-in duration-500">
     <Loading />
-    <article class="flex flex-col items-center p-sm shadow-[0px_0px_10px_1px_rgba(0,0,0,0.1)] rounded-3xl mt-7"
+    <article
+class="flex flex-col items-center p-sm shadow-[0px_0px_10px_1px_rgba(0,0,0,0.1)] rounded-3xl mt-7"
       aria-live="polite" aria-atomic="true" :aria-label="$t('result.articleLabel')">
-      <Midia v-if="
+      <Midia
+v-if="
         ['movie', 'series', 'anime', 'cartoon'].includes(category ?? '') &&
         suggestStore.suggestMidia
       " :midia="suggestStore.suggestMidia" />
       <Book v-else-if="category === 'book' && suggestStore.suggestBook" :book="suggestStore.suggestBook" />
-      <VideoGame v-else-if="category === 'video game' && suggestStore.suggestVideoGame"
+      <VideoGame
+v-else-if="category === 'video game' && suggestStore.suggestVideoGame"
         :game="suggestStore.suggestVideoGame" />
     </article>
 

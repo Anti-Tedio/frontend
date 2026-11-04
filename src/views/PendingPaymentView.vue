@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ClockIcon, CopyIcon, RefreshCcwIcon } from 'lucide-vue-next'
+import { ClockIcon, CopyIcon } from 'lucide-vue-next'
 import router from '@/router/routes'
 
 // TODO: replace with actual Pix code from store/props
@@ -41,9 +41,9 @@ const goBack = () => router.push('/')
             {{ pixCode }}
           </code>
           <button
-            @click="copyPix"
             class="bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:outline-none"
             :aria-label="$t('paymentPending.pixCopyLabel')"
+            @click="copyPix"
           >
             <CopyIcon :size="18" aria-hidden="true" />
           </button>
@@ -65,9 +65,9 @@ const goBack = () => router.push('/')
           {{ $t('paymentPending.checkButton') }}
         </button> -->
         <button
-          @click="goBack"
           class="w-full bg-transparent hover:bg-slate-50 text-slate-400 font-medium py-2 rounded-xl transition-colors text-sm focus-visible:outline-none focus-visible:underline"
           :aria-label="$t('paymentPending.backButton')"
+          @click="goBack"
         >
           {{ $t('paymentPending.backButton') }}
         </button>

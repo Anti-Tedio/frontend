@@ -78,14 +78,14 @@ const onSubmit = form.handleSubmit(async (values) => {
           </Button>
         </div>
 
-        <form v-else @submit="onSubmit" class="space-y-5" novalidate :aria-label="$t('resetPassword.title')">
+        <form v-else class="space-y-5" novalidate :aria-label="$t('resetPassword.title')" @submit="onSubmit">
           <FormField v-slot="{ componentField }" name="password">
             <FormItem>
               <FormLabel class="text-slate-700 font-bold ml-1">{{ $t('resetPassword.newPasswordLabel') }}</FormLabel>
               <FormControl>
                 <div class="relative group">
                   <Input :type="showPassword ? 'text' : 'password'" :placeholder="$t('resetPassword.newPasswordPlaceholder')" autocomplete="new-password" v-bind="componentField" class="rounded-2xl h-12 bg-slate-50/50 border-slate-200 focus-visible:ring-primary/60 transition-all pr-12" />
-                  <button type="button" @click="showPassword = !showPassword" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors focus-visible:outline-none" :aria-label="showPassword ? $t('auth.hidePassword') : $t('auth.showPassword')" :aria-pressed="showPassword">
+                  <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors focus-visible:outline-none" :aria-label="showPassword ? $t('auth.hidePassword') : $t('auth.showPassword')" :aria-pressed="showPassword" @click="showPassword = !showPassword">
                     <EyeIcon v-if="!showPassword" :size="20" aria-hidden="true" />
                     <EyeOffIcon v-else :size="20" aria-hidden="true" />
                   </button>

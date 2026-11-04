@@ -15,13 +15,13 @@ const email = ref(false)
 <template>
   <Dialog
     v-model:open="userStore.popUpLogin"
-    @vue:before-unmount="router.push('/persons')"
     aria-label="Authentication dialog"
+    @vue:before-unmount="router.push('/persons')"
   >
     <!-- Backdrop overlay -->
     <div
-      class="fixed inset-0 z-50 bg-white/30 backdrop-blur-sm"
       v-if="userStore.popUpLogin"
+      class="fixed inset-0 z-50 bg-white/30 backdrop-blur-sm"
       aria-hidden="true"
     />
 
@@ -40,8 +40,8 @@ const email = ref(false)
         <X aria-hidden="true" />
       </DialogClose>
 
-      <MethodLogin @email="email = !email" v-if="!email" />
-      <LoginEmail @back-method-login="email = false" v-else />
+      <MethodLogin v-if="!email" @email="email = !email" />
+      <LoginEmail v-else @back-method-login="email = false" />
     </DialogContent>
   </Dialog>
 </template>

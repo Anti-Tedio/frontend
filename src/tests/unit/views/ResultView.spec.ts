@@ -34,9 +34,9 @@ describe('ResultView.vue', () => {
     userStore.credits = 10
     const suggestStore = useSuggestStore()
     suggestStore.loading = true
-    suggestStore.suggestMidia = null as any
-    suggestStore.suggestBook = null as any
-    suggestStore.suggestVideoGame = null as any
+    suggestStore.suggestMidia = null
+    suggestStore.suggestBook = null
+    suggestStore.suggestVideoGame = null
     const categoriestore = useCategoriesStore()
     categoriestore.categories = [{ id: 1, title: { en: 'Movie' }, select: true, isActive: true }]
   })

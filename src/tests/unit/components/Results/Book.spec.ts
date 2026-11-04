@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
-import Book from '@/components/Results/Book.vue'
+import Book from '@/components/Results/BookResult.vue'
 import type { Suggestion } from '@/types'
 
 const i18n = createI18n({

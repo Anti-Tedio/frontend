@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
-import { mount, shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
-import Midia from '@/components/Results/Midia.vue'
+import Midia from '@/components/Results/MidiaResult.vue'
 import type { SuggestMidia } from '@/types/suggest'
 
 const i18n = createI18n({
@@ -59,7 +59,7 @@ describe('Midia.vue', () => {
   })
 
   it('mostra skeleton quando midia é null/undefined', () => {
-    const wrapper = mount(Midia, { props: { midia: null as any }, global: { plugins: [i18n] } })
+    const wrapper = mount(Midia, { props: { midia: null }, global: { plugins: [i18n] } })
     expect(wrapper.find('[aria-busy="true"]').exists()).toBe(true)
   })
 
@@ -72,10 +72,9 @@ describe('Midia.vue', () => {
     const wrapper = mount(Midia, { props: { midia: mockMidia }, global: { plugins: [i18n] } })
     const buttons = wrapper.findAll('button')
     const toggleBtn = buttons.find((b) => b.text().includes('Read more'))
-    if (toggleBtn) {
-      await toggleBtn.trigger('click')
-      expect(wrapper.text()).toContain('Show less')
-    }
+    expect(toggleBtn).toBeDefined()
+    await toggleBtn!.trigger('click')
+    expect(wrapper.text()).toContain('Show less')
   })
 
   it('renderiza o texto do enredo', () => {

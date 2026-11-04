@@ -1,11 +1,10 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { shallowMount, mount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import { createI18n } from 'vue-i18n'
 import { createMemoryHistory, createRouter } from 'vue-router'
 import SelectCategoryView from '@/views/SelectCategoryView.vue'
 import useCategoriesStore from '@/stores/categories.store'
-import useUserStore from '@/stores/user.store'
 
 const i18n = createI18n({
   legacy: false,

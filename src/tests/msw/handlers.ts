@@ -1,9 +1,11 @@
 import { http, HttpResponse } from 'msw'
 import type { Category, History, Person, Product, Rating, Suggestion, User } from '@/types'
 import type { SuggestMidia, SuggestVideoGame } from '@/types/suggest'
+import { api } from '@/services/axios';
 
-// Keep in sync with the baseURL in src/services/axios.ts
-export const API_URL = 'https://api.antitedio.com.br'
+// Não foi usada a api do axios para separar a real de uma URL de teste.
+// Talvez mude no futuro.
+export const API_URL = api
 
 const userFixture: User = {
   name: 'Test User',

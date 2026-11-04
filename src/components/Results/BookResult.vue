@@ -79,10 +79,10 @@ const AccessLink = () => {
             {{ book.plot }}
           </p>
           <button
-            @click="expanded = !expanded"
             class="text-xs font-semibold text-primary mt-1 hover:underline focus-visible:outline-none focus-visible:underline"
             :aria-expanded="expanded"
             :aria-controls="`synopsis-${book.title}`"
+            @click="expanded = !expanded"
           >
             {{ expanded ? $t('book.showLess') : $t('book.readMore') }}
           </button>

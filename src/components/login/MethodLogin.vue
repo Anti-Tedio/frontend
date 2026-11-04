@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import useUserStore from '@/stores/user.store'
-import facebookIcon from '../icons/facebookIcon.vue'
 import googleIcon from '../icons/googleIcon.vue'
 
 const userStore = useUserStore()
@@ -17,7 +16,7 @@ defineEmits(['email'])
       <p class="font-medium text-sm text-gray-500 mt-1">{{ $t('auth.chooseMethod') }}</p>
     </header>
     <div class="w-full flex flex-col gap-4" role="group" :aria-label="$t('auth.chooseMethod')">
-      <button class="w-full h-15 border-2 border-gray-100 rounded-2xl fill-gray-700 font-medium flex justify-center items-center gap-4 hover:border-primary/30 hover:bg-primary/5 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none" @click="userStore.loginProvider('google')" :aria-label="$t('auth.continueGoogle')">
+      <button class="w-full h-15 border-2 border-gray-100 rounded-2xl fill-gray-700 font-medium flex justify-center items-center gap-4 hover:border-primary/30 hover:bg-primary/5 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none" :aria-label="$t('auth.continueGoogle')" @click="userStore.loginProvider('google')">
         <googleIcon class="w-5" aria-hidden="true" />
         {{ $t('auth.continueGoogle') }}
       </button>
@@ -31,7 +30,7 @@ defineEmits(['email'])
       <span class="text-xs text-gray-400 font-medium uppercase tracking-widest" aria-hidden="true">or</span>
       <span class="flex-1 h-px bg-gray-100" aria-hidden="true"></span>
     </div>
-    <button class="w-full h-15 bg-primary rounded-2xl font-medium flex justify-center items-center gap-4 text-white hover:bg-primary/90 hover:scale-[1.02] transition-all duration-150 shadow-md shadow-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none" @click="$emit('email')" :aria-label="$t('auth.signInEmail')">
+    <button class="w-full h-15 bg-primary rounded-2xl font-medium flex justify-center items-center gap-4 text-white hover:bg-primary/90 hover:scale-[1.02] transition-all duration-150 shadow-md shadow-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none" :aria-label="$t('auth.signInEmail')" @click="$emit('email')">
       <span class="material-symbols-outlined" aria-hidden="true">mail</span>
       {{ $t('auth.signInEmail') }}
     </button>

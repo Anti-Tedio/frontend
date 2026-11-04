@@ -5,7 +5,7 @@ import { token } from "@/lib/refreshToken";
 import type { Router } from "vue-router";
 
 export const auth = (router: Router) => {
-    router.beforeEach((to, from) => {
+    router.beforeEach((to) => {
 
         const userStore = useUserStore()
         const personStore = usePersonsStore();

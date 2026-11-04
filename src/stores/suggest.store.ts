@@ -23,9 +23,9 @@ const useSuggestStore = defineStore('suggest', () => {
     const progress = ref(0);
     const loading = ref(false)
 
-    const executeRequest = async <T>(url: string, payload: object = {}, transform?: (data: any) => T): Promise<T> => {
+    const executeRequest = async <T>(url: string, payload: object = {}, transform?: (data: unknown) => T): Promise<T> => {
         progress.value = 0;
-        const { data } = await api.post(url, payload, {
+        const { data } = await api.post<unknown>(url, payload, {
             onDownloadProgress: (p: AxiosProgressEvent) => {
                 if (p.total) progress.value = Math.round((p.loaded * 30) / p.total);
             },
@@ -33,7 +33,7 @@ const useSuggestStore = defineStore('suggest', () => {
                 if (p.total) progress.value = Math.round((p.loaded * 70) / p.total);
             }
         });
-        return transform ? transform(data) : data;
+        return transform ? transform(data) : (data as T);
     };
 
     async function fetchMidia(categoryId: number) {

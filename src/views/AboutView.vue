@@ -26,9 +26,8 @@ import TechCard, { type TechItem } from '@/components/about/TechCard.vue'
 const { t } = useI18n()
 const router = useRouter()
 
-const { tm, locale } = useI18n()
+const { locale } = useI18n()
 
-const openSection = ref<number | null>(null)
 const showLocaleMenu = ref(false)
 
 const languages = [
@@ -132,23 +131,27 @@ const repoBackend = 'https://github.com/Anti Tédio/backend'
     <div class="animate-in fade-in duration-500 max-w-5xl mx-auto px-4 py-10 space-y-20 pb-24">
 
         <nav class="flex items-center justify-between mb-8">
-            <button @click="router.back()"
-                class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-primary transition-colors">
+            <button
+class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-primary transition-colors"
+                @click="router.back()">
                 <ArrowLeftIcon :size="18" />
             </button>
 
             <div class="relative">
-                <button @click="showLocaleMenu = !showLocaleMenu"
-                    class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-primary transition-colors uppercase">
+                <button
+class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-primary transition-colors uppercase"
+                    @click="showLocaleMenu = !showLocaleMenu">
                     <LanguagesIcon :size="18" />
                     {{ locale }}
                 </button>
 
-                <div v-if="showLocaleMenu"
+                <div
+v-if="showLocaleMenu"
                     class="absolute right-0 mt-2 w-32 bg-white border border-slate-100 rounded-xl shadow-lg z-10 overflow-hidden">
-                    <button v-for="lang in languages" :key="lang.code" @click="changeLanguage(lang.code)"
-                        class="w-full text-left px-4 py-2 text-sm hover:bg-slate-50 transition-colors"
-                        :class="{ 'text-primary font-bold': locale === lang.code }">
+                    <button
+v-for="lang in languages" :key="lang.code" class="w-full text-left px-4 py-2 text-sm hover:bg-slate-50 transition-colors"
+                        :class="{ 'text-primary font-bold': locale === lang.code }"
+                        @click="changeLanguage(lang.code)">
                         {{ lang.name }}
                     </button>
                 </div>
@@ -164,7 +167,8 @@ const repoBackend = 'https://github.com/Anti Tédio/backend'
                 </div>
             </div>
 
-            <h1 id="about-hero-heading"
+            <h1
+id="about-hero-heading"
                 class="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-slate-900 via-primary to-slate-900 bg-clip-text text-transparent">
                 Anti Tédio
             </h1>
@@ -174,7 +178,8 @@ const repoBackend = 'https://github.com/Anti Tédio/backend'
             </p>
 
             <div class="flex flex-wrap gap-3 justify-center pt-2">
-                <Badge v-for="cat in ['🎬 Movies & Series', '📚 Books', '🎮 Games', '🤖 Generative AI']" :key="cat"
+                <Badge
+v-for="cat in ['🎬 Movies & Series', '📚 Books', '🎮 Games', '🤖 Generative AI']" :key="cat"
                     variant="outline" class="px-4 py-2 text-sm border-primary/30 bg-primary/5">
                     {{ cat }}
                 </Badge>
@@ -188,7 +193,8 @@ const repoBackend = 'https://github.com/Anti Tédio/backend'
             </button>
         </header>
 
-        <section class="bg-white rounded-3xl shadow-lg p-8 border border-slate-100 hover:shadow-xl transition-shadow"
+        <section
+class="bg-white rounded-3xl shadow-lg p-8 border border-slate-100 hover:shadow-xl transition-shadow"
             aria-labelledby="about-project-heading">
             <div class="flex items-center gap-3 mb-6">
                 <div class="p-3 bg-primary/10 rounded-2xl" aria-hidden="true">
@@ -209,33 +215,39 @@ const repoBackend = 'https://github.com/Anti Tédio/backend'
             <ol class="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full list-none p-0">
                 <li
                     class="flex flex-col items-center text-center p-6 bg-white rounded-3xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200">
-                    <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4"
+                    <div
+class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4"
                         aria-hidden="true">
                         <User class="w-6 h-6" />
                     </div>
-                    <span class="text-xs font-black text-primary/50 uppercase tracking-widest mb-2"
+                    <span
+class="text-xs font-black text-primary/50 uppercase tracking-widest mb-2"
                         aria-hidden="true">01</span>
                     <h3 class="font-bold text-slate-900 mb-2">{{ $t('about.step1Title') }}</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">{{ $t('about.step1Desc') }}</p>
                 </li>
                 <li
                     class="flex flex-col items-center text-center p-6 bg-white rounded-3xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200">
-                    <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4"
+                    <div
+class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-4"
                         aria-hidden="true">
                         <Layers class="w-6 h-6" />
                     </div>
-                    <span class="text-xs font-black text-primary/50 uppercase tracking-widest mb-2"
+                    <span
+class="text-xs font-black text-primary/50 uppercase tracking-widest mb-2"
                         aria-hidden="true">02</span>
                     <h3 class="font-bold text-slate-900 mb-2">{{ $t('about.step2Title') }}</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">{{ $t('about.step2Desc') }}</p>
                 </li>
                 <li
                     class="flex flex-col items-center text-center p-6 bg-white rounded-3xl border border-primary/10 bg-primary/[0.02] shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200">
-                    <div class="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center mb-4"
+                    <div
+class="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center mb-4"
                         aria-hidden="true">
                         <SparklesIcon class="w-6 h-6" />
                     </div>
-                    <span class="text-xs font-black text-primary/50 uppercase tracking-widest mb-2"
+                    <span
+class="text-xs font-black text-primary/50 uppercase tracking-widest mb-2"
                         aria-hidden="true">03</span>
                     <h3 class="font-bold text-slate-900 mb-2">{{ $t('about.step3Title') }}</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">{{ $t('about.step3Desc') }}</p>
@@ -246,7 +258,8 @@ const repoBackend = 'https://github.com/Anti Tédio/backend'
         <section aria-labelledby="about-stats-heading">
             <h2 id="about-stats-heading" class="sr-only">{{ $t('about.statsTitle') }}</h2>
             <ul class="grid grid-cols-2 sm:grid-cols-4 gap-4 list-none p-0">
-                <li v-for="i in 4" :key="i"
+                <li
+v-for="i in 4" :key="i"
                     class="flex flex-col items-center justify-center p-6 bg-white rounded-2xl border border-slate-100 shadow-sm text-center hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-md transition-all duration-200">
                     <span class="text-4xl font-black text-primary">{{ $t(`about.stat${i}Value`) }}</span>
                     <span class="text-xs text-slate-500 font-medium mt-1 uppercase tracking-wider">{{
@@ -308,7 +321,8 @@ const repoBackend = 'https://github.com/Anti Tédio/backend'
         </section>
 
         <div class="grid md:grid-cols-2 gap-4">
-            <a :href="repoFrontend" target="_blank" rel="noopener noreferrer"
+            <a
+:href="repoFrontend" target="_blank" rel="noopener noreferrer"
                 class="group p-6 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800 text-white hover:scale-[1.02] transition-all duration-300 shadow-xl focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
                 :aria-label="$t('about.repoFrontendTitle')">
                 <div class="flex items-center gap-3 mb-3">
@@ -321,7 +335,8 @@ const repoBackend = 'https://github.com/Anti Tédio/backend'
                     <ExternalLinkIcon :size="14" aria-hidden="true" />
                 </div>
             </a>
-            <a :href="repoBackend" target="_blank" rel="noopener noreferrer"
+            <a
+:href="repoBackend" target="_blank" rel="noopener noreferrer"
                 class="group p-6 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800 text-white hover:scale-[1.02] transition-all duration-300 shadow-xl focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
                 :aria-label="$t('about.repoBackendTitle')">
                 <div class="flex items-center gap-3 mb-3">
@@ -336,7 +351,8 @@ const repoBackend = 'https://github.com/Anti Tédio/backend'
             </a>
         </div>
 
-        <section class="bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 border border-slate-200 shadow-lg"
+        <section
+class="bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 border border-slate-200 shadow-lg"
             aria-labelledby="creator-heading">
             <div class="text-center space-y-2 mb-8">
                 <h2 id="creator-heading" class="text-2xl font-bold text-slate-800">
@@ -350,7 +366,8 @@ const repoBackend = 'https://github.com/Anti Tédio/backend'
                         class="absolute inset-0 bg-gradient-to-r from-primary to-purple-500 rounded-full blur-md opacity-50 animate-pulse" />
                     <div
                         class="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-xl hover:scale-105 transition-transform duration-300">
-                        <img :src="creator.avatar" :alt="`${creator.name} profile photo`"
+                        <img
+:src="creator.avatar" :alt="`${creator.name} profile photo`"
                             class="w-full h-full object-cover" loading="lazy" />
                     </div>
                 </div>
@@ -367,14 +384,18 @@ const repoBackend = 'https://github.com/Anti Tédio/backend'
                 </div>
 
                 <div class="flex flex-wrap gap-3 justify-center pt-2" role="list">
-                    <a v-for="link in creatorLinks" :key="link.href" :href="link.href" target="_blank"
+                    <a
+v-for="link in creatorLinks" :key="link.href" :href="link.href" target="_blank"
                         rel="noopener noreferrer" :aria-label="link.label" role="listitem"
                         class="group flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-primary/30 hover:shadow-md transition-all duration-200 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none">
-                        <GithubIcon v-if="link.icon === 'github'" :size="18"
+                        <GithubIcon
+v-if="link.icon === 'github'" :size="18"
                             class="text-slate-500 group-hover:text-primary transition-colors" aria-hidden="true" />
-                        <LinkedinIcon v-else-if="link.icon === 'linkedin'" :size="18"
+                        <LinkedinIcon
+v-else-if="link.icon === 'linkedin'" :size="18"
                             class="text-slate-500 group-hover:text-primary transition-colors" aria-hidden="true" />
-                        <MailIcon v-else-if="link.icon === 'email'" :size="18"
+                        <MailIcon
+v-else-if="link.icon === 'email'" :size="18"
                             class="text-slate-500 group-hover:text-primary transition-colors" aria-hidden="true" />
                         <span class="text-sm font-medium text-slate-600 group-hover:text-primary transition-colors">{{
                             link.label }}</span>
@@ -391,11 +412,13 @@ const repoBackend = 'https://github.com/Anti Tédio/backend'
             <p class="text-xs text-slate-400">
                 <i18n-t keypath="about.iconCredits" tag="span">
                     <template #lucide>
-                        <a href="https://lucide.dev" target="_blank" rel="noopener noreferrer"
+                        <a
+href="https://lucide.dev" target="_blank" rel="noopener noreferrer"
                             class="hover:text-primary transition-colors focus-visible:underline focus-visible:outline-none">Lucide</a>
                     </template>
                     <template #svgrepo>
-                        <a href="https://www.svgrepo.com" target="_blank" rel="noopener noreferrer"
+                        <a
+href="https://www.svgrepo.com" target="_blank" rel="noopener noreferrer"
                             class="hover:text-primary transition-colors focus-visible:underline focus-visible:outline-none">SVG
                             Repo</a>
                     </template>

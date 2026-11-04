@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Login from '@/components/login/Login.vue'
+import Login from '@/components/login/LoginDialog.vue'
 import useUserStore from '../stores/user.store'
 import router from '../router/routes'
 import useCategoriesStore from '../stores/categories.store'
@@ -65,7 +65,8 @@ onMounted(() => {
   <header
     class="fixed top-0 backdrop-blur-sm flex justify-between items-center w-full p-sm bg-white/70 z-50 select-none"
     role="banner">
-    <a href="/" class="flex items-center gap-2 text-primary cursor-pointer no-underline" :aria-label="$t('nav.home')"
+    <a
+href="/" class="flex items-center gap-2 text-primary cursor-pointer no-underline" :aria-label="$t('nav.home')"
       @click.prevent="router.push('/')">
       <div class="w-12" aria-hidden="true">
         <img src="/src/assets/logo.webp" alt="Anti Tédio logo" width="48" height="48" />
@@ -76,9 +77,10 @@ onMounted(() => {
     <NavBarComponent @logout="userStore.logout" />
   </header>
 
-  <main class="mt-17 p-sm" id="main-content">
+  <main id="main-content" class="mt-17 p-sm">
     <VerifyEmailCode />
-    <CreditsExhaustedDialog :open="openCreditsExhaustedDialog" @buy-credits="buyCredits"
+    <CreditsExhaustedDialog
+:open="openCreditsExhaustedDialog" @buy-credits="buyCredits"
       @vue:before-unmount="closeCreditsExhaustedDialog" />
     <Login />
     <router-view />
@@ -86,10 +88,12 @@ onMounted(() => {
 
   <CookieConsentComponent />
 
-  <footer class="p-sm flex flex-wrap justify-between gap-10 mt-10 border-t border-gray-100" role="contentinfo"
+  <footer
+class="p-sm flex flex-wrap justify-between gap-10 mt-10 border-t border-gray-100" role="contentinfo"
     :aria-label="$t('footer.navigation')">
     <section :aria-label="$t('footer.tagline')" class="w-150">
-      <a href="/" class="flex items-center gap-2 text-primary no-underline" :aria-label="$t('nav.home')"
+      <a
+href="/" class="flex items-center gap-2 text-primary no-underline" :aria-label="$t('nav.home')"
         @click.prevent="router.push('/')">
         <Zap class="fill-primary" aria-hidden="true" />
         <span class="text-2xl font-bold font-sans tracking-tight uppercase">Anti Tédio</span>

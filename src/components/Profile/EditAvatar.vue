@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
-import { UploadCloud, X } from 'lucide-vue-next'
+import { UploadCloud } from 'lucide-vue-next'
 import useUserStore from '@/stores/user.store'
 
 const isOpen = ref(false)

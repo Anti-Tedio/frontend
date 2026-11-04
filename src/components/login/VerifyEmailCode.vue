@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import { isAxiosError } from 'axios'
 import { MailIcon, Loader2Icon, ArrowLeftRightIcon } from 'lucide-vue-next'
 import {
   Dialog,
@@ -31,8 +32,10 @@ const handleVerify = async () => {
     error.value = false
     localStorage.removeItem('email')
     window.location.reload()
-  } catch (e: any) {
-    errorMessage.value = e?.response?.data?.message ?? ''
+  } catch (e: unknown) {
+    errorMessage.value = isAxiosError<{ message?: string }>(e)
+      ? (e.response?.data?.message ?? '')
+      : ''
     error.value = true
   } finally {
     isLoading.value = false

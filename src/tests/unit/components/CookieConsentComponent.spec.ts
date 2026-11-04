@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
-import CookieConsentComponent from '../CookieConsentComponent.vue'
+import CookieConsentComponent from '@/components/CookieConsentComponent.vue'
 
 const i18n = createI18n({
   legacy: false,

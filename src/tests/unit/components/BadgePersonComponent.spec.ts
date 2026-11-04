@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from 'vitest'
 import { mount, shallowMount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import { createI18n } from 'vue-i18n'
-import BadgePersonComponent from '../BadgePersonComponent.vue'
+import BadgePersonComponent from '@/components/BadgePersonComponent.vue'
 import type { Person } from '@/types'
 import usePersonsStore from '@/stores/persons.store'
 

@@ -4,7 +4,7 @@ import { createI18n } from 'vue-i18n'
 import { createPinia, setActivePinia } from 'pinia'
 import type { Product } from '@/types'
 import useProductStore from '@/stores/product.store'
-import BuyCreditComponent from '../BuyCreditComponent.vue'
+import BuyCreditComponent from '@/components/BuyCreditComponent.vue'
 
 const i18n = createI18n({
   legacy: false,

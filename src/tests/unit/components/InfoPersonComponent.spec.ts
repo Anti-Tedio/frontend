@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { mount, shallowMount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
-import InfoPersonComponent from '../InfoPersonComponent.vue'
+import InfoPersonComponent from '@/components/InfoPersonComponent.vue'
 
 const i18n = createI18n({
   legacy: false,

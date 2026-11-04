@@ -3,7 +3,7 @@ import { nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import { createI18n } from 'vue-i18n'
-import HistoryCard from '../../Profile/HistoryCard.vue'
+import HistoryCard from '@/components/Profile/HistoryCard.vue'
 import type { Category, History, Rating } from '@/types'
 
 const i18n = createI18n({

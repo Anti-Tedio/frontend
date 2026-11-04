@@ -109,6 +109,9 @@ src/
 │   ├── PaymentFailureView.vue
 │   └── PaymentPendingView.vue
 ├── tests/              # Test suite (mirrors the structure of src/)
+│   ├── fixtures/       # Shared test data
+│   ├── integration/    # Integration tests (HTTP mocked with MSW)
+│   ├── msw/            # MSW request handlers and test server
 │   ├── unit/
 │   │   ├── components/
 │   │   ├── layouts/
@@ -194,6 +197,12 @@ All tests live in `src/tests/`. The internal structure mirrors the source tree s
 
 ```
 src/tests/
+├── fixtures/
+├── integration/
+│   └── stores/
+├── msw/
+│   ├── handlers.ts
+│   └── server.ts
 ├── setup.ts
 ├── types.d.ts
 └── unit/
@@ -226,9 +235,31 @@ bunx vitest run src/tests/unit/views/ProfileView.spec.ts
 
 ### Fixtures and MSW handlers
 
-Shared test data belongs in `src/tests/fixtures/`, for example `src/tests/fixtures/profile.ts`.
+Shared test data belongs in `src/tests/fixtures/`. For example, `src/tests/fixtures/history.ts` exports the history and rating fixtures used by the integration tests.
 
-API mocking will be handled by Mock Service Worker (issue #7). When it is added, request handlers go in `src/tests/msw/handlers.ts` and the test server in `src/tests/msw/server.ts`. Import the server from the setup file or from the spec that needs it.
+HTTP requests are mocked with [Mock Service Worker](https://mswjs.io/). The test server is created in `src/tests/msw/server.ts`, while the default handlers live in `src/tests/msw/handlers.ts`.
+
+`src/tests/setup.ts` starts the server with `onUnhandledRequest: 'error'`, so any request without a matching handler fails the test instead of reaching the network. Handlers are reset automatically after each test.
+
+To override a handler inside a specific test:
+
+```ts
+import { http, HttpResponse } from 'msw'
+import { server } from '@/tests/msw/server'
+import { API_URL } from '@/tests/msw/handlers'
+
+server.use(
+  http.post(`${API_URL}/history`, () =>
+    HttpResponse.json({
+      history: [],
+      nextCursor: null,
+      rating: null,
+    }),
+  ),
+)
+```
+
+Use MSW for integration tests that need to exercise the HTTP layer (`src/tests/integration/`). Pure unit tests should keep mocking store actions with `vi.spyOn`. MSW and its handlers are only imported by test files, so they are not included in the production bundle.
 
 ---
 

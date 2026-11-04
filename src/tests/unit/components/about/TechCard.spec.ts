@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
-import TechCard from '../about/TechCard.vue'
-import type { TechItem } from '../about/TechCard.vue'
+import TechCard from '@/components/about/TechCard.vue'
+import type { TechItem } from '@/components/about/TechCard.vue'
 
 describe('TechCard.vue', () => {
   const mockItem: TechItem = {

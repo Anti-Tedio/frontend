@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
-import VideoGame from '../../Results/VideoGame.vue'
+import VideoGame from '@/components/Results/VideoGame.vue'
 import type { SuggestVideoGame } from '@/types/suggest'
 
 const i18n = createI18n({

@@ -20,6 +20,7 @@
 - [Getting Started](#getting-started)
 - [Environment Variables](#environment-variables)
 - [Available Scripts](#available-scripts)
+- [Testing](#testing)
 - [Internationalization (i18n)](#internationalization-i18n)
 - [Component Architecture](#component-architecture)
 - [Routes](#routes)
@@ -107,6 +108,13 @@ src/
 │   ├── PaymentSuccessView.vue
 │   ├── PaymentFailureView.vue
 │   └── PaymentPendingView.vue
+├── tests/              # Test suite (mirrors the structure of src/)
+│   ├── unit/
+│   │   ├── components/
+│   │   ├── layouts/
+│   │   └── views/
+│   ├── setup.ts        # Vitest setup file
+│   └── types.d.ts      # Test environment type augmentations
 ├── App.vue             # Root component (header, footer, router-view)
 ├── i18n.ts             # vue-i18n setup (locale detection, fallback)
 └── main.ts             # App entry point
@@ -177,6 +185,50 @@ All Vite environment variables must be prefixed with `VITE_` to be exposed to th
 | `npm run type-check` | Run `vue-tsc` without emitting |
 | `npm run lint` | Run ESLint |
 | `npm run format` | Run Prettier |
+
+---
+
+## Testing
+
+All tests live in `src/tests/`. The internal structure mirrors the source tree so it is easy to find the spec for a given file.
+
+```
+src/tests/
+├── setup.ts
+├── types.d.ts
+└── unit/
+    ├── components/
+    │   ├── Profile/
+    │   ├── Results/
+    │   └── login/
+    ├── layouts/
+    └── views/
+```
+
+### Naming convention
+
+- Specs use the `*.spec.ts` suffix.
+- The spec filename matches the file under test: `src/components/Profile/HistoryCard.vue` is tested by `src/tests/unit/components/Profile/HistoryCard.spec.ts`.
+- Code under test is always imported through the `@/` alias, not through relative paths.
+
+### Running tests
+
+```bash
+# Run the whole unit suite in watch mode
+npm run test:unit
+
+# Run the suite once (useful for CI)
+bunx vitest run
+
+# Run a single spec
+bunx vitest run src/tests/unit/views/ProfileView.spec.ts
+```
+
+### Fixtures and MSW handlers
+
+Shared test data belongs in `src/tests/fixtures/`, for example `src/tests/fixtures/profile.ts`.
+
+API mocking will be handled by Mock Service Worker (issue #7). When it is added, request handlers go in `src/tests/msw/handlers.ts` and the test server in `src/tests/msw/server.ts`. Import the server from the setup file or from the spec that needs it.
 
 ---
 

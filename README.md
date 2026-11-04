@@ -197,6 +197,19 @@ All Vite environment variables must be prefixed with `VITE_` to be exposed to th
 
 ---
 
+## Continuous Integration
+
+The GitHub Actions workflow in `.github/workflows/ci.yml` runs on pushes to `main` and on pull requests. It installs dependencies with `bun install --frozen-lockfile` and runs, in order:
+
+1. `bun run lint`
+2. `bun run type-check`
+3. `bun run test`
+4. `bun run build`
+
+The required status check for merging is **Quality** (the `quality` job). Branch protection must be configured in the repository settings after the workflow has run at least once.
+
+---
+
 ## Testing
 
 All tests live in `src/tests/`. The internal structure mirrors the source tree so it is easy to find the spec for a given file.

@@ -129,21 +129,21 @@ src/
 
 ### Prerequisites
 
-- Node.js `^20.19.0 || >=22.12.0`
-- Bun 1.x (recommended) or npm 9+
+- Node.js `^20.19.0 || ^22.13.0 || >=24.0.0` (versão fixada em `.nvmrc`)
+- Bun `1.4.4` (versão usada pela CI)
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/Anti Tédio/frontend.git
+git clone https://github.com/Anti-Tedio/frontend.git
 cd frontend
 
 # Install dependencies
 bun install
 ```
 
-> Os scripts também funcionam com npm: substitua `bun run` por `npm run`.
+> O projeto usa Bun como gerenciador oficial. O lockfile versionado é o `bun.lock`; não utilize `npm`/`yarn` para instalar dependências.
 
 ### Development server
 
@@ -186,8 +186,9 @@ All Vite environment variables must be prefixed with `VITE_` to be exposed to th
 | `bun run dev` | Start development server with HMR |
 | `bun run build` | Type-check and build for production |
 | `bun run preview` | Preview the production build locally |
+| `bun run test` | Run the unit test suite once (used by CI) |
 | `bun run test:unit` | Run unit tests with Vitest in watch mode |
-| `bun run test:unit:run` | Run the unit test suite once |
+| `bun run test:unit:run` | Alias for running the unit test suite once |
 | `bun run type-check` | Run `vue-tsc` without emitting |
 | `bun run lint` | Run ESLint with the flat config |
 | `bun run lint:fix` | Run ESLint and apply safe automatic fixes |
@@ -232,7 +233,7 @@ src/tests/
 bun run test:unit
 
 # Run the suite once (useful for CI)
-bunx vitest run
+bun run test
 
 # Run a single spec
 bunx vitest run src/tests/unit/views/ProfileView.spec.ts
